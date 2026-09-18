@@ -211,6 +211,80 @@
     .info-grid { grid-template-columns: 1fr; }
   }
 </style>
+
+<style>
+/* ===== Mobile accessibility & legibility enhancements ===== */
+*{ -webkit-tap-highlight-color: rgba(0,0,0,0.08); }
+a, button, input, .pill, .flag, .cflag, .apill { overflow-wrap: break-word; word-break: break-word; }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+  outline: 3px solid #D9822B; outline-offset: 2px; border-radius: 4px;
+}
+nav.side a:focus-visible { outline-offset: -2px; }
+
+@media (max-width: 860px) {
+  /* 규정 위계 관계도는 모바일에서 숨김 */
+  .tree-card { display: none !important; }
+
+  html { -webkit-text-size-adjust: 100%; }
+  body { line-height: 1.78; }
+
+  nav.side {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 8px;
+  }
+  nav.side a {
+    padding: 11px 16px !important;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 13.8px !important;
+  }
+
+  .search-wrap input {
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+  }
+
+  .open-btn, .dl-btn, .proposal-link, .proposal-pill, .ok-pill, .flow-step, a.open-btn {
+    min-height: 42px;
+  }
+  .open-btn, .dl-btn { padding-top: 12px !important; padding-bottom: 12px !important; }
+  .proposal-link, .proposal-pill, .ok-pill { padding-top: 9px !important; padding-bottom: 9px !important; }
+
+  .masthead { padding: 22px 18px 20px !important; }
+  .masthead h1 { font-size: 20px !important; line-height: 1.45 !important; }
+  .masthead .sub { font-size: 13.5px !important; }
+  .masthead-inner { flex-wrap: wrap; }
+
+  section h2 { font-size: 18px !important; }
+  .item-head h3, .art-head h3, .doc-title { font-size: 15px !important; }
+
+  .pill, .flag, .cflag, .apill, .tflag { font-size: 12px !important; padding: 5px 10px !important; }
+
+  table.ratio, table.amend, .cross-table { font-size: 12.6px !important; }
+  table.amend td.before, table.amend td.after, table.amend td.why { width: auto !important; }
+
+  .layout { padding-left: 16px !important; padding-right: 16px !important; gap: 24px !important; }
+  .wrap { padding-left: 16px !important; padding-right: 16px !important; }
+
+  .amend-banner, .summary-bar { padding-left: 16px !important; padding-right: 16px !important; }
+  .amend-card, .summary-card { padding: 14px 16px !important; }
+
+  .doc-grid { gap: 16px !important; }
+  .doc-card:active { transform: scale(0.99); }
+}
+
+@media (max-width: 480px) {
+  .masthead h1 { font-size: 18px !important; }
+  body { font-size: 14.8px !important; }
+  .info-box, .item-card, .art-card, .fact, .review-card { padding: 12px 14px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
 </head>
 <body>
 
