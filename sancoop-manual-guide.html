@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>산학연공동 기술개발과제 관리 매뉴얼(5차) — 항목별 정리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEEDE6;
+    --panel: #F8F7F2;
+    --ink: #1C2430;
+    --ink-soft: #565A62;
+    --line: #D9D6C9;
+    --line-soft: #E4E2D8;
+    --navy: #1F4258;
+    --navy-deep: #142B39;
+    --gold: #A9791E;
+    --gold-bg: #F4ECD8;
+    --red: #8B3232;
+    --red-bg: #F5E7E4;
+    --teal: #2E6B5E;
+    --teal-bg: #E7F0EC;
+    --chip: #E4E7E2;
+    --shadow: rgba(28,36,48,0.08);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper: #171A1C;
+      --panel: #1F2326;
+      --ink: #E9E7DF;
+      --ink-soft: #A7ACA9;
+      --line: #34383B;
+      --line-soft: #2A2E31;
+      --navy: #6FA0B8;
+      --navy-deep: #8FBBD0;
+      --gold: #D8AE5C;
+      --gold-bg: #2C2717;
+      --red: #D08787;
+      --red-bg: #2E1F1F;
+      --teal: #7FBBA8;
+      --teal-bg: #17262F;
+      --chip: #262A2C;
+      --shadow: rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #171A1C;
+    --panel: #1F2326;
+    --ink: #E9E7DF;
+    --ink-soft: #A7ACA9;
+    --line: #34383B;
+    --line-soft: #2A2E31;
+    --navy: #6FA0B8;
+    --navy-deep: #8FBBD0;
+    --gold: #D8AE5C;
+    --gold-bg: #2C2717;
+    --red: #D08787;
+    --red-bg: #2E1F1F;
+    --teal: #7FBBA8;
+    --teal-bg: #17262F;
+    --chip: #262A2C;
+    --shadow: rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.7;
+    font-size: 15.5px;
+  }
+  h1, h2, h3, h4 { font-family: 'Noto Serif KR', serif; color: var(--ink); margin: 0; }
+  a { color: inherit; }
+
+  .masthead {
+    background: var(--navy-deep);
+    color: #F3F1E9;
+    padding: 30px 28px 24px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .masthead-inner { max-width: 1180px; margin: 0 auto; position: relative; }
+  .meta-badge { position:absolute; top:0; right:0; text-align:right; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:10px 14px; font-size:12px; color:#DCE7E0; line-height:1.6; }
+  .meta-badge .k { color:#9FB6AC; margin-right:6px; }
+  .meta-badge a { color:#EAD9A6; text-decoration:underline; }
+  @media (max-width:860px){ .meta-badge{ position:static; display:inline-block; margin-top:14px; } }
+  .dl-box { display:flex; align-items:center; gap:14px; background: var(--teal-bg); border:1px solid var(--teal); border-radius:8px; padding:14px 18px; margin: 14px 0 6px; flex-wrap:wrap; grid-column: 1 / -1; }
+  .dl-box .ic { font-size:22px; }
+  .dl-box .txt { flex:1; font-size:13.6px; color: var(--ink); min-width:220px; }
+  .dl-box .txt strong { color: var(--teal); }
+  .dl-btn { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; background: var(--teal); color:#fff; padding:9px 16px; border-radius:6px; text-decoration:none; white-space:nowrap; }
+  .masthead .tag { font-size: 12.5px; letter-spacing: 0.02em; color: #C9D6DB; margin-bottom: 10px; }
+  .masthead h1 { font-size: 25px; font-weight: 600; color: #FBFAF5; line-height: 1.4; }
+  .masthead .sub { margin-top: 8px; color: #B9C7CD; font-size: 14px; }
+
+  .amend-banner { max-width: 1180px; margin: -14px auto 0; padding: 0 28px; position: relative; z-index: 2; }
+  .amend-card {
+    background: var(--gold-bg); border: 1px solid var(--gold); border-radius: 6px;
+    padding: 16px 20px; display: flex; gap: 14px; align-items: flex-start;
+    box-shadow: 0 6px 18px var(--shadow); flex-wrap: wrap;
+  }
+  .amend-card .mark {
+    font-family: 'Noto Serif KR', serif; font-weight: 700; color: var(--gold); font-size: 13px;
+    border: 1px solid var(--gold); border-radius: 4px; padding: 3px 8px; white-space: nowrap; margin-top: 2px;
+  }
+  .amend-card ul { margin: 0; padding-left: 18px; flex: 1; min-width: 260px; }
+  .amend-card li { font-size: 13.5px; margin-bottom: 5px; }
+  .amend-card strong { color: var(--navy); }
+
+  .layout { max-width: 1180px; margin: 30px auto 80px; padding: 0 28px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; }
+  nav.side { position: sticky; top: 20px; align-self: start; max-height: calc(100vh - 40px); overflow-y: auto; padding-right: 6px; }
+  nav.side .group { margin-bottom: 20px; }
+  nav.side .group-label { font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.03em; margin-bottom: 6px; padding-left: 10px; }
+  nav.side a {
+    display: block; text-decoration: none; font-size: 13.5px; color: var(--ink-soft);
+    padding: 6px 10px; border-left: 2px solid transparent; border-radius: 0 4px 4px 0;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  nav.side a:hover { color: var(--navy); background: var(--panel); }
+  nav.side a.active { color: var(--navy); border-left-color: var(--gold); background: var(--panel); font-weight: 600; }
+
+  main { min-width: 0; }
+  section { margin-bottom: 56px; }
+  section h2 { font-size: 21px; font-weight: 600; padding-bottom: 10px; border-bottom: 1px solid var(--line); margin-bottom: 18px; scroll-margin-top: 20px; }
+  section > .lede { color: var(--ink-soft); font-size: 14px; margin-bottom: 20px; }
+
+  .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 4px; }
+  .info-box { background: var(--panel); border: 1px solid var(--line-soft); border-radius: 6px; padding: 14px 16px; }
+  .info-box .k { font-size: 12px; color: var(--ink-soft); margin-bottom: 4px; }
+  .info-box .v { font-size: 14.5px; }
+
+  ul.plain { margin: 8px 0 0; padding-left: 18px; }
+  ul.plain li { margin-bottom: 6px; font-size: 14.5px; }
+
+  .note { font-size: 13px; color: var(--ink-soft); border-left: 2px solid var(--line); padding-left: 10px; margin: 10px 0; }
+
+  .search-wrap { margin-bottom: 22px; }
+  .search-wrap input {
+    width: 100%; font-family: inherit; font-size: 14px; padding: 11px 14px;
+    border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink);
+  }
+  .search-wrap input:focus { outline: 2px solid var(--navy); outline-offset: 1px; }
+  .search-hint { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+
+  .item-card { border: 1px solid var(--line-soft); border-radius: 8px; background: var(--panel); margin-bottom: 20px; overflow: hidden; scroll-margin-top: 20px; }
+  .item-head { display: flex; align-items: baseline; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--line-soft); }
+  .item-head .num { font-family: 'Noto Serif KR', serif; color: var(--navy); font-weight: 700; font-size: 15px; min-width: 20px; }
+  .item-head h3 { font-size: 17px; font-weight: 600; }
+  .item-body { padding: 14px 20px 18px; }
+  .item-body ul { margin: 0; padding-left: 18px; }
+  .item-body li { font-size: 13.8px; margin-bottom: 6px; }
+  .item-foot { padding: 10px 20px 16px; font-size: 12.5px; color: var(--ink-soft); border-top: 1px dashed var(--line-soft); margin-top: 6px; }
+
+  /* Two-column limit-style card (like budget-limit layout) */
+  .split-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; padding: 4px 20px 18px; }
+  .split-col { padding-top: 14px; }
+  .split-col .label { font-size: 12px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .split-col.limit .label { color: var(--red); }
+  .split-col.limit { border-left: 1px solid var(--line-soft); padding-left: 20px; }
+  .split-col ul { margin: 0; padding-left: 16px; }
+  .split-col li { font-size: 13.8px; margin-bottom: 6px; }
+  @media (max-width: 720px) {
+    .split-body { grid-template-columns: 1fr; }
+    .split-col.limit { border-left: none; padding-left: 0; border-top: 1px solid var(--line-soft); margin-top: 10px; padding-top: 14px; }
+  }
+
+  table.ratio { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 10px 0 18px; }
+  table.ratio caption { text-align: left; font-size: 13px; color: var(--ink-soft); margin-bottom: 8px; caption-side: top; }
+  table.ratio th, table.ratio td { border: 1px solid var(--line); padding: 9px 10px; text-align: left; vertical-align: top; }
+  table.ratio thead th { background: var(--chip); font-weight: 600; text-align: center; }
+  table.ratio td.figure, table.ratio th.figure { color: var(--gold); font-weight: 600; }
+  .table-scroll { overflow-x: auto; }
+
+  .steps { list-style: none; margin: 10px 0 0; padding: 0; }
+  .steps li { position: relative; padding: 4px 0 14px 24px; font-size: 14.5px; border-left: 1px solid var(--line); margin-left: 4px; }
+  .steps li:last-child { border-left-color: transparent; }
+  .steps li::before { content: ""; position: absolute; left: -4.5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+  .pill { font-size: 12.5px; background: var(--chip); border-radius: 20px; padding: 5px 12px; color: var(--ink-soft); }
+  .pill.warn { background: var(--red-bg); color: var(--red); }
+  .pill.good { background: var(--teal-bg); color: var(--teal); }
+
+  .fact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 10px 0 6px; }
+  .fact { background: var(--panel); border: 1px solid var(--line-soft); border-radius: 6px; padding: 12px 14px; }
+  .fact .num { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 700; color: var(--gold); }
+  .fact .desc { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 720px) { .fact-grid { grid-template-columns: 1fr; } }
+
+  .rev-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+  .rev-table th, .rev-table td { border-bottom: 1px solid var(--line-soft); padding: 8px 10px; text-align: left; vertical-align: top; }
+  .rev-table th { color: var(--ink-soft); font-weight: 600; font-size: 12px; }
+  .rev-table td.date { white-space: nowrap; color: var(--navy); font-weight: 600; }
+
+  footer { max-width: 1180px; margin: 0 auto 60px; padding: 20px 28px; color: var(--ink-soft); font-size: 12.5px; border-top: 1px solid var(--line); }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; }
+    nav.side {
+      position: static; max-height: none; display: flex; overflow-x: auto; gap: 4px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--line); margin-bottom: 10px;
+    }
+    nav.side .group { display: flex; gap: 4px; margin-bottom: 0; flex-shrink: 0; }
+    nav.side .group-label { display: none; }
+    nav.side a { white-space: nowrap; border-left: none; border-bottom: 2px solid transparent; }
+    nav.side a.active { border-left: none; border-bottom-color: var(--gold); }
+    .info-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="meta-badge">
+      <div><span class="k">작성자</span>앵커김군 (<a href="mailto:coolzet@konkuk.ac.kr">coolzet@konkuk.ac.kr</a>)</div>
+      <div><span class="k">업데이트</span>2026. 9. 18.</div>
+    </div>
+    <div class="tag">서울연구원 · 서울앵커센터 · 서울시 지역성장 인재양성체계(앵커)</div>
+    <h1>산학연공동 기술개발과제 관리 매뉴얼(5차) — 항목별 정리</h1>
+    <div class="sub">2025. 10. 17. 제정 · 2026. 9. 14. 개정 (대외본) 기준으로 절차·항목·서식을 한 페이지에 정리했습니다.</div>
+  </div>
+</header>
+
+<div class="amend-banner">
+  <div class="amend-card">
+    <span class="mark">5차 개정 (2026.9.14.)</span>
+    <ul>
+      <li><strong>사업 명칭 일괄 변경</strong>: RISE → 앵커 (「지역성장 인재양성체계(앵커) 추진방안」 '26.4. 에 따름)</li>
+      <li><strong>관련 근거 갱신</strong>: 운영규정 훈령 제575호, 「앵커 사업비 집행 및 관리 지침」('26.6.), 「서울 앵커 사업비 집행 및 관리 기준」('26.7.) 등으로 교체 + 「보조금 관리에 관한 법률」 추가</li>
+      <li><strong>기본원칙 나항</strong>: 우선 적용 규정 명칭을 「지역성장 인재양성체계 운영규정」·「앵커 사업비 집행 및 관리 지침」으로 수정</li>
+      <li><strong>연구개발비 관리 라항</strong>: 카드사용 불가 시 지출방법 근거가 '서울RISE 사업비 지침' → <strong>「앵커 사업비 집행 및 관리 지침」</strong>으로 변경</li>
+      <li><strong>[첨부1], [첨부2] 신설</strong>: 사업비 관리용 대학·과제 식별번호 표, e나라도움-사업계획서 항목 매칭표 및 집행 제한 항목 추가</li>
+    </ul>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="side" id="sideNav">
+    <div class="group">
+      <div class="group-label">기본</div>
+      <a href="#overview">Ⅰ. 개요</a>
+      <a href="#principles">Ⅱ. 기본 원칙·준수사항</a>
+      <a href="#planning">Ⅲ. 과제 기획</a>
+    </div>
+    <div class="group">
+      <div class="group-label">과제 선정·관리</div>
+      <a href="#apply">1. 과제 신청</a>
+      <a href="#select">2. 과제 선정</a>
+      <a href="#manage">3. 과제 관리</a>
+      <a href="#outcome">4. 성과 관리·활용·평가</a>
+    </div>
+    <div class="group">
+      <div class="group-label">연구개발비</div>
+      <a href="#rd-manage">1. 연구개발비 관리</a>
+      <a href="#rd-items">2. 항목별 사용 용도</a>
+      <a href="#rd-etc">3. 산업체 연구비·기타</a>
+    </div>
+    <div class="group">
+      <div class="group-label">첨부·서식</div>
+      <a href="#attach1">첨부1. 식별번호</a>
+      <a href="#attach2">첨부2. e나라도움 매칭·제한</a>
+      <a href="#forms">서식 1~3</a>
+      <a href="#revlog">개정 이력 한눈에</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="search-wrap">
+      <input type="text" id="searchBox" placeholder="키워드로 찾기 (예: 상한액, 학생인건비, 연구수당, 심사평가단)">
+      <div class="search-hint">입력하면 항목별 사용 용도 카드가 실시간으로 필터링됩니다.</div>
+    </div>
+
+    <section id="overview">
+      <h2>Ⅰ. 개요</h2>
+      <div class="info-grid">
+        <div class="info-box">
+          <div class="k">목적</div>
+          <div class="v">교육부·서울특별시가 추진하는 앵커의 일환으로 수행하는 산학연공동 기술개발과제의 관리·운영에 관한 사항 규정</div>
+        </div>
+        <div class="info-box">
+          <div class="k">적용대상</div>
+          <div class="v">앵커 추진의 일환으로 수행하는 <strong>①④⑤⑨번 단위과제</strong> 내 산학연공동 기술개발과제의 관리·운영</div>
+        </div>
+        <div class="info-box">
+          <div class="k">용어정의</div>
+          <div class="v">앵커 지원비를 활용해 대학·기업이 공동 기술개발로 지식재산 창출, 기술이전·사업화 등 산학연협력 성과를 내는 협력 활동(및 그 과제단위)</div>
+        </div>
+        <div class="info-box">
+          <div class="k">관련 근거</div>
+          <div class="v">산업교육진흥법, 보조금 관리에 관한 법률, 지역성장 인재양성체계 운영규정(훈령 제575호), 앵커 사업비 집행 및 관리 지침('26.6.), 서울 앵커 사업비 집행 및 관리 기준('26.7.)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="principles">
+      <h2>Ⅱ. 기본 원칙 및 준수 사항</h2>
+      <ul class="plain">
+        <li>대학(사업단)은 이 매뉴얼에 근거하여 과제 선정·평가·관리·운영에 필요한 자체 규정·지침을 수립해야 함</li>
+        <li>기업지원·협력활동비 항목 내에서 「국가연구개발사업 연구개발비 사용기준」을 준용하여 집행대학(사업단)이 관리하되, <strong>지역성장 인재양성체계 운영규정 → 앵커 사업비 집행 및 관리 지침 → 서울 앵커 사업비 집행 및 관리 기준 → 이 매뉴얼</strong> 순으로 우선 적용 <span class="pill">개정 2026.9.14.</span></li>
+        <li>참여 산업체의 연구비(현금·현물)는 앵커 총사업비에 포함하지 않으며, 대학이 자체적으로 별도 관리</li>
+        <li>예산 항목, 사업비 집행·관리는 e나라도움 항목에 맞춰 수행</li>
+        <li>운영 목적에 부합하지 않는 연구과제비 활용(항목 과다 편성 등) 시 제한·제재 조치 가능 <span class="pill">개정 2025.12.17.</span></li>
+        <li>대학(사업단) 자체 운영·관리로 발생한 사항의 책임은 대학(사업단)에 있음</li>
+        <li>매뉴얼 적용에 관한 해석은 교육부·서울특별시·서울앵커센터에 따름</li>
+      </ul>
+    </section>
+
+    <section id="planning">
+      <h2>Ⅲ. 과제 기획</h2>
+      <div class="note">이 장은 예시로서, 운영 시 참고사항으로 활용하는 부분입니다.</div>
+
+      <h3 style="font-size:15px; margin: 18px 0 8px;">1. 산업체 수요조사</h3>
+      <p style="font-size:14.5px; margin:0 0 6px;">사업단은 산업체 수요조사를 실시하고 결과를 과제 기획에 반영해야 하며, 조사에는 다음이 포함됩니다.</p>
+      <ul class="plain">
+        <li>기술개발의 목표 및 내용</li>
+        <li>보유기술 현황, 연구개발 동향 및 파급효과</li>
+        <li>관련 시장 동향 및 규모</li>
+        <li>투입 가능한 산업체 보유 자원 현황(현금, 현물, 인력 등)</li>
+        <li>개발성과의 활용 방안</li>
+      </ul>
+
+      <h3 style="font-size:15px; margin: 20px 0 8px;">2. 산학연공동 기술개발과제 기획</h3>
+      <p style="font-size:14.5px; margin:0 0 6px;">서울 앵커 단위과제 목표와 기술적·경제적 타당성을 고려해 아래 사항을 포함하여 기획합니다.</p>
+      <ul class="plain">
+        <li>대학(사업단)의 특화·전략 분야, 앵커 추진 목표 및 내용, 산학연공동 기술개발의 목표·추진 체계</li>
+        <li>과제 수행 기간(단기/중·장기), 연구개발비 규모 등 세부 추진 내용</li>
+        <li>과제 선정 및 성과 평가 계획</li>
+        <li>해당 기술 관련 대학 보유 자원(특허, 연구역량 등)</li>
+        <li>국내·외 특허 및 기술동향</li>
+        <li>기술개발의 기대·파급효과 및 활용 가능성</li>
+      </ul>
+    </section>
+
+    <section id="apply-group">
+      <h2>Ⅳ. 과제 선정 및 관리</h2>
+      <div class="lede">신청 → 선정 → 관리 → 성과관리의 흐름으로 정리했습니다.</div>
+
+      <div class="fact-grid">
+        <div class="fact"><div class="num">1억원</div><div class="desc">과제당 연구개발비 상한액 (서울 앵커 10 챌린지는 대학당 사업비 한도)</div></div>
+        <div class="fact"><div class="num">1과제</div><div class="desc">참여교원 1인당 사업연도 기준 참여 제한(연구책임자·참여연구자 불문)</div></div>
+        <div class="fact"><div class="num">20%↑</div><div class="desc">학생 제외 전체 연구진 중 기업 소속 연구진 권장 비율(필수 1명 이상)</div></div>
+      </div>
+
+      <h3 id="apply" style="font-size:16px; margin: 26px 0 10px;">1. 과제 신청</h3>
+      <ul class="plain">
+        <li>연구수행계획을 수립한 연구책임자가 대학 자체 규정에 따라 사업단 등에 과제를 신청 <span class="pill">신설 2026.4.30.</span></li>
+        <li>연구진 구성: 앵커 참여대학 교원(연구책임자) + 참여교원 + 학생 + 기업(부설연구소 포함) 임·직원 + 기타 협력기관 연구자 (2개 이상 기업 참여 가능)</li>
+        <li>참여기업은 원칙적으로 서울특별시 소재 기업. 지역 외 기업은 명확한 사유가 있는 경우 [서식3] 제출로 인정</li>
+        <li>기업 소속 연구진 필수 포함(최소 1명 이상), 학생 제외 전체 연구진의 20% 이상 권장</li>
+        <li>참여기업으로부터 산업체 연구비(현금·현물)를 받을 수 있으나 앵커 총사업비에는 포함하지 않고 대학이 별도 관리 <span class="pill">개정 2026.9.14.</span></li>
+        <li>과제 결과물은 참여기업 대상 과제종료 후 기술이전을 권장</li>
+        <li>과제당 상한액 1억원 (서울 앵커 10 챌린지는 대학당 사업비 한도) <span class="pill">개정 2026.4.30.</span></li>
+        <li>기 수행 과제와 중복되지 않도록 NTIS 유사성 검토 등으로 사전 중복성 검토 실시</li>
+        <li>교원창업 기업: 참여교원이 대표자가 아닌 경우만 참여 가능하며, 유일한 참여 산업체로 구성 불가(타 산업체 필수 포함). 참여교원이 대표자인 경우 타 대학 과제도 참여 불가</li>
+      </ul>
+
+      <h3 id="select" style="font-size:16px; margin: 26px 0 10px;">2. 과제 선정</h3>
+      <ul class="plain">
+        <li>심사평가 계획에 따른 객관적·공정한 절차로 선정</li>
+        <li>심사평가단: <strong>4인 이상</strong>, 외부인사 <strong>70% 이상</strong> 원칙, 이해관계자 제외</li>
+        <li>심사평가 항목: 창의성·계획 충실성 / 특화분야·추진목표 부합성·인력양성 실현성 / 연구진 구성 적정성·협력 가능성 / 기 수행과제와의 차별성 / 파급효과·활용가능성 / 연구윤리 확보 및 참여제한 미대상 여부</li>
+        <li>선정 후 과제 수행 전 <strong>【서식1】연구개발비 사용 계획</strong>과 <strong>【서식2】참여기관 참여의사 확인서</strong>를 공문으로 서울앵커센터에 제출 <span class="pill">신설 2026.4.30.</span></li>
+        <li>협력기업·기관이 서울특별시 소재가 아니면 <strong>【서식3】타시도 기업·기관 참여사유서</strong> 제출 <span class="pill">신설 2026.4.30.</span></li>
+      </ul>
+
+      <h3 id="manage" style="font-size:16px; margin: 26px 0 10px;">3. 과제 관리</h3>
+      <ul class="plain">
+        <li>신청·선정 시 계획에 따라 수행이 원칙이나, 중요사항(참여기업·연구책임자·목표·연구개발비·수행기간 등) 변경 시 계획 변경 신청서 제출 → 심의·의결기구 승인 필요</li>
+        <li>연구노트는 「국가연구개발사업 연구노트 지침」에 준하여 기록·관리</li>
+      </ul>
+      <div class="note">
+        <strong>연구개발비 지급 중지·회수 사유</strong> — ①국가연구개발사업/본 과제 관련 부정행위, ②연구책임자 참여제한 확정, ③환경변경·목표 조기달성으로 계속 수행 불필요, ④법령·규정·협약 의무 위반·불이행 또는 수행 불가능, ⑤동일 과제로 타 사업 중복 수혜
+      </div>
+
+      <h3 id="outcome" style="font-size:16px; margin: 26px 0 10px;">4. 성과 관리·활용 및 평가</h3>
+      <ul class="plain">
+        <li>성과는 대학이 연구자로부터 권리를 승계해 소유하는 것이 원칙이나, 유형·참여 비중에 따라 연구자 소유 또는 공동 소유 가능</li>
+        <li>결과 발표는 연구진(대학·기업·협력기관) 공동 발표가 원칙이며, 아래 사사표기 필수</li>
+        <li>최종보고서(결과보고서) 및 성과 정보는 과제 종료일로부터 <strong>1개월 이내</strong> 사업단 제출 → 심의·의결기구 자체평가</li>
+        <li>서울앵커센터 요청 시 전자문서로 제출, 필요 시 공개 가능</li>
+        <li>매 사업연도 실적보고서에 포함해 서울앵커센터에 제출 → 앵커 성과평가·중간평가에 반영 가능</li>
+      </ul>
+      <div class="info-box" style="margin-top:10px;">
+        <div class="k">사사표기 예시 (국문)</div>
+        <div class="v" style="font-size:13.5px;">이 논문은 20**년도 교육부 및 서울특별시의 재원으로 서울앵커센터의 지원을 받아 수행된 지역성장 인재양성체계(앵커)의 결과입니다. (20**-ANCHOR-01-대학고유번호-과제번호)</div>
+      </div>
+    </section>
+
+    <section id="rd">
+      <h2>Ⅴ. 연구개발비 집행</h2>
+
+      <h3 id="rd-manage" style="font-size:16px; margin-bottom:10px;">1. 연구개발비 관리</h3>
+      <ul class="plain">
+        <li>연구개발비는 항목별로 계상하고 기준을 준수</li>
+        <li>집행 시 증빙자료 필수, e나라도움카드 사용 권장. 카드사용 불가 시 <strong>「앵커 사업비 집행 및 관리 지침」</strong>을 따름 <span class="pill">개정 2026.9.14.</span></li>
+        <li>과제 종료 후 사업단이 정산 실시, 앵커 지원비 집행실적 보고 시 정산내역 제출</li>
+      </ul>
+      <div class="pill-row">
+        <span class="pill">지출결의서 · 수입결의서</span>
+        <span class="pill">카드 매출전표</span>
+        <span class="pill">세금계산서</span>
+        <span class="pill">계좌이체 내역서 · 무통장 입금증</span>
+        <span class="pill">계약서 · 청구서 · 거래명세서 · 견적서 · 검수조서</span>
+        <span class="pill warn">간이영수증 불인정</span>
+      </div>
+
+      <div class="note">
+        서울 앵커 사업비 관리 지침이 원칙이며, 그 외 미언급 사항은 「국가연구개발혁신법」 및 시행령 준용 <span class="pill">개정 2025.10.27.</span> ·
+        간접비는 산학연공동 기술개발과제에서 편성 불가, 연구수당은 성과급과 중복 지급 불가
+      </div>
+
+      <h3 id="rd-items" style="font-size:16px; margin: 28px 0 10px;">2. 항목별 사용 용도</h3>
+      <div class="lede" style="margin-bottom:14px;">「국가연구개발사업 연구개발비 사용기준」을 준용한 9개 비목입니다.</div>
+
+      <div class="item-card" data-kw="인건비 연구자 인건비 비영리법인">
+        <div class="item-head"><span class="num">가.</span><h3>인건비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>연구개발과제 수행에 참여하는 연구자에게 지급하는 인건비</li>
+            <li>비영리법인 연구부서에 소속된 연구지원인력에게 지급하는 인건비</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item-card" data-kw="학생인건비 학생연구자 대학원 2명 필수">
+        <div class="item-head"><span class="num">나.</span><h3>학생인건비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>법 제2조제3호나목 대학, 특정연구기관 육성법 시행령상 연구기관, 대학원대학 설립 가능 연구기관 등이 학생연구자에게 지급하는 인건비</li>
+            <li>정부출연연구기관 등이 대학등·외국대학과 학·연 협동과정 계약을 통해 참여하는 학생연구자(또는 외국대학 소속 학생 연구자)에게 지급하는 인건비</li>
+            <li>6개월 이상 연수프로그램을 통해 참여하는 학생연구자에게 지급하는 인건비</li>
+          </ul>
+        </div>
+        <div class="item-foot"><strong>앵커 참여 학생은 2명 이상 필수로 연구진 참여</strong> <span class="pill">개정 2025.10.27.</span></div>
+      </div>
+
+      <div class="item-card" data-kw="연구시설 장비비 구입 설치 임차 유지보수 연구인프라">
+        <div class="item-head"><span class="num">다.</span><h3>연구시설·장비비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>연구시설·장비 구입·설치비, 관련 부대비용, 성능향상비</li>
+            <li>연구시설·장비 임차비</li>
+            <li>연구시설·장비 운영·유지비(유지·보수비, 운영비, 이전 설치비)</li>
+            <li>연구인프라 조성비(부지·시설 매입·임차·조성비, 설계·건축·감리비, 장비 구입·설비비)</li>
+          </ul>
+        </div>
+        <div class="item-foot">연구시설 설치·운영은 대학 내에서 하는 것이 원칙</div>
+      </div>
+
+      <div class="item-card" data-kw="연구재료비 시약 재료 관리시스템 시제품">
+        <div class="item-head"><span class="num">라.</span><h3>연구재료비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>연구재료 구입비(시약·재료 구입비 및 부대비용)</li>
+            <li>연구개발과제 관리비(관리시스템 운영비 등)</li>
+            <li>연구재료 제작비(시험제품·시험설비 제작비)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item-card" data-kw="위탁연구개발비 위탁기관">
+        <div class="item-head"><span class="num">마.</span><h3>위탁연구개발비</h3></div>
+        <div class="item-body">
+          <ul><li>주관연구개발기관이 과제 일부를 위탁할 때 위탁연구개발기관에 지급하는 비용</li></ul>
+        </div>
+      </div>
+
+      <div class="item-card" data-kw="국제공동연구개발비 외국기관 외국인">
+        <div class="item-head"><span class="num">바.</span><h3>국제공동연구개발비</h3></div>
+        <div class="item-body">
+          <ul><li>연구개발과제협약에 따라 외국 소재 기관·외국인과 공동 연구 수행 시 지급하는 비용</li></ul>
+        </div>
+        <div class="item-foot">국제공동연구개발의 목적이 명확해야 함</div>
+      </div>
+
+      <div class="item-card" data-kw="연구개발부담비 기본사업">
+        <div class="item-head"><span class="num">사.</span><h3>연구개발부담비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>법률로 직접 설립된 연구개발기관이 기본사업 연구개발비에서 부담하는 비용</li>
+            <li>기본사업 연구개발과제 수행을 위해 다른 연구개발기관에 지급하는 비용</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item-card" data-kw="연구활동비 지식재산 회의비 출장비 소프트웨어 클라우드 종합사업관리비">
+        <div class="item-head"><span class="num">아.</span><h3>연구활동비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>지식재산 창출 활동비, 외부 전문기술 활용비(전문가·연구개발서비스 활용 등)</li>
+            <li>회의비(회의장 임차·속기·통역 등), 출장비(국내외)</li>
+            <li>소프트웨어 활용비, 연구실 운영비(사무기기·소모품·냉난방 등)</li>
+            <li>연구인력 지원비(교육훈련, 학회 참가비, 야근 식대), 종합사업관리비</li>
+            <li>클라우드컴퓨팅서비스 이용료</li>
+            <li>그 밖의 비용(문헌구입비, 논문 게재료, 인쇄·복사비, 세금·공과금, 우편·택배비 등)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item-card" data-kw="연구수당 장려금 20% 70%">
+        <div class="item-head"><span class="num">자.</span><h3>연구수당</h3></div>
+        <div class="item-body">
+          <ul><li>연구개발과제 수행에 참여하는 연구책임자 및 연구자(학생연구자 포함)를 대상으로 지급하는 장려금</li></ul>
+        </div>
+        <div class="item-foot">수정인건비의 <strong>20% 범위 내</strong> 계산, 개인별 최대 지급률은 과제 연구수당 총 지급액의 <strong>70%</strong> 초과 불가 · 성과급과 중복 지급 불가</div>
+      </div>
+
+      <h3 id="rd-etc" style="font-size:16px; margin: 28px 0 10px;">3. 산업체 연구비 및 기타</h3>
+      <ul class="plain">
+        <li>필요 시 산업체 연구비(현금·현물)를 지원받을 수 있으며, 대학 별도 규정에 따라 집행·관리</li>
+        <li>산업체 연구비 집행내역서는 별도 관리하여 과제 결과보고서와 함께 별도 제출</li>
+        <li>연구개발비는 【서식1】 연구개발비 사용 계획에 따라 집행이 원칙이며, 사전 미승인 항목 또는 계획과 현저히 다른 집행은 정산 시 불인정될 수 있음 <span class="pill">신설 2026.4.30.</span></li>
+      </ul>
+    </section>
+
+    <section id="attach1">
+      <h2>첨부1. 산학연공동 기술개발과제 사업비 관리를 위한 식별번호</h2>
+      <div class="lede">대학(주관/참여) 및 단위과제별로 부여하는 관리번호 체계입니다. 실제 번호·매칭 대학 목록은 원문 표를 참고하세요.</div>
+      <ul class="plain">
+        <li>구성: ① 대학번호(주관) · ② 단위과제번호 · ③ 대학번호(참여) · ④ 사업비항목</li>
+        <li>식별번호는 대학·단위과제가 추가됨에 따라 변경될 수 있음</li>
+        <li>2차년도에 단위과제 번호가 변경되어도 <strong>기존 1차년도 식별번호를 그대로 적용</strong></li>
+        <li>2026년도 캠퍼스타운 사업은 개별단위과제로 등록되어 <strong>식별번호를 사용하지 않음</strong></li>
+      </ul>
+      <div class="note">원문 표에는 건국대·경희대·고려대·국민대·동국대·서강대·서울과학기술대·서울대·서울시립대·성균관대·세종대·숭실대·연세대·인덕대·중앙대·한양대·한양여대·배화여대·숙명여대·이화여대·홍익대 등 35개 연번의 대학·단위과제 매칭 목록이 포함되어 있습니다.</div>
+    </section>
+
+    <section id="attach2">
+      <h2>첨부2. e나라도움 및 사업계획서 예산 필수 매칭 · 주요 집행 제한 항목</h2>
+      <div class="lede">서울 앵커 사업비의 효율적 집행을 위해 e나라도움 예산(보조비목·세목)과 사업계획서 예산(사업비 항목)을 아래처럼 연계합니다. 지정 항목에는 해당 내역 이외 편성이 불가합니다.</div>
+
+      <div class="table-scroll">
+      <table class="ratio">
+        <thead><tr><th>사업비 항목</th><th>편성비율</th><th>보조비목(e나라도움)</th><th>보조세목(e나라도움)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>[기업 지원·협력 활동비] 산학공동기술개발과제 — 학생인건비, 연구수당</td>
+            <td>인건비 항목 편성비율에 미포함</td>
+            <td class="figure">인건비 (110)</td>
+            <td class="figure">기타인건비 (05)</td>
+          </tr>
+          <tr>
+            <td>[기업 지원·협력 활동비] 산학공동기술개발과제 — 인건비성 제외한 전체</td>
+            <td>—</td>
+            <td class="figure">연구개발비 (260)</td>
+            <td class="figure">연구개발비 (01)</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="note">지정 항목 이외 내역의 e나라도움 세목 매칭은 대학이 자체 판단 후 입력합니다.</div>
+
+      <h3 style="font-size:15px; margin: 20px 0 10px;">주요 집행 제한 항목</h3>
+      <div class="pill-row">
+        <span class="pill warn">대학 역할 없이 기업 등에 예산만 지원 (홈페이지 구축·홍보물 제작 등)</span>
+        <span class="pill warn">기업 등에 지급되는 대가성 비용 (홍보물·상품권·기념품)</span>
+        <span class="pill warn">교·직원 및 기관(대학본부 등) 직원의 개인 연구활동비</span>
+      </div>
+      <div class="note">단, 사업계획에 대학·기업의 역할이 명시되어 있고 공동으로 산학연협력을 이행하는 경우에만 예산 지원 집행이 가능합니다.</div>
+    </section>
+
+    <section id="forms">
+      <h2>서식 1~3</h2>
+      <div class="split-body" style="padding:0; display:grid; grid-template-columns: repeat(3,1fr); gap:14px;">
+        <div class="item-card" style="margin:0;">
+          <div class="item-head"><span class="num">서식1</span><h3 style="font-size:15px;">연구개발비 사용 계획</h3></div>
+          <div class="item-body">
+            <ul>
+              <li>과제 요약서(연구진, 기간, 예산, 실적 등)</li>
+              <li>과제 요약문(기술분류, 목표·내용, 활용계획)</li>
+              <li>연구개발비 사용 계획 및 총괄표, 비목별 소요 명세</li>
+            </ul>
+          </div>
+          <div class="item-foot">신설 2026.4.30. · 선정 후 과제 수행 전 제출</div>
+        </div>
+        <div class="item-card" style="margin:0;">
+          <div class="item-head"><span class="num">서식2</span><h3 style="font-size:15px;">참여기관 참여의사 확인서</h3></div>
+          <div class="item-body">
+            <ul>
+              <li>참여기업/기관 정보, 담당자·연구책임자 정보</li>
+              <li>참여기간, 대응자금(현금/현물) 납부 확약</li>
+            </ul>
+          </div>
+          <div class="item-foot">신설 2026.4.30.</div>
+        </div>
+        <div class="item-card" style="margin:0;">
+          <div class="item-head"><span class="num">서식3</span><h3 style="font-size:15px;">타시도 기업·기관 참여사유서</h3></div>
+          <div class="item-body">
+            <ul>
+              <li>서울 소재가 아닌 기업·기관의 참여 목적·사유 기술</li>
+              <li>예: 해당 분야 기업이 서울 미소재, 서울시 경제 기여도, 단위과제 연관성</li>
+            </ul>
+          </div>
+          <div class="item-foot">개정 2025.12.17.</div>
+        </div>
+        <div class="dl-box">
+          <span class="ic">📄</span>
+          <div class="txt"><strong>서식2·3 (참여기관 참여의사확인서 · 타시도 기업 참여사유서)</strong> — 빈 서식(PDF)을 내려받아 사용하세요.</div>
+          <a class="dl-btn" href="/_blob/b5a8cccfef05f19c99d005774a60f2d4" id="dlBtn" download="산학연매뉴얼_서식2-3.pdf">⬇ 서식 다운로드 (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="revlog">
+      <h2>개정 이력 한눈에 (본문 표기 기준)</h2>
+      <div class="lede">본문 곳곳에 표기된 개정·신설 일자를 모아 정리했습니다.</div>
+      <table class="rev-table">
+        <thead><tr><th style="width:120px;">일자</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="date">2025.10.27.</td><td>연구개발비 사용 원칙 문구 정리(내부인건비 항목 일부 삭제) · 학생인건비 조항에 "앵커 참여 학생 2명 이상 필수 참여" 추가</td></tr>
+          <tr><td class="date">2025.12.17.</td><td>기본원칙 마항 신설(연구과제비 목적 외 활용 시 제한·제재 가능) · 과제 상한액 관련 문구 삭제 · 서식3(타시도 참여사유서) 개정</td></tr>
+          <tr><td class="date">2026.4.30.</td><td>적용대상 문구 개정 · 과제신청 절차·연구진 구성 요건·상한액(1억원) 신설 · 서식1·2 신설(연구개발비 사용계획, 참여의사 확인서) · 서식3 관련 절차 신설</td></tr>
+          <tr><td class="date">2026.9.14. (5차)</td><td>목적·관련근거·기본원칙·연구개발비 관리 조항의 RISE 관련 명칭·근거를 앵커 체계로 일괄 수정 · 첨부1(식별번호), 첨부2(e나라도움 매칭·집행제한) 신설</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  「서울시 지역성장 인재양성체계(앵커) — 산학연공동 기술개발과제 관리 매뉴얼(5차)」(서울연구원·서울앵커센터, 2025.10.17. 제정 / 2026.9.14. 개정, 대외본) 원문을 바탕으로 열람 편의를 위해 재구성한 참고용 정리입니다. 실제 신청·집행 시에는 원문 매뉴얼과 서식을 함께 확인하세요.
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('main section');
+  const links = document.querySelectorAll('nav.side a');
+  const linkMap = {};
+  links.forEach(l => linkMap[l.getAttribute('href').slice(1)] = l);
+
+  // Map sub-heading ids (apply/select/manage/outcome, rd-manage/rd-items/rd-etc) via their own elements too
+  const trackTargets = document.querySelectorAll('main section, main h3[id]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      if (!linkMap[id]) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        linkMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+
+  trackTargets.forEach(s => { if (s.id) observer.observe(s); });
+
+  const searchBox = document.getElementById('searchBox');
+  const cards = document.querySelectorAll('.item-card');
+  searchBox.addEventListener('input', () => {
+    const q = searchBox.value.trim().toLowerCase();
+    cards.forEach(card => {
+      const kw = card.getAttribute('data-kw') || '';
+      const text = (kw + ' ' + card.textContent).toLowerCase();
+      card.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

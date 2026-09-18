@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>건국대학교 앵커사업단 사업비 관리 지침 (원안) — 항목별 정리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F2; --panel: #FFFFFF; --ink: #16241C; --ink-soft: #55635B;
+    --line: #D8E0D9; --line-soft: #E6ECE7;
+    --ku-green: #0F5B3B; --ku-green-deep: #0A3F28; --ku-green-soft: #E7F1EB;
+    --ku-blue: #2F5C8A; --ku-purple: #6B4C7A; --ku-orange: #D9822B; --ku-orange-soft:#FBF0E2;
+    --red: #9A3B3B; --red-bg: #F7E8E6; --chip: #E6ECE7; --shadow: rgba(15,60,40,0.10);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+      --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+      --ku-green-soft:#173327; --ku-blue:#7FA8D6; --ku-purple:#B79AC4; --ku-orange:#E8A968; --ku-orange-soft:#2D2418;
+      --red:#E09A9A; --red-bg:#2E1F1F; --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+    --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+    --ku-green-soft:#173327; --ku-blue:#7FA8D6; --ku-purple:#B79AC4; --ku-orange:#E8A968; --ku-orange-soft:#2D2418;
+    --red:#E09A9A; --red-bg:#2E1F1F; --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body { background: var(--paper); color: var(--ink); font-family:'Noto Sans KR',sans-serif; line-height:1.7; font-size:15.5px; }
+  h1,h2,h3,h4 { font-family:'Noto Serif KR',serif; color: var(--ink); margin:0; }
+  a { color: inherit; }
+
+  .masthead { background: var(--ku-green-deep); color:#F4F8F5; padding:30px 28px 26px; border-bottom:4px solid var(--ku-orange); position:relative; }
+  .masthead-inner { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; gap:16px; position:relative; }
+  .bull-badge { width:46px; height:46px; border-radius:50%; background: var(--ku-orange); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+  .masthead .tag { font-size:12.5px; letter-spacing:.02em; color:#CFE3D6; margin-bottom:10px; }
+  .masthead h1 { font-size:24px; font-weight:600; color:#FBFDFB; line-height:1.4; max-width:700px; }
+  .masthead .sub { margin-top:8px; color:#BFDBC9; font-size:14px; max-width:700px; }
+  .badge-row { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+  .flag { font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; }
+  .flag.main { background:#fff; color: var(--ku-green-deep); }
+  .flag.pending { background: var(--red); color:#fff; }
+
+  .meta-badge { position:absolute; top:0; right:0; text-align:right; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:10px 14px; font-size:12px; color:#DCE7E0; line-height:1.6; }
+  .meta-badge .k { color:#B7D9C6; margin-right:6px; }
+  .meta-badge a { color:#F0D9A6; text-decoration:underline; }
+  @media (max-width:860px){ .meta-badge{ position:static; display:inline-block; margin-top:14px; } }
+
+  .amend-banner { max-width:1180px; margin:-14px auto 0; padding:0 28px; position:relative; z-index:2; }
+  .amend-card { background: var(--red-bg); border:1px solid var(--red); border-radius:6px; padding:16px 20px; display:flex; gap:14px; align-items:flex-start; box-shadow:0 6px 18px var(--shadow); flex-wrap:wrap; }
+  .amend-card .mark { font-family:'Noto Serif KR',serif; font-weight:700; color: var(--red); font-size:13px; border:1px solid var(--red); border-radius:4px; padding:3px 8px; white-space:nowrap; margin-top:2px; }
+  .amend-card p, .amend-card ul { margin:0; font-size:13.8px; color:var(--ink); flex:1; min-width:260px; }
+  .amend-card ul { padding-left:18px; } .amend-card li { margin-bottom:5px; }
+  .amend-card strong { color: var(--red); }
+  .amend-card .proposal-link { display:inline-flex; align-items:center; gap:6px; margin-top:10px; font-size:13px; font-weight:600; color:#fff; background: var(--red); padding:8px 14px; border-radius:6px; text-decoration:none; }
+
+  .layout { max-width:1180px; margin:30px auto 80px; padding:0 28px; display:grid; grid-template-columns:230px 1fr; gap:40px; }
+  nav.side { position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow-y:auto; padding-right:6px; }
+  nav.side .group { margin-bottom:18px; }
+  nav.side .group-label { font-size:11.5px; color:var(--ink-soft); letter-spacing:.03em; margin-bottom:6px; padding-left:10px; }
+  nav.side a { display:block; text-decoration:none; font-size:13.2px; color:var(--ink-soft); padding:5px 10px; border-left:2px solid transparent; border-radius:0 4px 4px 0; transition:color .15s,border-color .15s,background .15s; }
+  nav.side a:hover { color:var(--ku-green); background:var(--panel); }
+  nav.side a.active { color:var(--ku-green); border-left-color:var(--ku-orange); background:var(--panel); font-weight:600; }
+
+  main { min-width:0; }
+  section { margin-bottom:52px; }
+  section h2 { font-size:20px; font-weight:600; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:6px; scroll-margin-top:20px; }
+  section .chapter-sub { font-size:13px; color:var(--ink-soft); margin-bottom:18px; }
+  section > .lede { color:var(--ink-soft); font-size:14px; margin-bottom:20px; }
+
+  .info-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-bottom:14px; }
+  .info-box { background:var(--panel); border:1px solid var(--line-soft); border-radius:6px; padding:14px 16px; }
+  .info-box .k { font-size:12px; color:var(--ink-soft); margin-bottom:4px; }
+  .info-box .v { font-size:14px; }
+
+  .item-card { border:1px solid var(--line-soft); border-radius:8px; background:var(--panel); margin-bottom:20px; overflow:hidden; scroll-margin-top:20px; }
+  .item-head { display:flex; align-items:baseline; gap:12px; padding:16px 20px; border-bottom:1px solid var(--line-soft); }
+  .item-head .num { font-family:'Noto Serif KR',serif; color:var(--ku-green); font-weight:700; font-size:15px; min-width:20px; }
+  .item-head h3 { font-size:16.5px; font-weight:600; }
+  .item-body { padding:14px 20px 18px; }
+  .item-body ul { margin:0; padding-left:18px; } .item-body li { font-size:13.7px; margin-bottom:6px; }
+  .item-foot { padding:10px 20px 16px; font-size:12.4px; color:var(--ink-soft); border-top:1px dashed var(--line-soft); margin-top:6px; }
+  .item-foot.warn { color: var(--red); border-top-color: var(--red); }
+
+  ul.plain { margin:8px 0 0; padding-left:18px; } ul.plain li { margin-bottom:6px; font-size:14.4px; }
+  .note { font-size:13px; color:var(--ink-soft); border-left:2px solid var(--line); padding-left:10px; margin:10px 0; }
+  .note.warn { color: var(--red); border-left-color: var(--red); }
+
+  .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 4px; }
+  .pill { font-size:12.3px; background:var(--chip); border-radius:20px; padding:5px 12px; color:var(--ink-soft); }
+  .pill.good { background:var(--ku-green-soft); color:var(--ku-green); }
+  .pill.warn { background:var(--red-bg); color:var(--red); }
+  .pill.orange { background:var(--ku-orange-soft); color:var(--ku-orange); }
+
+  table.ratio { width:100%; border-collapse:collapse; font-size:13.2px; margin:10px 0 18px; }
+  table.ratio th, table.ratio td { border:1px solid var(--line); padding:8px 9px; text-align:left; vertical-align:top; }
+  table.ratio thead th { background:var(--chip); font-weight:600; text-align:center; }
+  .table-scroll { overflow-x:auto; }
+
+  .search-wrap { margin-bottom:22px; }
+  .search-wrap input { width:100%; font-family:inherit; font-size:14px; padding:11px 14px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); }
+  .search-wrap input:focus { outline:2px solid var(--ku-green); outline-offset:1px; }
+  .search-hint { font-size:12px; color:var(--ink-soft); margin-top:6px; }
+
+  footer { max-width:1180px; margin:0 auto 60px; padding:20px 28px; color:var(--ink-soft); font-size:12.5px; border-top:1px solid var(--line); }
+
+  @media (max-width:860px) {
+    .layout { grid-template-columns:1fr; }
+    nav.side { position:static; max-height:none; display:flex; overflow-x:auto; gap:4px; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:10px; }
+    nav.side .group { display:flex; gap:4px; margin-bottom:0; flex-shrink:0; }
+    nav.side .group-label { display:none; }
+    nav.side a { white-space:nowrap; border-left:none; border-bottom:2px solid transparent; }
+    nav.side a.active { border-left:none; border-bottom-color:var(--ku-orange); }
+    .info-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="meta-badge">
+      <div><span class="k">작성자</span>앵커김군 (<a href="mailto:coolzet@konkuk.ac.kr">coolzet@konkuk.ac.kr</a>)</div>
+      <div><span class="k">업데이트</span>2026. 9. 18.</div>
+    </div>
+    <div class="bull-badge">🐂</div>
+    <div>
+      <div class="tag">건국대학교 RISE사업단 · 2026. 4. (원안)</div>
+      <h1>[건국대학교 사업단] 사업비 관리 지침 <span style="opacity:.7; font-size:16px;">(원안)</span></h1>
+      <div class="sub">본교 앵커(구 RISE) 사업 수행을 위한 사업비·연구지원비·간접비 관리 세부 지침을 항목별로 정리했습니다.</div>
+      <div class="badge-row">
+        <span class="flag main">★ 건국대학교 메인 규정</span>
+        <span class="flag pending">⚠ 개정 예정 — RISE → 앵커 명칭 전면 정비 대상</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="amend-banner">
+  <div class="amend-card">
+    <span class="mark">왜 개정이 필요한가</span>
+    <div style="flex:1; min-width:260px;">
+      <ul>
+        <li>상위 4개 규정(운영규정 제575호, 앵커 사업비 지침 4차, 서울 앵커 기준 3차, 산학연공동 매뉴얼 5차)은 <strong>모두 "RISE → 앵커" 명칭 정비를 완료</strong>했으나, 이 사업단 지침(2026.4. 원안)은 본문 전체에서 <strong>"RISE"라는 옛 명칭을 그대로 사용</strong>하고 있습니다.</li>
+        <li>문서 상단에 "[교육부 개정] 지역혁신중심 대학지원체계(RISE) → 지역성장 인재양성체계(앵커)"라는 자체 검토 메모가 표지·목적 조항에 남아있어, <strong>개정이 예정되어 있음을 문서 스스로 표시</strong>하고 있습니다.</li>
+        <li>서식 번호 불일치([서식23]~[서식25] 상호 참조 오류) 등 정합성 이슈도 함께 발견되었습니다.</li>
+      </ul>
+      <a class="proposal-link" href="https://claude.ai/artifact/2PV4bK7JGhzjDFqrkrSquG" target="_blank" rel="noopener">📋 조문별 개정 제안 페이지 보기 ↗</a>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="side" id="sideNav">
+    <div class="group">
+      <div class="group-label">Ⅰ·Ⅱ장</div>
+      <a href="#ch1">목적·관련법규정</a>
+      <a href="#ch2">회계 일반사항</a>
+    </div>
+    <div class="group">
+      <div class="group-label">Ⅲ장</div>
+      <a href="#ch3">사업비 관리·결재선</a>
+    </div>
+    <div class="group">
+      <div class="group-label">Ⅳ장 편성 항목 10종</div>
+      <a href="#i1">가. 인건비</a>
+      <a href="#i2">나. 장학금</a>
+      <a href="#i3">다. 교육·연구 프로그램</a>
+      <a href="#i4">라. 환경개선비</a>
+      <a href="#i5">마. 실습장비·기자재</a>
+      <a href="#i6">바. 지역 연계·협업</a>
+      <a href="#i7">사. 기업 지원·협력</a>
+      <a href="#i8">아. 성과 활용·확산</a>
+      <a href="#i9">자. 그 밖의 운영경비</a>
+      <a href="#i10">차. 간접비</a>
+    </div>
+    <div class="group">
+      <div class="group-label">Ⅳ·Ⅴ장</div>
+      <a href="#change">사업비 변경</a>
+      <a href="#settle">이월·정산·반납</a>
+    </div>
+    <div class="group">
+      <div class="group-label">별첨</div>
+      <a href="#forms">서식 목록 (서식1~25)</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="search-wrap">
+      <input type="text" id="searchBox" placeholder="키워드로 찾기 (예: 인건비, 결재선, 간접비, RISE)">
+      <div class="search-hint">입력하면 항목 카드가 실시간으로 필터링됩니다.</div>
+    </div>
+
+    <section id="ch1">
+      <h2>Ⅰ. 사업비 집행 및 관리 — 목적·관련법규정</h2>
+      <div class="info-grid">
+        <div class="info-box">
+          <div class="k">목적</div>
+          <div class="v">본교 RISE사업(앵커사업)에 참여하는 교직원 및 협력기관 직원의 사업활동을 지원하기 위해 사업비·연구지원비·간접비 관리에 필요한 사항을 규정</div>
+        </div>
+        <div class="info-box">
+          <div class="k">적용 대상</div>
+          <div class="v">건국대학교 및 참여대학(덕성여대·동국대·배화여대, 각 기관 지침 미규정 시 포함) 교직원, 사업단장이 인정하는 협력기관(업체) 직원</div>
+        </div>
+      </div>
+      <h3 style="font-size:15px; margin: 20px 0 10px;">관련 법·규정 목록 (가~너)</h3>
+      <ul class="plain">
+        <li>가. 지역혁신중심 대학지원체계 운영규정 <span class="pill warn">→ 최신 명칭: 지역성장 인재양성체계 운영규정(교육부훈령 제575호)</span></li>
+        <li>나. 교육부 RISE 사업 집행 및 관리 지침 <span class="pill warn">→ 앵커 사업비 집행 및 관리 지침(4차)</span></li>
+        <li>다. 서울시 지역혁신중심 대학지원체계(RISE) 사업비 집행 및 관리 기준 <span class="pill warn">→ 서울 앵커 사업비 집행 및 관리 기준(3차)</span></li>
+        <li>라~카. 보조금법, 국고보조사업 관리규정, 사학기관 재무회계규칙, 산학협력단회계처리규칙, 국가연구개발혁신법, 국가계약법, 조달사업법, 국고보조금 통합관리지침 <span class="pill good">변경 불필요</span></li>
+        <li>타·파. 부정청탁금지법, 공공기록물관리법 <span class="pill good">변경 불필요</span></li>
+        <li>하. 건국대학교 지역혁신중심 대학지원체계(RISE)사업 관리운영 규정 <span class="pill warn">→ (앵커)사업 관리운영 규정 명칭 갱신 필요</span></li>
+        <li>거. 건국대학교 지역혁신중심 대학지원체계(RISE)사업 위원회 운영 내규 <span class="pill warn">→ (앵커)사업 위원회 운영 내규</span></li>
+        <li>너. 서울시 지역혁신중심 대학지원체계(RISE) 캠퍼스타운 사업 운영 매뉴얼 <span class="pill warn">→ 서울시 지역성장 인재양성체계(앵커) 캠퍼스타운 사업 운영 매뉴얼</span></li>
+      </ul>
+      <div class="note warn">문서 표지와 목적 조항에는 "[교육부 개정] 지역혁신중심 대학지원체계(RISE) → 지역성장 인재양성체계(앵커)"라는 작성자의 자체 검토 메모가 남아 있어, 이 문서가 개정 대기 상태임을 스스로 표시하고 있습니다.</div>
+    </section>
+
+    <section id="ch2">
+      <h2>Ⅱ. 회계 일반사항</h2>
+      <ul class="plain">
+        <li>사업비 관리 사업연도: 매년 3월 1일 ~ 다음연도 2월 말일 (1차년도만 2025.6.1.~2026.2.28. 특례) — <span class="pill good">상위 규정과 일치</span></li>
+        <li>회계연도: 매년 1월 1일 ~ 12월 31일 — <span class="pill good">상위 규정과 일치</span></li>
+        <li>해당 사업연도 사업비는 당해연도 사업기간 내 지출 원칙, 회계연도 종료 후 이월은 e나라도움 회계연도 이월 절차 필수</li>
+      </ul>
+    </section>
+
+    <section id="ch3">
+      <h2>Ⅲ. 사업비 관리 · 결재선</h2>
+
+      <h3 style="font-size:15px; margin-bottom:10px;">총괄·별도 계정관리</h3>
+      <ul class="plain">
+        <li>총 사업비는 서울연구원 → 주관대학(건국대) 산학협력단 회계로 교부, 건국대가 참여대학에 재교부</li>
+        <li>참여대학 재교부액은 본교 산학협력단 회계 수입으로 계상하지 않도록 유의</li>
+      </ul>
+
+      <h3 style="font-size:15px; margin: 20px 0 10px;">지출 방법·관리</h3>
+      <ul class="plain">
+        <li>원칙: e나라도움 사업비 전용카드·계좌이체 / 카드 발급 전 등 불가피 시 산학협력단 법인카드(내규 준용) / 불가 시 현금(사유서·영수증)</li>
+        <li>사업비 집행 관련 증빙서류 5년 보관 근거를 <strong>「서울시 지역혁신중심 대학지원체계(RISE) 사업 협약」 제12조2항</strong>으로 인용 <span class="pill warn">→ 개정 제안: 「지역성장 인재양성체계 운영규정」 제31조제4항 등 현행 근거로 교체 필요</span></li>
+        <li>보조사업비 카드 사용제한 업종(유흥·위생·레저·사행·기타) 목록은 상위 규정과 동일</li>
+      </ul>
+
+      <h3 style="font-size:15px; margin: 20px 0 10px;">집행 절차 및 결재선 (3-1-5 위임전결요강 관련)</h3>
+      <div class="table-scroll">
+      <table class="ratio">
+        <thead><tr><th>적용대상</th><th>절차</th><th>결재선 요지</th></tr></thead>
+        <tbody>
+          <tr><td>지산학협력본부·AI인재양성본부·미래혁신본부·캠퍼스타운사업본부</td><td>시행품의(1억원 초과/이하/500만원 이하)</td><td>담당자 → RISE사업운영센터장 → 기획IR센터(협조) → 부장 → 본부장 → (사업부단장 →) 총괄부단장 → 사업단장</td></tr>
+          <tr><td>RISE사업운영센터·RISE기획IR센터</td><td>시행품의·청구서 작성</td><td>담당자 → 센터장 → 기획IR센터(협조) → 사업부단장 → 총괄부단장 → 사업단장</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="pill-row">
+        <span class="pill warn">RISE사업운영센터 → 조직명 갱신 필요(총무처 확인)</span>
+        <span class="pill warn">RISE기획IR센터 → 조직명 갱신 필요</span>
+        <span class="pill">500만원 이하 시행품의 결재선 행에 "삭제" 검토 메모 존재</span>
+      </div>
+
+      <h3 style="font-size:15px; margin: 20px 0 10px;">위임전결요강 [3-1-5] 소관부서</h3>
+      <ul class="plain">
+        <li><strong>RISE사업단</strong> (전결권자: 단장/총장) — 사업계획서·보고서, 사업계획변경, 사업 관련 규정, 예산·결산, 인력운영 등 <span class="pill warn">→ 앵커사업단</span></li>
+        <li>사업 부단장 — 원안 품의 완료된 1억원 이하 예산 집행 등</li>
+        <li>본부장/센터장 — 5백만원 이하 예산 집행, 사업비 예산·지출 통제, 전표처리, 전담인력 인건비 지급, 직인 관수</li>
+      </ul>
+    </section>
+
+    <section id="items">
+      <h2>Ⅳ. 사업비 편성 항목 (10종)</h2>
+      <div class="lede">항목 구조·비율은 앵커 사업비 지침(4차)과 동일하나, 조문 표현에 "RISE"가 다수 남아 있습니다.</div>
+
+      <div class="item-card" id="i1" data-kw="인건비 보직수당 성과급 5% 1000만원 서식24 서식25">
+        <div class="item-head"><span class="num">가.</span><h3>인건비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>신규채용 인력 한정, 대학본부·산학협력단 소속 교직원은 원칙 지급 불가(전담 업무 시 예외)</li>
+            <li>보직수당+성과급 합산 사업비 총액 5% 이내, 연간 1인당 최대 1,000만원 — <span class="pill good">상위 규정과 일치</span></li>
+            <li>인센티브 지급대상: 단위과제 연구책임자·내부 참여교원, 대학 라이즈사업단 조직관리상 직원 — <span class="pill warn">"라이즈사업단" 표현 갱신 필요</span></li>
+            <li>일용임금 기준(학부생 12,000원/시간, 석사 18,000원/시간, 박사 20,000원/시간) 및 4대보험 가입기준 상세 규정</li>
+          </ul>
+        </div>
+        <div class="item-foot warn">인센티브 집행 체크리스트를 [서식24]로 인용하고 있으나, 실제 서식 목록상 인센티브 체크리스트는 <strong>[서식25]</strong>이며 [서식24]는 "납품 확인 및 검수조서"입니다 — 서식 번호 재확인 필요</div>
+      </div>
+
+      <div class="item-card" id="i2" data-kw="장학금 재학생">
+        <div class="item-head"><span class="num">나.</span><h3>장학금</h3></div>
+        <div class="item-body"><p style="margin:0;">재학생 한정(석·박사 수료생 포함), 근로장학금 외 생활비 성격·한국장학재단 이중지원 초과분 제한. 상위 규정과 일치</p></div>
+      </div>
+
+      <div class="item-card" id="i3" data-kw="교육 연구 프로그램 캠퍼스타운 혁신인재지원금 RIS">
+        <div class="item-head"><span class="num">다.</span><h3>교육·연구 프로그램 개발·운영비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>개발비·운영비·국제화경비·캠퍼스타운 항목(발굴·성장지원·Scale-up·판로개척·해외전시) — 서울기준(3차)과 동일 구조</li>
+            <li>결과물 표기 문구: "본 교과목/교재는 교육부 및 서울시의 <strong>지역혁신중심 대학지원(RISE)</strong> 사업비를 받아 개발한 것입니다" <span class="pill warn">→ "지역성장 인재양성체계(앵커)"로 교체 필요</span></li>
+            <li>장학금성(현금성) 지원: "기존 <strong>RIS</strong> 사업의 혁신인재지원금에 준하는" <span class="pill warn">오탈자/구명칭 — "RISE" 표기 및 명칭 확인 필요</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item-card" id="i4" data-kw="환경개선비 시설장비유지비 건설비">
+        <div class="item-head"><span class="num">라.</span><h3>교육·연구 환경개선비</h3></div>
+        <div class="item-body"><p style="margin:0;">강의실·실험실 환경개선, 전산시스템 구축비. 운영비(시설장비유지비)·건설비(실시설계비·시설비) 세부 집행기준 상세 — 항목 구조는 상위 규정과 일치</p></div>
+      </div>
+
+      <div class="item-card" id="i5" data-kw="실습장비 기자재">
+        <div class="item-head"><span class="num">마.</span><h3>실험·실습장비 및 기자재 구입·운영비</h3></div>
+        <div class="item-body"><p style="margin:0;">교육·연구·산학협력 목적 장비·기자재 구입·리스·임차·유지보수. 3천만원/1억원 승인 기준은 상위 규정과 동일하게 적용</p></div>
+      </div>
+
+      <div class="item-card" id="i6" data-kw="지역 연계 협업">
+        <div class="item-head"><span class="num">바.</span><h3>지역 연계·협업 지원비</h3></div>
+        <div class="item-body"><p style="margin:0;">기관 간 연계협업, 지자체 연계 지역문제 해결 — 상위 규정과 동일</p></div>
+      </div>
+
+      <div class="item-card" id="i7" data-kw="기업 지원 협력 활동비 산학연공동">
+        <div class="item-head"><span class="num">사.</span><h3>기업 지원·협력 활동비</h3></div>
+        <div class="item-body"><p style="margin:0;">산학공동 R&BD 비용, 산학협력·직업평생교육활동비 — 「서울 앵커 산학연공동 기술개발과제 관리 매뉴얼」 준용 필요(문서 내 인용 시 매뉴얼 최신 명칭 확인 필요)</p></div>
+      </div>
+
+      <div class="item-card" id="i8" data-kw="성과 활용 확산">
+        <div class="item-head"><span class="num">아.</span><h3>성과 활용·확산 지원비</h3></div>
+        <div class="item-body"><p style="margin:0;">연구개발서비스 활용비, 기술이전·사업화 비용, 성과 공유·확산비(캠퍼스타운 성과발표회 포함) — 상위 규정과 동일</p></div>
+      </div>
+
+      <div class="item-card" id="i9" data-kw="그 밖의 운영경비 RISE전담조직 회의비">
+        <div class="item-head"><span class="num">자.</span><h3>그 밖의 사업운영 경비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>여비·교육훈련비·일반수용비·회의비 등, 5% 이내(간접비 별도 편성 시 3% 이내)</li>
+            <li>"<strong>RISE</strong> 전담조직 운영을 위한 경비" <span class="pill warn">→ "앵커 전담조직"으로 교체 필요</span></li>
+            <li>"서울 <strong>Rise</strong> 집행 및 관리 지침과 같이" <span class="pill warn">대소문자 혼용("Rise") 및 구명칭 — "서울 앵커 사업비 집행 및 관리 기준"으로 교체 필요</span></li>
+            <li>강사료 기준은 "[별첨1] 서울연구원 예산집행지침 참조" 부분에 <strong>수정</strong> 검토 메모, 국외여비 관련 "업무협의·간담회 경비" 항목에는 <strong>삭제</strong> 검토 메모가 남아 있음</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item-card" id="i10" data-kw="간접비 3% RISE사업">
+        <div class="item-head"><span class="num">차.</span><h3>간접비</h3></div>
+        <div class="item-body">
+          <ul>
+            <li>"교육연구단, 산학협력단 등의 <strong>RISE사업</strong>의 총괄 관리를 위한 경비" <span class="pill warn">→ "앵커사업"으로 교체 필요</span></li>
+            <li>직접 관리 사업비의 3% 이내 계상·집행 — <span class="pill good">상위 규정과 일치</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="change">
+      <h2>Ⅳ. 사업비 변경</h2>
+      <ul class="plain">
+        <li>변경 절차: <strong>RISE사업단 운영위원회</strong> 심의 → 수정사업계획서 <strong>서울 RISE센터</strong> 보고·승인 → e나라도움/서울시 통합관리시스템 반영 <span class="pill warn">조직명 전체 갱신 필요(→ 앵커사업단 운영위원회, 서울앵커센터)</span></li>
+        <li>단위과제 간 예산변경은 동일 프로젝트 내에서만 가능, 늘봄·캠퍼스타운·의과대학은 변경 불가 — 상위 규정과 일치</li>
+        <li>목표 미달성 시 <strong>서울 RISE위원회</strong> 심의·의결로 조치 <span class="pill warn">→ 서울앵커위원회로 명칭 갱신 필요</span></li>
+      </ul>
+    </section>
+
+    <section id="settle">
+      <h2>Ⅴ. 사업비 이월·정산·반납</h2>
+      <ul class="plain">
+        <li>"원칙적으로 <strong>RISE 사업비</strong> 이월은 허용되지 않으나..." <span class="pill warn">→ "앵커 사업비"로 교체 필요</span></li>
+        <li>총액 10% 이내, 2회계연도 초과 불가, 종료 30일 전 신청 — <span class="pill good">상위 규정과 일치</span></li>
+        <li>정산·감사 기준(1억원 이상 외부감사인 검증, 10억원 이상 감사보고서)도 상위 규정과 동일</li>
+      </ul>
+    </section>
+
+    <section id="forms">
+      <h2>별첨 및 서식 목록 (서식1~25)</h2>
+      <div class="lede">서식 25종 중 아래 항목에서 명칭 갱신 또는 번호 재정렬이 필요합니다.</div>
+      <div class="pill-row">
+        <span class="pill">서식1 원인행위 결재문서</span><span class="pill">서식2 사업비 지급내역서</span><span class="pill">서식3 인건비 지급내역서</span>
+        <span class="pill">서식4 개인정보 동의서</span><span class="pill">서식5 근로확인서</span><span class="pill">서식6 일용근무자 출근부</span>
+        <span class="pill">서식7 활동보고서</span><span class="pill">서식8 회의록</span><span class="pill">서식9 출장보고서</span>
+        <span class="pill">서식10 전문가 활용계획서</span><span class="pill">서식11 전문가 활용비 지급신청서</span>
+      </div>
+      <div class="pill-row" style="margin-top:8px;">
+        <span class="pill warn">서식12 "지역혁신중심 대학지원체계(RISE)사업 보직수당 지급내역서" → 앵커사업으로 명칭 갱신</span>
+        <span class="pill">서식13 업체지정 사유서</span><span class="pill">서식14 조교 신청서</span>
+        <span class="pill">서식15~18 조교 복무협약서·서약서·출근부·활동보고서</span>
+      </div>
+      <div class="pill-row" style="margin-top:8px;">
+        <span class="pill warn">서식19 "건국RISE인재지원금 신청자 명부" → "건국앵커인재지원금"(가칭)으로 명칭 갱신 필요</span>
+        <span class="pill">서식20 시상금 수령확인증</span><span class="pill">서식21 학생연구자 연구참여확약서</span>
+        <span class="pill">서식22 연구과제 계획서</span>
+      </div>
+      <div class="pill-row" style="margin-top:8px;">
+        <span class="pill warn">서식23 연구개발과제 협약서 — 본문 중 "그 밖의 운영경비" 항목이 이를 [서식23]으로 잘못 인용(실제로는 [서식24] 납품확인·검수조서를 가리켜야 함)</span>
+        <span class="pill warn">서식24 납품 확인 및 검수조서 — 본문 "인건비" 항목이 이를 인센티브 체크리스트로 잘못 인용</span>
+        <span class="pill warn">서식25 인센티브 집행 체크리스트 — 본문 "인건비" 항목에서 [서식24]로 오기됨, 실제는 [서식25]</span>
+      </div>
+      <div class="note warn">서식23~25 사이의 상호 참조 오류는 본문 전체를 재검증해 정확한 서식 번호로 통일해야 합니다. 상세 제안은 개정 제안 페이지를 참고하세요.</div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  「[건국대학교 사업단] 사업비 관리 지침」(건국대학교 RISE사업단, 2026. 4. 원안) 원문을 바탕으로 열람 편의를 위해 재구성한 참고용 정리입니다. 본 문서는 개정 예정 상태이며, 실제 적용 시에는 최신 개정본과 상위 규정을 함께 확인하세요.
+</footer>
+
+<script>
+  const links = document.querySelectorAll('nav.side a');
+  const linkMap = {};
+  links.forEach(l => linkMap[l.getAttribute('href').slice(1)] = l);
+  const targets = document.querySelectorAll('main section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      if (!linkMap[id]) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        linkMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+  targets.forEach(s => { if (s.id) observer.observe(s); });
+
+  const searchBox = document.getElementById('searchBox');
+  const cards = document.querySelectorAll('.item-card');
+  searchBox.addEventListener('input', () => {
+    const q = searchBox.value.trim().toLowerCase();
+    cards.forEach(card => {
+      const kw = card.getAttribute('data-kw') || '';
+      const text = (kw + ' ' + card.textContent).toLowerCase();
+      card.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

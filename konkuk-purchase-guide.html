@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>건국대학교 구매계약업무요강 — 항목별 정리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F2; --panel: #FFFFFF; --ink: #16241C; --ink-soft: #55635B;
+    --line: #D8E0D9; --line-soft: #E6ECE7;
+    --ku-green: #0F5B3B; --ku-green-deep: #0A3F28; --ku-green-soft: #E7F1EB;
+    --ku-blue: #2F5C8A; --ku-purple: #6B4C7A; --ku-orange: #D9822B;
+    --red: #8B3232; --red-bg: #F5E7E4; --chip: #E6ECE7; --shadow: rgba(15,60,40,0.10);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+      --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+      --ku-green-soft:#173327; --ku-blue:#7FA8D6; --ku-purple:#B79AC4; --ku-orange:#E8A968;
+      --red:#D08787; --red-bg:#2E1F1F; --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+    --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+    --ku-green-soft:#173327; --ku-blue:#7FA8D6; --ku-purple:#B79AC4; --ku-orange:#E8A968;
+    --red:#D08787; --red-bg:#2E1F1F; --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body { background: var(--paper); color: var(--ink); font-family:'Noto Sans KR',sans-serif; line-height:1.7; font-size:15.5px; }
+  h1,h2,h3,h4 { font-family:'Noto Serif KR',serif; color: var(--ink); margin:0; }
+  a { color: inherit; }
+
+  .masthead { background: var(--ku-green-deep); color:#F4F8F5; padding:30px 28px 24px; border-bottom:4px solid var(--ku-orange); }
+  .masthead-inner { max-width:1180px; margin:0 auto; display:flex; align-items:center; gap:16px; position:relative; }
+  .meta-badge { position:absolute; top:-6px; right:0; text-align:right; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:10px 14px; font-size:12px; color:#DCE7E0; line-height:1.6; }
+  .meta-badge .k { color:#B7D9C6; margin-right:6px; }
+  .meta-badge a { color:#F0D9A6; text-decoration:underline; }
+  @media (max-width:860px){ .meta-badge{ position:static; display:inline-block; margin-top:14px; } }
+  .dl-box { display:flex; align-items:center; gap:14px; background: var(--ku-green-soft); border:1px solid var(--ku-green); border-radius:8px; padding:14px 18px; margin: 14px 0 6px; flex-wrap:wrap; }
+  .dl-box .ic { font-size:22px; }
+  .dl-box .txt { flex:1; font-size:13.6px; color: var(--ink); min-width:220px; }
+  .dl-box .txt strong { color: var(--ku-green); }
+  .dl-btn { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; background: var(--ku-green); color:#fff; padding:9px 16px; border-radius:6px; text-decoration:none; white-space:nowrap; }
+  .bull-badge {
+    width:46px; height:46px; border-radius:50%; background: var(--ku-orange);
+    display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0;
+  }
+  .masthead .tag { font-size:12.5px; letter-spacing:.02em; color:#CFE3D6; margin-bottom:10px; }
+  .masthead h1 { font-size:24px; font-weight:600; color:#FBFDFB; line-height:1.4; }
+  .masthead .sub { margin-top:8px; color:#BFDBC9; font-size:14px; }
+
+  .amend-banner { max-width:1180px; margin:-14px auto 0; padding:0 28px; position:relative; z-index:2; }
+  .amend-card { background: var(--ku-green-soft); border:1px solid var(--ku-green); border-radius:6px; padding:16px 20px; display:flex; gap:14px; align-items:flex-start; box-shadow:0 6px 18px var(--shadow); flex-wrap:wrap; }
+  .amend-card .mark { font-family:'Noto Serif KR',serif; font-weight:700; color: var(--ku-green); font-size:13px; border:1px solid var(--ku-green); border-radius:4px; padding:3px 8px; white-space:nowrap; margin-top:2px; }
+  .amend-card p, .amend-card ul { margin:0; font-size:13.8px; color:var(--ink); flex:1; min-width:260px; }
+  .amend-card ul { padding-left:18px; } .amend-card li { margin-bottom:5px; }
+  .amend-card strong { color: var(--ku-green-deep); }
+
+  .layout { max-width:1180px; margin:30px auto 80px; padding:0 28px; display:grid; grid-template-columns:220px 1fr; gap:40px; }
+  nav.side { position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow-y:auto; padding-right:6px; }
+  nav.side .group { margin-bottom:20px; }
+  nav.side .group-label { font-size:11.5px; color:var(--ink-soft); letter-spacing:.03em; margin-bottom:6px; padding-left:10px; }
+  nav.side a { display:block; text-decoration:none; font-size:13.4px; color:var(--ink-soft); padding:6px 10px; border-left:2px solid transparent; border-radius:0 4px 4px 0; transition:color .15s,border-color .15s,background .15s; }
+  nav.side a:hover { color:var(--ku-green); background:var(--panel); }
+  nav.side a.active { color:var(--ku-green); border-left-color:var(--ku-orange); background:var(--panel); font-weight:600; }
+
+  main { min-width:0; }
+  section { margin-bottom:56px; }
+  section h2 { font-size:21px; font-weight:600; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:6px; scroll-margin-top:20px; }
+  section .chapter-sub { font-size:13px; color:var(--ink-soft); margin-bottom:18px; }
+  section > .lede { color:var(--ink-soft); font-size:14px; margin-bottom:20px; }
+
+  .art-card { border:1px solid var(--line-soft); border-radius:8px; background:var(--panel); margin-bottom:14px; overflow:hidden; scroll-margin-top:20px; }
+  .art-head { display:flex; align-items:baseline; gap:10px; padding:13px 18px; border-bottom:1px solid var(--line-soft); }
+  .art-head .tagnum { font-family:'Noto Serif KR',serif; color: var(--ku-green); font-weight:700; font-size:14px; white-space:nowrap; }
+  .art-head h3 { font-size:15.5px; font-weight:600; }
+  .art-body { padding:12px 18px 16px; }
+  .art-body ul { margin:0; padding-left:18px; } .art-body li { font-size:13.8px; margin-bottom:6px; }
+  .art-body p { font-size:13.8px; margin:0 0 8px; }
+  .art-foot { padding:8px 18px 14px; font-size:12.3px; color:var(--ink-soft); border-top:1px dashed var(--line-soft); margin-top:4px; }
+
+  .info-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-bottom:14px; }
+  .info-box { background:var(--panel); border:1px solid var(--line-soft); border-radius:6px; padding:14px 16px; }
+  .info-box .k { font-size:12px; color:var(--ink-soft); margin-bottom:4px; }
+  .info-box .v { font-size:14px; }
+
+  ul.plain { margin:8px 0 0; padding-left:18px; } ul.plain li { margin-bottom:6px; font-size:14.5px; }
+  .note { font-size:13px; color:var(--ink-soft); border-left:2px solid var(--line); padding-left:10px; margin:10px 0; }
+
+  .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 4px; }
+  .pill { font-size:12.3px; background:var(--chip); border-radius:20px; padding:5px 12px; color:var(--ink-soft); }
+  .pill.warn { background:var(--red-bg); color:var(--red); }
+  .pill.good { background:var(--ku-green-soft); color:var(--ku-green); }
+
+  table.ratio { width:100%; border-collapse:collapse; font-size:13.3px; margin:10px 0 18px; }
+  table.ratio th, table.ratio td { border:1px solid var(--line); padding:9px 10px; text-align:center; vertical-align:top; }
+  table.ratio thead th { background:var(--chip); font-weight:600; }
+  table.ratio td.figure, table.ratio th.figure { color: var(--ku-orange); font-weight:600; }
+  .table-scroll { overflow-x:auto; }
+
+  .search-wrap { margin-bottom:22px; }
+  .search-wrap input { width:100%; font-family:inherit; font-size:14px; padding:11px 14px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); }
+  .search-wrap input:focus { outline:2px solid var(--ku-green); outline-offset:1px; }
+  .search-hint { font-size:12px; color:var(--ink-soft); margin-top:6px; }
+
+  footer { max-width:1180px; margin:0 auto 60px; padding:20px 28px; color:var(--ink-soft); font-size:12.5px; border-top:1px solid var(--line); }
+
+  @media (max-width:860px) {
+    .layout { grid-template-columns:1fr; }
+    nav.side { position:static; max-height:none; display:flex; overflow-x:auto; gap:4px; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:10px; }
+    nav.side .group { display:flex; gap:4px; margin-bottom:0; flex-shrink:0; }
+    nav.side .group-label { display:none; }
+    nav.side a { white-space:nowrap; border-left:none; border-bottom:2px solid transparent; }
+    nav.side a.active { border-left:none; border-bottom-color:var(--ku-orange); }
+    .info-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="meta-badge">
+      <div><span class="k">작성자</span>앵커김군 (<a href="mailto:coolzet@konkuk.ac.kr">coolzet@konkuk.ac.kr</a>)</div>
+      <div><span class="k">업데이트</span>2026. 9. 18.</div>
+    </div>
+    <div class="bull-badge">🐂</div>
+    <div>
+      <div class="tag">건국대학교 총무처 · 3-1-21 일반행정</div>
+      <h1>구매계약업무요강 — 항목별 정리</h1>
+      <div class="sub">제정 2008.12.24. · 28차 개정 2026.7.14. 기준으로 구매·계약 절차를 항목별로 재구성했습니다.</div>
+    </div>
+  </div>
+</header>
+
+<div class="amend-banner">
+  <div class="amend-card">
+    <span class="mark">28차 개정 (2026.7.14.) 핵심</span>
+    <ul>
+      <li>제3조제4항 여러 호(구舊 특정품목 직접구매 대상)를 <strong>삭제</strong>하고, 대신 <strong>500만원 미만 물품 / 1,000만원 미만 용역 / 1,500만원 미만 시설공사</strong> 등 금액 기준으로 재정비</li>
+      <li>제3조제5항 <strong>신설</strong> — 박물류, 광고 게재, 출장·행사 교통·숙박·식음료, 고보안 구매건, 출판물 제작, 외부기관 공동계약, 국가기관 구매, 회계·노무법인 등은 단일견적 직접구매 허용</li>
+      <li>제14조 낙찰자 결정: 추정금액 <strong>4,000만원 이상</strong> 개찰 시 감사담당자 입회 규정 반영</li>
+    </ul>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="side" id="sideNav">
+    <div class="group">
+      <div class="group-label">제1장 총칙</div>
+      <a href="#ch1">목적·정의·담당부서</a>
+    </div>
+    <div class="group">
+      <div class="group-label">제2장 구매절차</div>
+      <a href="#ch2">절차·계약방법</a>
+    </div>
+    <div class="group">
+      <div class="group-label">제3장 입찰·낙찰</div>
+      <a href="#ch3">입찰·예정가격·낙찰</a>
+    </div>
+    <div class="group">
+      <div class="group-label">제4장 계약체결</div>
+      <a href="#ch4">계약서·보증금·지체상금</a>
+    </div>
+    <div class="group">
+      <div class="group-label">부속</div>
+      <a href="#attach">준용·별지서식</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="search-wrap">
+      <input type="text" id="searchBox" placeholder="키워드로 찾기 (예: 수의계약, 낙찰자, 지체상금, 하자보수)">
+      <div class="search-hint">입력하면 조문 카드가 실시간으로 필터링됩니다.</div>
+    </div>
+
+    <section id="ch1">
+      <h2>제1장 총칙</h2>
+      <div class="chapter-sub">제1조 ~ 제3조</div>
+
+      <div class="art-card" data-kw="목적">
+        <div class="art-head"><span class="tagnum">제1조</span><h3>목적</h3></div>
+        <div class="art-body"><p>본교의 구매계약업무를 수행하기 위한 기준과 절차를 정함</p></div>
+      </div>
+
+      <div class="art-card" data-kw="정의 물품 용역 임대차 시설공사 추정금액 예정가격">
+        <div class="art-head"><span class="tagnum">제2조</span><h3>정의</h3></div>
+        <div class="art-body">
+          <ul>
+            <li><strong>물품</strong>: 소모품·비품·기기·제작품·차량·시설기자재·유류·인쇄물·출판물 등</li>
+            <li><strong>용역</strong>: 유지보수·컨설팅·인력공급·S/W개발·보험계약 등</li>
+            <li><strong>임대차</strong>: 교내 시설 임대차 관련 업무 전반</li>
+            <li><strong>시설공사</strong>: 건설·토목·전기·설비·설계·감리 및 제반 보수공사 등</li>
+            <li><strong>추정금액</strong>: 추정가격(부가세 제외)에 관련 세액을 포함한 금액(공사는 본교 제공 자재금액까지 포함)</li>
+            <li><strong>예정가격</strong>: 낙찰자·계약금액 결정 기준으로 미리 정하는 가격</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="담당부서 총무처 구매팀 글로컬 500만원 1000만원 1500만원 100만원 직접구매 단일견적">
+        <div class="art-head"><span class="tagnum">제3조</span><h3>담당부서</h3></div>
+        <div class="art-body">
+          <p><strong>총무처 총무·구매팀</strong>이 아래 기준 이상을 담당합니다.</p>
+          <ul>
+            <li>물품구매 500만원 이상 / 용역구매 1,000만원 이상 / 시설공사 1,500만원 이상</li>
+            <li>실험실습비 집행 1,000만원 이상 / 임대차 및 외자구매 / 매각 100만원 이상</li>
+          </ul>
+          <p>GLOCAL캠퍼스 물품구매는 총무인사팀, 시설공사 입찰·계약은 시설안전팀 담당.</p>
+        </div>
+        <div class="art-foot">
+          <strong>예산집행부서 직접구매 가능(복수견적 원칙)</strong> — 물품 500만원 미만·용역 1,000만원 미만·시설공사 1,500만원 미만·실험실습비 1,000만원 미만·매각 100만원 미만·의학전문대학원 물품 300만원 미만, 공연·세미나·외부인사초청 특강, 출판부 인쇄물, 국내외 교육탐방·시험대비반 프로그램 ·
+          <strong>단일견적 직접구매(제5항, 2026.7.14. 신설)</strong> — 박물류, 광고 게재, 출장·행사 교통/숙박/식음료, 고보안 구매건, 출판물 제작, 외부기관 공동계약, 국가기관 구매, 회계법인·노무법인·로펌·감정평가 관련 구매
+        </div>
+      </div>
+    </section>
+
+    <section id="ch2">
+      <h2>제2장 구매절차 및 계약방법</h2>
+      <div class="chapter-sub">제4조 ~ 제7조</div>
+
+      <div class="art-card" data-kw="구매절차 구매신청 원안시행결재">
+        <div class="art-head"><span class="tagnum">제4조</span><h3>구매절차</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>수요부서가 예산집행부서에 품명·규격·수량·용도 등을 명기해 구매신청 → 예산집행부서 사전검토·예산확인·원안시행결재 → 구매부서에 의뢰</li>
+            <li>1,500만원 이상 시설공사는 공사내역서·시방서·설계서·현장설명서 포함 원안시행결재 후 구매부서 계약의뢰</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="계약방법 경쟁입찰 수의계약">
+        <div class="art-head"><span class="tagnum">제5조</span><h3>계약방법</h3></div>
+        <div class="art-body"><p>계약방법은 <strong>경쟁입찰, 수의계약</strong>에 의함</p></div>
+      </div>
+
+      <div class="art-card" data-kw="경쟁입찰 2000만원 지명경쟁 나라장터 전자구매대행">
+        <div class="art-head"><span class="tagnum">제5조의2</span><h3>경쟁입찰</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>추정금액 <strong>2,000만원 이상</strong>: 경쟁입찰 원칙 / <strong>2,000만원 미만</strong>: 홈페이지 접수 복수견적으로 업체 선정</li>
+            <li>필요 시 참가자격 제한 입찰 가능</li>
+            <li>지명경쟁입찰: 전문공사(1억원 이하) 또는 기타공사(8천만원 이하)의 우량거래처 활용 시 5인 이상 지명(5인 미만이면 전원 지명)</li>
+            <li>나라장터(국가종합전자조달시스템) 또는 전자구매대행업체를 통한 구매는 입찰과정을 갈음한 것으로 봄</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="수의계약 사유 업체지정사유서">
+        <div class="art-head"><span class="tagnum">제6조</span><h3>수의계약</h3></div>
+        <div class="art-body">
+          <p>다음의 경우 수의계약 가능:</p>
+          <ul>
+            <li>법령에 근거한 수의계약 사유가 있는 경우</li>
+            <li>입찰 참가자격을 갖춘 자가 1인뿐임이 명백한 경우</li>
+            <li>낙찰자가 계약체결·이행하지 않아 해제·해지한 경우(낙찰금액보다 불리하지 않은 범위)</li>
+            <li>재공고입찰에도 입찰자·낙찰자가 없는 경우</li>
+          </ul>
+        </div>
+        <div class="art-foot">수의계약 요청 시 업체지정사유서([별지 제1호서식]) 첨부, 위임전결 전결권자 결재 후 구매부서에 의뢰</div>
+      </div>
+
+      <div class="art-card" data-kw="단가계약">
+        <div class="art-head"><span class="tagnum">제7조</span><h3>단가계약</h3></div>
+        <div class="art-body"><p>일정기간 계속 구입이 필요한 물품은 규격·품질 통일성 유지와 구매시간 단축을 위해 단가계약 체결 가능 (대상물품은 구매부서가 정함)</p></div>
+      </div>
+    </section>
+
+    <section id="ch3">
+      <h2>제3장 입찰 및 낙찰절차</h2>
+      <div class="chapter-sub">제8조 ~ 제15조</div>
+
+      <div class="art-card" data-kw="유효한입찰 2인이상">
+        <div class="art-head"><span class="tagnum">제8조</span><h3>유효한 입찰의 성립</h3></div>
+        <div class="art-body"><p><strong>2인 이상</strong>의 유효한 입찰로 성립</p></div>
+      </div>
+
+      <div class="art-card" data-kw="입찰방법 입찰유의서 현장설명회">
+        <div class="art-head"><span class="tagnum">제9조</span><h3>입찰방법</h3></div>
+        <div class="art-body"><p>입찰유의서·계약일반조건·특수조건·설계서 등을 숙지·수락한 자만 참가. 물품구매·시설공사 입찰의 현장설명회는 시행부서 준비 자료로 진행</p></div>
+      </div>
+
+      <div class="art-card" data-kw="예정가격 결정 밀봉 산정제외">
+        <div class="art-head"><span class="tagnum">제10조</span><h3>예정가격 결정</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>거래실례가격 → 원가계산 가격(신규개발품 등) → 물가정보·2인 이상 견적조사 가격 순으로 산정</li>
+            <li>전결권자 가격사정 필요, 밀봉 후 개찰·협상 장소에 비치(누설 금지)</li>
+            <li><strong>예정가격 산정 제외</strong>(추정금액을 예정가격으로 함): 2,000만원 미만 구매·임대차·용역·제조물·매각, 외자 직수입, 조달품목·전자구매대행 구매, 협상에 의한 계약</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="입찰서제출 위임장 보증보험증권">
+        <div class="art-head"><span class="tagnum">제11조</span><h3>입찰서 제출</h3></div>
+        <div class="art-body"><p>소정 양식 작성·제출, 개찰 전후 취소·철회·변경 불가. 구비서류: 입찰서, 위임장(대리인), 이행(입찰)보증보험증권, 자격증명서류 등</p></div>
+      </div>
+
+      <div class="art-card" data-kw="입찰보증금 5% 확약서">
+        <div class="art-head"><span class="tagnum">제12조</span><h3>입찰보증금</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>입찰금액의 <strong>5% 이상</strong>을 보증서 또는 이행보증보험증권으로 납부</li>
+            <li>낙찰자가 계약 미체결 시 입찰보증금은 본교에 귀속</li>
+            <li>온라인 경쟁입찰이고 추정금액 200만원 이상~1,000만원 미만 건은 입찰보증금지급확약서([별지 제2호서식])로 대체 가능</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="입찰무효">
+        <div class="art-head"><span class="tagnum">제13조</span><h3>입찰의 무효</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>위임장 미제출 대리인 입찰 / 보증금 미납·부족 / 현장설명 미참가자 입찰</li>
+            <li>주요 기재사항 불분명 / 2인 이상 대리 또는 타인 대리 겸임 / 기타 조건 위배</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="낙찰자결정 최저가 60% 4000만원 감사담당자 재입찰 임대 매각">
+        <div class="art-head"><span class="tagnum">제14조</span><h3>낙찰자 결정</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>2,000만원 이상(시설공사 1,500만원 이상)은 지정 장소·일시 개찰, 예정가격 이하 최저가 입찰자를 낙찰자로 결정</li>
+            <li>시설공사는 예정가격의 <strong>60% 미만</strong> 입찰 업체는 낙찰자에서 제외</li>
+            <li><strong>4,000만원 이상</strong> 업체선정은 감사담당자 입회 개찰</li>
+            <li>제한적 최저가 낙찰제, 협상에 의한 계약, 규격/기술입찰 후 가격입찰 등 특수 절차 가능</li>
+            <li>1회 투찰 유찰 시 추가 2회 재입찰, 이후 유찰이면 재공고(2,000만원 미만은 1회로 제한 가능)</li>
+            <li>2,000만원 미만 구매·용역·제조물은 최저제시 견적업체가 낙찰자</li>
+            <li>임대·매각은 예정가격 이상 최고응찰자가 낙찰자</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="재공고입찰">
+        <div class="art-head"><span class="tagnum">제15조</span><h3>재공고입찰</h3></div>
+        <div class="art-body"><p>유효한 입찰자·낙찰자가 없거나, 낙찰자가 계약을 체결하지 않는 경우 재공고입찰에 부칠 수 있음</p></div>
+      </div>
+    </section>
+
+    <section id="ch4">
+      <h2>제4장 계약체결 및 이행</h2>
+      <div class="chapter-sub">제16조 ~ 제21조</div>
+
+      <div class="art-card" data-kw="계약서작성 10일 3000만원 전자계약">
+        <div class="art-head"><span class="tagnum">제16조</span><h3>계약서 작성</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>표준계약서에 필요사항 명기, 낙찰 후 근무일 기준 <strong>10일 이내</strong> 체결</li>
+            <li>정당한 이유없이 미체결 시 낙찰 취소 가능</li>
+            <li>계약금액 <strong>3,000만원 미만</strong>, 외자 직수입, 물품매각 즉시대금납부 등은 계약서 작성 생략 가능(성립 증거서류로 대체)</li>
+            <li>전자문서 및 전자거래기본법에 따른 전자계약서 작성 가능</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="계약보증금 10% 15%">
+        <div class="art-head"><span class="tagnum">제17조</span><h3>계약보증금</h3></div>
+        <div class="art-body"><p>계약금액의 <strong>10% 이상</strong>(시설공사는 <strong>15% 이상</strong>) 보증서 또는 이행보증보험증권 제출</p></div>
+      </div>
+
+      <div class="art-card" data-kw="설계변경 계약금액조정 낙찰률">
+        <div class="art-head"><span class="tagnum">제18조</span><h3>설계변경으로 인한 계약금액 조정</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>감소/증가 공사량 단가는 계약서상 단가 기준(계약단가가 예정가격단가보다 높으면 예정가격단가 적용)</li>
+            <li>신규비목 단가는 설계변경 당시 산정단가 × 낙찰률 이하</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="지체상금 0.5 0.75 1.25">
+        <div class="art-head"><span class="tagnum">제19조</span><h3>지체상금</h3></div>
+        <div class="art-body">
+          <p>계약금액 × 율 × 지체일수(현금 납부):</p>
+          <ul>
+            <li>시설공사: 1,000분의 0.5</li>
+            <li>물품 제조·구매(SW 일괄입찰 포함): 1,000분의 0.75</li>
+            <li>물품 수리·가공·대여, 용역 등: 1,000분의 1.25</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="계약해제 해지 보증금귀속">
+        <div class="art-head"><span class="tagnum">제19조의2</span><h3>계약의 해제·해지</h3></div>
+        <div class="art-body"><p>정당한 사유 없이 의무 미이행 시 해제·해지 가능(계약보증금 귀속). 지체상금이 계약보증금에 도달하고 이행 가능성이 없음이 명백한 경우도 동일</p></div>
+      </div>
+
+      <div class="art-card" data-kw="하자보수보증금 3% 10%">
+        <div class="art-head"><span class="tagnum">제20조</span><h3>하자보수보증금</h3></div>
+        <div class="art-body"><p>계약금액의 <strong>3% 이상 10% 이하</strong> 보증서로 납부</p></div>
+      </div>
+
+      <div class="art-card" data-kw="하자담보책임기간 1년 2년">
+        <div class="art-head"><span class="tagnum">제21조</span><h3>하자담보책임기간</h3></div>
+        <div class="art-body"><p>물품은 인수일로부터 <strong>1년</strong>, 공사는 완료일로부터 <strong>2년 이상</strong></p></div>
+      </div>
+    </section>
+
+    <section id="attach">
+      <h2>준용·보칙 및 별지서식</h2>
+
+      <div class="art-card" data-kw="준용 보칙">
+        <div class="art-head"><span class="tagnum">제22·23조</span><h3>준용 및 보칙</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>미규정 사항은 「국가를 당사자로 하는 계약에 관한 법률」, 동법 시행령, 「사학기관 재무·회계규칙」 준용</li>
+            <li>이 규정·법령에 없는 사항은 총장 승인 후 시행</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pill-row">
+        <span class="pill good">[별지 제1호서식] 업체지정 사유서</span>
+        <span class="pill good">[별지 제2호서식] 입찰보증금 지급확약서</span>
+      </div>
+      <div class="note">이 요강은 2008.12.24. 제정 이후 28차까지 개정되었으며, 이번 정리는 2026.7.14. 시행분(2025.10.1. 개정본 표기)을 기준으로 합니다.</div>
+
+      <div class="dl-box">
+        <span class="ic">📄</span>
+        <div class="txt"><strong>별지 제1호·제2호서식</strong> — 업체지정 사유서, 입찰보증금 지급확약서 빈 서식(PDF)입니다.</div>
+        <a class="dl-btn" href="/_blob/bda050868e25079c8db498ab654e33ca" id="dlBtn" download="구매계약업무요강_별지1-2호.pdf">⬇ 서식 다운로드 (PDF)</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  「건국대학교 구매계약업무요강」(3-1-21, 제정 2008.12.24. / 28차 개정 2026.7.14.) 원문을 바탕으로 열람 편의를 위해 재구성한 참고용 정리입니다. 실제 집행 시에는 원문 요강과 최신 개정 사항을 함께 확인하세요.
+</footer>
+
+<script>
+  const links = document.querySelectorAll('nav.side a');
+  const linkMap = {};
+  links.forEach(l => linkMap[l.getAttribute('href').slice(1)] = l);
+  const targets = document.querySelectorAll('main section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      if (!linkMap[id]) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        linkMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+  targets.forEach(s => { if (s.id) observer.observe(s); });
+
+  const searchBox = document.getElementById('searchBox');
+  const cards = document.querySelectorAll('.art-card');
+  searchBox.addEventListener('input', () => {
+    const q = searchBox.value.trim().toLowerCase();
+    cards.forEach(card => {
+      const kw = card.getAttribute('data-kw') || '';
+      const text = (kw + ' ' + card.textContent).toLowerCase();
+      card.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

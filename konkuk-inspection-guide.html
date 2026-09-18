@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>건국대학교 검수요강 — 항목별 정리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F2; --panel: #FFFFFF; --ink: #16241C; --ink-soft: #55635B;
+    --line: #D8E0D9; --line-soft: #E6ECE7;
+    --ku-green: #0F5B3B; --ku-green-deep: #0A3F28; --ku-green-soft: #E7F1EB;
+    --ku-blue: #2F5C8A; --ku-purple: #6B4C7A; --ku-orange: #D9822B;
+    --red: #8B3232; --red-bg: #F5E7E4; --chip: #E6ECE7; --shadow: rgba(15,60,40,0.10);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+      --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+      --ku-green-soft:#173327; --ku-blue:#7FA8D6; --ku-purple:#B79AC4; --ku-orange:#E8A968;
+      --red:#D08787; --red-bg:#2E1F1F; --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+    --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+    --ku-green-soft:#173327; --ku-blue:#7FA8D6; --ku-purple:#B79AC4; --ku-orange:#E8A968;
+    --red:#D08787; --red-bg:#2E1F1F; --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body { background: var(--paper); color: var(--ink); font-family:'Noto Sans KR',sans-serif; line-height:1.7; font-size:15.5px; }
+  h1,h2,h3,h4 { font-family:'Noto Serif KR',serif; color: var(--ink); margin:0; }
+  a { color: inherit; }
+
+  .masthead { background: var(--ku-green-deep); color:#F4F8F5; padding:30px 28px 24px; border-bottom:4px solid var(--ku-orange); }
+  .masthead-inner { max-width:1180px; margin:0 auto; display:flex; align-items:center; gap:16px; position:relative; }
+  .meta-badge { position:absolute; top:-6px; right:0; text-align:right; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:10px 14px; font-size:12px; color:#DCE7E0; line-height:1.6; }
+  .meta-badge .k { color:#B7D9C6; margin-right:6px; }
+  .meta-badge a { color:#F0D9A6; text-decoration:underline; }
+  @media (max-width:860px){ .meta-badge{ position:static; display:inline-block; margin-top:14px; } }
+  .dl-box { display:flex; align-items:center; gap:14px; background: var(--ku-green-soft); border:1px solid var(--ku-green); border-radius:8px; padding:14px 18px; margin: 14px 0 6px; flex-wrap:wrap; }
+  .dl-box .ic { font-size:22px; }
+  .dl-box .txt { flex:1; font-size:13.6px; color: var(--ink); min-width:220px; }
+  .dl-box .txt strong { color: var(--ku-green); }
+  .dl-btn { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; background: var(--ku-green); color:#fff; padding:9px 16px; border-radius:6px; text-decoration:none; white-space:nowrap; }
+  .bull-badge { width:46px; height:46px; border-radius:50%; background: var(--ku-orange); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+  .masthead .tag { font-size:12.5px; letter-spacing:.02em; color:#CFE3D6; margin-bottom:10px; }
+  .masthead h1 { font-size:24px; font-weight:600; color:#FBFDFB; line-height:1.4; }
+  .masthead .sub { margin-top:8px; color:#BFDBC9; font-size:14px; }
+
+  .amend-banner { max-width:1180px; margin:-14px auto 0; padding:0 28px; position:relative; z-index:2; }
+  .amend-card { background: var(--ku-green-soft); border:1px solid var(--ku-green); border-radius:6px; padding:16px 20px; display:flex; gap:14px; align-items:flex-start; box-shadow:0 6px 18px var(--shadow); flex-wrap:wrap; }
+  .amend-card .mark { font-family:'Noto Serif KR',serif; font-weight:700; color: var(--ku-green); font-size:13px; border:1px solid var(--ku-green); border-radius:4px; padding:3px 8px; white-space:nowrap; margin-top:2px; }
+  .amend-card p, .amend-card ul { margin:0; font-size:13.8px; color:var(--ink); flex:1; min-width:260px; }
+  .amend-card ul { padding-left:18px; } .amend-card li { margin-bottom:5px; }
+  .amend-card strong { color: var(--ku-green-deep); }
+
+  .layout { max-width:1180px; margin:30px auto 80px; padding:0 28px; display:grid; grid-template-columns:220px 1fr; gap:40px; }
+  nav.side { position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow-y:auto; padding-right:6px; }
+  nav.side .group { margin-bottom:20px; }
+  nav.side .group-label { font-size:11.5px; color:var(--ink-soft); letter-spacing:.03em; margin-bottom:6px; padding-left:10px; }
+  nav.side a { display:block; text-decoration:none; font-size:13.4px; color:var(--ink-soft); padding:6px 10px; border-left:2px solid transparent; border-radius:0 4px 4px 0; transition:color .15s,border-color .15s,background .15s; }
+  nav.side a:hover { color:var(--ku-green); background:var(--panel); }
+  nav.side a.active { color:var(--ku-green); border-left-color:var(--ku-orange); background:var(--panel); font-weight:600; }
+
+  main { min-width:0; }
+  section { margin-bottom:56px; }
+  section h2 { font-size:21px; font-weight:600; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:6px; scroll-margin-top:20px; }
+  section .chapter-sub { font-size:13px; color:var(--ink-soft); margin-bottom:18px; }
+  section > .lede { color:var(--ink-soft); font-size:14px; margin-bottom:20px; }
+
+  .art-card { border:1px solid var(--line-soft); border-radius:8px; background:var(--panel); margin-bottom:14px; overflow:hidden; scroll-margin-top:20px; }
+  .art-head { display:flex; align-items:baseline; gap:10px; padding:13px 18px; border-bottom:1px solid var(--line-soft); }
+  .art-head .tagnum { font-family:'Noto Serif KR',serif; color: var(--ku-green); font-weight:700; font-size:14px; white-space:nowrap; }
+  .art-head h3 { font-size:15.5px; font-weight:600; }
+  .art-body { padding:12px 18px 16px; }
+  .art-body ul { margin:0; padding-left:18px; } .art-body li { font-size:13.8px; margin-bottom:6px; }
+  .art-body p { font-size:13.8px; margin:0 0 8px; }
+  .art-foot { padding:8px 18px 14px; font-size:12.3px; color:var(--ink-soft); border-top:1px dashed var(--line-soft); margin-top:4px; }
+
+  ul.plain { margin:8px 0 0; padding-left:18px; } ul.plain li { margin-bottom:6px; font-size:14.5px; }
+  .note { font-size:13px; color:var(--ink-soft); border-left:2px solid var(--line); padding-left:10px; margin:10px 0; }
+
+  .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 4px; }
+  .pill { font-size:12.3px; background:var(--chip); border-radius:20px; padding:5px 12px; color:var(--ink-soft); }
+  .pill.warn { background:var(--red-bg); color:var(--red); }
+  .pill.good { background:var(--ku-green-soft); color:var(--ku-green); }
+
+  .search-wrap { margin-bottom:22px; }
+  .search-wrap input { width:100%; font-family:inherit; font-size:14px; padding:11px 14px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); }
+  .search-wrap input:focus { outline:2px solid var(--ku-green); outline-offset:1px; }
+  .search-hint { font-size:12px; color:var(--ink-soft); margin-top:6px; }
+
+  footer { max-width:1180px; margin:0 auto 60px; padding:20px 28px; color:var(--ink-soft); font-size:12.5px; border-top:1px solid var(--line); }
+
+  @media (max-width:860px) {
+    .layout { grid-template-columns:1fr; }
+    nav.side { position:static; max-height:none; display:flex; overflow-x:auto; gap:4px; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:10px; }
+    nav.side .group { display:flex; gap:4px; margin-bottom:0; flex-shrink:0; }
+    nav.side .group-label { display:none; }
+    nav.side a { white-space:nowrap; border-left:none; border-bottom:2px solid transparent; }
+    nav.side a.active { border-left:none; border-bottom-color:var(--ku-orange); }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="meta-badge">
+      <div><span class="k">작성자</span>앵커김군 (<a href="mailto:coolzet@konkuk.ac.kr">coolzet@konkuk.ac.kr</a>)</div>
+      <div><span class="k">업데이트</span>2026. 9. 18.</div>
+    </div>
+    <div class="bull-badge">🐂</div>
+    <div>
+      <div class="tag">건국대학교 관재처 · 3-1-22 일반행정</div>
+      <h1>검수요강 — 항목별 정리</h1>
+      <div class="sub">제정 1984.9.18. · 23차 개정 2025.7.24. (개정 2025.10.1. 표기본) 기준으로 검수 절차를 항목별로 재구성했습니다.</div>
+    </div>
+  </div>
+</header>
+
+<div class="amend-banner">
+  <div class="amend-card">
+    <span class="mark">최근 개정 핵심</span>
+    <ul>
+      <li>제3조제2항 <strong>5호 삭제(2025.7.24.)</strong> — 발주부서 자체검수 대상에서 제외된 항목 정리</li>
+      <li>제3조제2항 <strong>9호</strong> — 구매계약업무요강 제3조제4항에 의한 물품구매·용역구매·시설공사는 발주부서 자체검수 가능 (2018.6.11. 신설, 2025.7.24. 개정으로 범위 갱신)</li>
+      <li>구매계약업무요강과 짝을 이루는 문서로, 구매계약 후 물품·용역·공사의 완성 내용을 확인하는 절차를 규정</li>
+    </ul>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="side" id="sideNav">
+    <div class="group">
+      <div class="group-label">기본</div>
+      <a href="#basic">목적·정의·적용범위</a>
+      <a href="#dept">담당부서</a>
+    </div>
+    <div class="group">
+      <div class="group-label">검수 절차</div>
+      <a href="#method">검수방법</a>
+      <a href="#ban">사전 사용금지·검수거부</a>
+      <a href="#etc">거래중지·입회요청</a>
+    </div>
+    <div class="group">
+      <div class="group-label">부속</div>
+      <a href="#attach">관례·별지서식</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="search-wrap">
+      <input type="text" id="searchBox" placeholder="키워드로 찾기 (예: 발주부서, 검수거부, 가검수, 거래중지)">
+      <div class="search-hint">입력하면 조문 카드가 실시간으로 필터링됩니다.</div>
+    </div>
+
+    <section id="basic">
+      <h2>목적·정의·적용범위</h2>
+
+      <div class="art-card" data-kw="목적">
+        <div class="art-head"><span class="tagnum">제1조</span><h3>목적</h3></div>
+        <div class="art-body"><p>건국대학교에서 행하는 물품의 구매, 제작, 수리, 건설 및 시설공사의 검수에 관한 사항을 규정</p></div>
+      </div>
+
+      <div class="art-card" data-kw="정의 검수">
+        <div class="art-head"><span class="tagnum">제2조</span><h3>정의</h3></div>
+        <div class="art-body"><p><strong>검수</strong>: 물품의 구매·제작·수리·건설 및 시설공사의 완성 내용을 발주서·지출결의서·거래명세서·시방서 등의 서류와 대조하여 확인하는 일</p></div>
+      </div>
+
+      <div class="art-card" data-kw="적용범위">
+        <div class="art-head"><span class="tagnum">제2조의2</span><h3>적용범위</h3></div>
+        <div class="art-body"><p>이 요강은 본교의 <strong>모든 부서</strong>에 적용</p></div>
+      </div>
+    </section>
+
+    <section id="dept">
+      <h2>담당부서</h2>
+      <div class="chapter-sub">제3조</div>
+
+      <div class="art-card" data-kw="담당부서 관재처 관재팀 글로컬 기획예산팀">
+        <div class="art-head"><span class="tagnum">제3조①</span><h3>중앙검수 담당</h3></div>
+        <div class="art-body"><p>검수는 <strong>관재처 관재팀</strong> 담당(GLOCAL캠퍼스는 <strong>기획처 기획예산팀</strong>)</p></div>
+      </div>
+
+      <div class="art-card" data-kw="발주부서 자체검수 차량 화환 업무추진비 실험실습비 도서관 특별회계 농축수임산물">
+        <div class="art-head"><span class="tagnum">제3조②</span><h3>발주부서 자체검수 대상</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>차량유지 필요 물품</li>
+            <li>외부에 직접 전달할 화환·기념품 등</li>
+            <li>업무추진비 과목에서 구입하는 물품</li>
+            <li>실험실습비로 구입하는 소모품</li>
+            <li>도서관에서 구입하는 도서 및 전자정보원</li>
+            <li>구매계약업무요강 제3조제4항에 의한 물품구매·용역구매·시설공사</li>
+            <li>특별회계에서 구입하는 물품(GLOCAL캠퍼스 제외)</li>
+            <li>농·축·수·임산물(생물, 식자재 포함), 수목, 화훼류</li>
+          </ul>
+        </div>
+        <div class="art-foot">위 발주부서 검수는 발주부서장이 수행. 예산부서 미소속자가 발주한 경우 발주자가 검수하고 예산부서장이 확인</div>
+      </div>
+    </section>
+
+    <section id="method">
+      <h2>검수방법</h2>
+      <div class="chapter-sub">제4조</div>
+
+      <div class="art-card" data-kw="검수방법 자료송부 대조 서명 가검수 본검수">
+        <div class="art-head"><span class="tagnum">제4조</span><h3>검수방법</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>발주부서는 발주서·지출결의서·거래명세서·계약서·시방서·사양서·도면 등을 검수부서에 송부</li>
+            <li>검수자는 자료와 물품·공사내용을 대조해 품질·수량·기타 조건 합당 여부 확인·검수</li>
+            <li>검수 후 관계서류에 서명하여 발주부서로 송부</li>
+            <li>성분·함량·시설·공사내용 분석이 필요하면 교내 전문가 또는 공인기관에 의뢰·확인</li>
+            <li>자료가 없으면 검수 불가하나, 발주부서장 요청 시 <strong>가검수</strong> 가능(자료 구비 시 반드시 본검수 실시)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="ban">
+      <h2>사전 사용금지 및 검수거부</h2>
+      <div class="chapter-sub">제5조 ~ 제6조</div>
+
+      <div class="art-card" data-kw="사전사용금지">
+        <div class="art-head"><span class="tagnum">제5조</span><h3>사전 사용금지</h3></div>
+        <div class="art-body"><p>검수할 물품 및 시설물은 검수를 받지 않고 사전에 사용할 수 없음</p></div>
+      </div>
+
+      <div class="art-card" data-kw="검수거부 절차미종결 검수거부사유서">
+        <div class="art-head"><span class="tagnum">제6조</span><h3>검수거부</h3></div>
+        <div class="art-body">
+          <p>다음의 경우 검수를 하지 않음:</p>
+          <ul>
+            <li>구매절차가 종결되지 않은 물품구입</li>
+            <li>계약서·거래명세서에 의하지 않은 검수</li>
+            <li>발주부서의 검수요청이 없는 경우</li>
+          </ul>
+          <p>자료·지출결의서·청구서 내용과 현품이 상이하거나 변질·감손·공사불량·이상이 있으면 검수를 유보하고 <strong>검수거부사유서</strong>([별지서식 2호])를 첨부해 즉시 발주부서에 통보</p>
+        </div>
+      </div>
+
+      <div class="art-card" data-kw="거래중지요청 하자">
+        <div class="art-head"><span class="tagnum">제6조의2</span><h3>거래중지요청</h3></div>
+        <div class="art-body"><p>업체의 빈번한 하자발생으로 재정상 불이익 또는 업무진행에 지장을 준 경우, 해당 부서장에게 거래중지를 요청할 수 있음</p></div>
+      </div>
+    </section>
+
+    <section id="etc">
+      <h2>입회의 요청</h2>
+      <div class="chapter-sub">제7조</div>
+
+      <div class="art-card" data-kw="입회요청 전문지식 운송업자">
+        <div class="art-head"><span class="tagnum">제7조</span><h3>입회의 요청</h3></div>
+        <div class="art-body">
+          <ul>
+            <li>특별한 기술·전문지식이 필요한 물품, 수리, 시설공사는 발주부서·소요부서 담당자 입회 요청 가능</li>
+            <li>운송업자 배달 물품에 이상이 발견되면 운송업자 및 관계자 입회하에 확인서 작성·보관</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="attach">
+      <h2>관례 및 별지서식</h2>
+
+      <div class="art-card" data-kw="관례">
+        <div class="art-head"><span class="tagnum">제9조</span><h3>관례</h3></div>
+        <div class="art-body"><p>이 요강에 명시되지 않은 사항은 관례에 준하여 처리</p></div>
+      </div>
+
+      <div class="pill-row">
+        <span class="pill good">[별지서식 2호] 검수거부사유서 — 품명·규격·제조회사·수량·금액·납품처·거부사유 기재</span>
+        <span class="pill">[별지서식 1호] 삭제(2018.6.11.)</span>
+      </div>
+      <div class="note">이 요강은 1984.9.18. 제정 이후 23차까지 개정되었으며, 이번 정리는 2025.7.24. 개정(2025.10.1. 시행 표기)을 기준으로 합니다. 구매계약업무요강과 함께 확인하면 구매→검수 전체 절차를 이해할 수 있습니다.</div>
+
+      <div class="dl-box">
+        <span class="ic">📄</span>
+        <div class="txt"><strong>별지서식 2호</strong> — 검수거부사유서 빈 서식(PDF)입니다.</div>
+        <a class="dl-btn" href="/_blob/4d312d8b8314a736267e354c6ad8e647" id="dlBtn" download="검수요강_별지서식2호.pdf">⬇ 서식 다운로드 (PDF)</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  「건국대학교 검수요강」(3-1-22, 제정 1984.9.18. / 23차 개정 2025.7.24.) 원문을 바탕으로 열람 편의를 위해 재구성한 참고용 정리입니다. 실제 검수 시에는 원문 요강과 최신 개정 사항을 함께 확인하세요.
+</footer>
+
+<script>
+  const links = document.querySelectorAll('nav.side a');
+  const linkMap = {};
+  links.forEach(l => linkMap[l.getAttribute('href').slice(1)] = l);
+  const targets = document.querySelectorAll('main section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      if (!linkMap[id]) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        linkMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+  targets.forEach(s => { if (s.id) observer.observe(s); });
+
+  const searchBox = document.getElementById('searchBox');
+  const cards = document.querySelectorAll('.art-card');
+  searchBox.addEventListener('input', () => {
+    const q = searchBox.value.trim().toLowerCase();
+    cards.forEach(card => {
+      const kw = card.getAttribute('data-kw') || '';
+      const text = (kw + ' ' + card.textContent).toLowerCase();
+      card.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

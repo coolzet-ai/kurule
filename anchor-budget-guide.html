@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>앵커 사업비 집행 및 관리 지침 (4차 개정) — 항목별 정리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEEDE6;
+    --panel: #F8F7F2;
+    --ink: #1C2430;
+    --ink-soft: #565A62;
+    --line: #D9D6C9;
+    --line-soft: #E4E2D8;
+    --navy: #1F4258;
+    --navy-deep: #142B39;
+    --gold: #A9791E;
+    --gold-bg: #F4ECD8;
+    --red: #8B3232;
+    --red-bg: #F5E7E4;
+    --chip: #E4E7E2;
+    --shadow: rgba(28,36,48,0.08);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper: #171A1C;
+      --panel: #1F2326;
+      --ink: #E9E7DF;
+      --ink-soft: #A7ACA9;
+      --line: #34383B;
+      --line-soft: #2A2E31;
+      --navy: #6FA0B8;
+      --navy-deep: #8FBBD0;
+      --gold: #D8AE5C;
+      --gold-bg: #2C2717;
+      --red: #D08787;
+      --red-bg: #2E1F1F;
+      --chip: #262A2C;
+      --shadow: rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #171A1C;
+    --panel: #1F2326;
+    --ink: #E9E7DF;
+    --ink-soft: #A7ACA9;
+    --line: #34383B;
+    --line-soft: #2A2E31;
+    --navy: #6FA0B8;
+    --navy-deep: #8FBBD0;
+    --gold: #D8AE5C;
+    --gold-bg: #2C2717;
+    --red: #D08787;
+    --red-bg: #2E1F1F;
+    --chip: #262A2C;
+    --shadow: rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.7;
+    font-size: 15.5px;
+  }
+  h1, h2, h3, h4 { font-family: 'Noto Serif KR', serif; color: var(--ink); margin: 0; }
+  a { color: inherit; }
+  img { max-width: 100%; }
+
+  /* ---------- Header ---------- */
+  .masthead {
+    background: var(--navy-deep);
+    color: #F3F1E9;
+    padding: 30px 28px 24px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .masthead-inner { max-width: 1180px; margin: 0 auto; position: relative; }
+  .meta-badge { position:absolute; top:0; right:0; text-align:right; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:10px 14px; font-size:12px; color:#DCE7E0; line-height:1.6; }
+  .meta-badge .k { color:#9FB6AC; margin-right:6px; }
+  .meta-badge a { color:#EAD9A6; text-decoration:underline; }
+  @media (max-width:860px){ .meta-badge{ position:static; display:inline-block; margin-top:14px; } }
+  .dl-box { display:flex; align-items:center; gap:14px; background: var(--gold-bg); border:1px solid var(--gold); border-radius:8px; padding:14px 18px; margin: 10px 0 6px; flex-wrap:wrap; }
+  .dl-box .ic { font-size:22px; }
+  .dl-box .txt { flex:1; font-size:13.6px; color: var(--ink); min-width:220px; }
+  .dl-box .txt strong { color: var(--gold); }
+  .dl-btn { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; background: var(--gold); color:#fff; padding:9px 16px; border-radius:6px; text-decoration:none; white-space:nowrap; }
+  .masthead .tag {
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: #C9D6DB;
+    margin-bottom: 10px;
+  }
+  .masthead h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #FBFAF5;
+    line-height: 1.4;
+  }
+  .masthead .sub {
+    margin-top: 8px;
+    color: #B9C7CD;
+    font-size: 14px;
+  }
+
+  /* ---------- Amendment banner ---------- */
+  .amend-banner {
+    max-width: 1180px;
+    margin: -14px auto 0;
+    padding: 0 28px;
+    position: relative;
+    z-index: 2;
+  }
+  .amend-card {
+    background: var(--gold-bg);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    box-shadow: 0 6px 18px var(--shadow);
+  }
+  .amend-card .mark {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 13px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 3px 8px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .amend-card p { margin: 0; font-size: 14px; color: var(--ink); }
+  .amend-card strong { color: var(--navy); }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    max-width: 1180px;
+    margin: 30px auto 80px;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+  }
+  nav.side {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+  nav.side .group { margin-bottom: 20px; }
+  nav.side .group-label {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+    padding-left: 10px;
+  }
+  nav.side a {
+    display: block;
+    text-decoration: none;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    padding: 6px 10px;
+    border-left: 2px solid transparent;
+    border-radius: 0 4px 4px 0;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  nav.side a:hover { color: var(--navy); background: var(--panel); }
+  nav.side a.active {
+    color: var(--navy);
+    border-left-color: var(--gold);
+    background: var(--panel);
+    font-weight: 600;
+  }
+
+  main { min-width: 0; }
+
+  section { margin-bottom: 56px; }
+  section h2 {
+    font-size: 21px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 18px;
+    scroll-margin-top: 20px;
+  }
+  section > .lede { color: var(--ink-soft); font-size: 14px; margin-bottom: 20px; }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 4px;
+  }
+  .info-box {
+    background: var(--panel);
+    border: 1px solid var(--line-soft);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .info-box .k { font-size: 12px; color: var(--ink-soft); margin-bottom: 4px; }
+  .info-box .v { font-size: 14.5px; }
+
+  ul.plain { margin: 8px 0 0; padding-left: 18px; }
+  ul.plain li { margin-bottom: 6px; font-size: 14.5px; }
+  ul.plain.tight li { margin-bottom: 3px; }
+
+  .note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    border-left: 2px solid var(--line);
+    padding-left: 10px;
+    margin: 10px 0;
+  }
+
+  /* ---------- Search ---------- */
+  .search-wrap { margin-bottom: 22px; }
+  .search-wrap input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--panel);
+    color: var(--ink);
+  }
+  .search-wrap input:focus { outline: 2px solid var(--navy); outline-offset: 1px; }
+  .search-hint { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+
+  /* ---------- Budget item cards ---------- */
+  .item-card {
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    background: var(--panel);
+    margin-bottom: 20px;
+    overflow: hidden;
+    scroll-margin-top: 20px;
+  }
+  .item-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line-soft);
+    background: linear-gradient(180deg, var(--panel), var(--panel));
+  }
+  .item-head .num {
+    font-family: 'Noto Serif KR', serif;
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 15px;
+    min-width: 20px;
+  }
+  .item-head h3 { font-size: 17px; font-weight: 600; }
+  .item-body { padding: 4px 20px 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+  .item-col { padding-top: 14px; }
+  .item-col .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .item-col.limit .label { color: var(--red); }
+  .item-col ul { margin: 0; padding-left: 16px; }
+  .item-col li { font-size: 13.8px; margin-bottom: 6px; }
+  .item-col.limit { border-left: 1px solid var(--line-soft); padding-left: 20px; }
+  .item-foot {
+    padding: 10px 20px 16px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    border-top: 1px dashed var(--line-soft);
+    margin-top: 6px;
+  }
+  @media (max-width: 720px) {
+    .item-body { grid-template-columns: 1fr; }
+    .item-col.limit { border-left: none; padding-left: 0; border-top: 1px solid var(--line-soft); margin-top: 10px; padding-top: 14px; }
+  }
+
+  /* ---------- Tables ---------- */
+  table.ratio {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 10px 0 18px;
+  }
+  table.ratio caption {
+    text-align: left;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+    caption-side: top;
+  }
+  table.ratio th, table.ratio td {
+    border: 1px solid var(--line);
+    padding: 9px 10px;
+    text-align: center;
+  }
+  table.ratio thead th {
+    background: var(--chip);
+    font-weight: 600;
+  }
+  table.ratio td.figure, table.ratio th.figure { color: var(--gold); font-weight: 600; }
+  .table-scroll { overflow-x: auto; }
+
+  /* ---------- Timeline / steps ---------- */
+  .steps { list-style: none; margin: 10px 0 0; padding: 0; }
+  .steps li {
+    position: relative;
+    padding: 4px 0 14px 24px;
+    font-size: 14.5px;
+    border-left: 1px solid var(--line);
+    margin-left: 4px;
+  }
+  .steps li:last-child { border-left-color: transparent; }
+  .steps li::before {
+    content: "";
+    position: absolute;
+    left: -4.5px;
+    top: 6px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+  .pill {
+    font-size: 12.5px;
+    background: var(--chip);
+    border-radius: 20px;
+    padding: 5px 12px;
+    color: var(--ink-soft);
+  }
+
+  footer {
+    max-width: 1180px;
+    margin: 0 auto 60px;
+    padding: 20px 28px;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; }
+    nav.side {
+      position: static;
+      max-height: none;
+      display: flex;
+      overflow-x: auto;
+      gap: 4px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 10px;
+    }
+    nav.side .group { display: flex; gap: 4px; margin-bottom: 0; flex-shrink: 0; }
+    nav.side .group-label { display: none; }
+    nav.side a { white-space: nowrap; border-left: none; border-bottom: 2px solid transparent; }
+    nav.side a.active { border-left: none; border-bottom-color: var(--gold); }
+    .info-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="meta-badge">
+      <div><span class="k">작성자</span>앵커김군 (<a href="mailto:coolzet@konkuk.ac.kr">coolzet@konkuk.ac.kr</a>)</div>
+      <div><span class="k">업데이트</span>2026. 9. 18.</div>
+    </div>
+    <div class="tag">교육부 · 지역성장 인재양성체계(앵커) 사업</div>
+    <h1>사업비 집행 및 관리 지침 (4차 개정) — 항목별 정리</h1>
+    <div class="sub">2026. 9. 개정본을 기준으로 항목별 사용 용도·집행 제한·편성 비율을 한 페이지에 정리했습니다.</div>
+  </div>
+</header>
+
+<div class="amend-banner">
+  <div class="amend-card">
+    <span class="mark">4차 개정 신설</span>
+    <p>
+      <strong>인건비 항목(14쪽)</strong>에 단서가 추가되었습니다 — 특성화지방대학(글로컬대학)에 대해서는
+      「앵커 사업비 집행 및 관리 지침」 3차 개정('26.6.) 시 반영된 <strong>인건비 지급 기준 변경 사항을 적용하지 않습니다.</strong>
+      즉, 글로컬대학은 3차 개정 이전 인건비 기준을 그대로 유지합니다.
+    </p>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="side" id="sideNav">
+    <div class="group">
+      <div class="group-label">기본</div>
+      <a href="#overview">개요 · 적용범위</a>
+      <a href="#general">사업비 관리 일반</a>
+    </div>
+    <div class="group">
+      <div class="group-label">편성 항목 10종</div>
+      <a href="#i1">① 인건비</a>
+      <a href="#i2">② 장학금</a>
+      <a href="#i3">③ 교육·연구 프로그램</a>
+      <a href="#i4">④ 교육·연구 환경개선비</a>
+      <a href="#i5">⑤ 실험·실습장비·기자재</a>
+      <a href="#i6">⑥ 지역 연계·협업</a>
+      <a href="#i7">⑦ 기업 지원·협력</a>
+      <a href="#i8">⑧ 성과 활용·확산</a>
+      <a href="#i9">⑨ 그 밖의 운영경비</a>
+      <a href="#i10">⑩ 간접비</a>
+    </div>
+    <div class="group">
+      <div class="group-label">비율 · 절차</div>
+      <a href="#ratio">편성 비율표</a>
+      <a href="#change">사업비 변경</a>
+      <a href="#settle">이월 · 정산 · 반납</a>
+      <a href="#penalty">부정수급 대응</a>
+      <a href="#downloads">서식 다운로드</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="search-wrap">
+      <input type="text" id="searchBox" placeholder="항목·키워드로 찾기 (예: 성과급, 장비, 이월, 장학금)">
+      <div class="search-hint">입력하면 편성 항목 10종 카드가 실시간으로 필터링됩니다.</div>
+    </div>
+
+    <section id="overview">
+      <h2>개요 · 적용범위</h2>
+      <div class="info-grid">
+        <div class="info-box">
+          <div class="k">목적</div>
+          <div class="v">앵커 사업비의 예산 편성·집행 기준을 정해 사업의 효율적 운영과 집행·관리의 투명성을 높이는 것</div>
+        </div>
+        <div class="info-box">
+          <div class="k">적용 주체</div>
+          <div class="v">광역지자체가 운영규정과 이 지침의 범위 내에서 시·도별 '사업비 집행 및 관리 기준'을 수립·운용</div>
+        </div>
+        <div class="info-box">
+          <div class="k">예외 적용 대상</div>
+          <div class="v">글로컬대학 실행계획서, 초광역 과제(COSS·SCOUT)는 이 지침과 협의체 자체 세부 기준만 적용</div>
+        </div>
+        <div class="info-box">
+          <div class="k">관계 법령</div>
+          <div class="v">보조금 관리에 관한 법률, 국고보조금 통합관리지침, 교육부 국고보조사업 관리규정, 지역혁신중심 대학지원체계 운영규정 등</div>
+        </div>
+      </div>
+      <div class="note">국·공립대 통합 지원을 위한 지방비는 이 지침 적용에서 제외되며, '대학통·폐합 신청서'에 따라 별도 집행합니다.</div>
+    </section>
+
+    <section id="general">
+      <h2>사업비 관리 일반사항</h2>
+      <div class="info-grid">
+        <div class="info-box">
+          <div class="k">사업연도</div>
+          <div class="v">매년 3월 1일 ~ 다음연도 2월 말일 (의과대학 교육혁신 지원과제는 별도 기간)</div>
+        </div>
+        <div class="info-box">
+          <div class="k">회계연도</div>
+          <div class="v">매년 1월 1일 ~ 12월 31일</div>
+        </div>
+        <div class="info-box">
+          <div class="k">사업비 관리 체계</div>
+          <div class="v">대학본부·산학협력단 등 중앙관리부서에서 총괄 관리, 별도 계정 설정·구분 회계, e나라도움으로 교부·집행</div>
+        </div>
+        <div class="info-box">
+          <div class="k">지출 방법</div>
+          <div class="v">보조금전용카드(e나라도움 카드) 또는 계좌이체 원칙 · 인건비·회의수당·성과급은 계좌이체 · 불가피 시 법인카드/현금(사유서)</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:15px; margin: 22px 0 8px;">인정 가능한 거래 증빙</h3>
+      <div class="pill-row">
+        <span class="pill">카드 매출 전표</span>
+        <span class="pill">전자 세금계산서</span>
+        <span class="pill">공공기관 발행 영수증</span>
+        <span class="pill">계좌이체 증빙자료</span>
+      </div>
+
+      <h3 style="font-size:15px; margin: 22px 0 8px;">지출관리 핵심</h3>
+      <ul class="plain">
+        <li>모든 지출은 내부품의서·지출원인행위서 등 집행계획에 근거해야 하며, 관련 서류는 사업 종료 후 5년간 보존 (단, e나라도움 등록 자료는 예외)</li>
+        <li>원인행위와 지출행위는 동일 사업연도 내에 발생해야 함</li>
+        <li>국고보조금과 대응자금 집행내역은 각각 구분 처리</li>
+        <li>유흥업소 등 카드사용 제한 업종에서의 사용은 정당한 집행으로 인정되지 않음</li>
+      </ul>
+
+      <h3 style="font-size:15px; margin: 22px 0 8px;">집행점검 · 부정수급 대응</h3>
+      <ul class="plain">
+        <li>지역앵커센터가 e나라도움을 통해 <strong>월 1회 이상</strong> 집행점검(모니터링) 실시</li>
+        <li>부당사용 발견 시 대학·기관 자체점검 → 지역앵커센터 보고 → 필요 시 추가 점검, 결과는 교육부·광역지자체에 보고</li>
+        <li>거짓 신청, 목적 외 사용 등이 확인되면 교부결정 취소, 사업비 반환, 제재부과금 부과, 사업 수행배제, 명단 공표 등 조치 가능 (아래 '부정수급 대응' 참고)</li>
+      </ul>
+    </section>
+
+    <section id="items">
+      <h2>예산 항목별 편성·집행 기준 (10종)</h2>
+      <div class="lede">「지역혁신중심 대학지원체계 운영규정」별표2에서 정한 10개 항목별 사용 용도와 주요 집행 제한 항목입니다.</div>
+
+      <div class="item-card" id="i1" data-kw="인건비 보직수당 성과급 인센티브 신규채용 퇴직금 4대보험 글로컬대학 3차개정">
+        <div class="item-head"><span class="num">①</span><h3>인건비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>사업 수행에 필요한 신규채용 교원·직원 인건비(퇴직금, 4대 보험 포함) — 대학본부·산학협력단 소속 교직원은 원칙적으로 지급 불가</li>
+              <li>예외: ①사업단 등 전담조직에서 앵커 업무를 전담하는 경우, ②PBS 방식 운영기관 직원이 참여하는 경우 — 인사발령·업무분장 등 공신력 있는 증빙 필요</li>
+              <li>학부·대학원생 등 단기근로 보조인력 인건비</li>
+              <li>전담조직 책임자 보직수당, 사업성과 우수자·기여자 성과급(인센티브)</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>전담이 아닌 기존 교·직원(대학본부 등 포함)의 급여, 직무교육비, 연수비</li>
+              <li>전담조직 외 타 부서 겸직자의 인건비 대체·지급</li>
+              <li>통상적 업무수행 수당(보고서 작성·위원회 참석·자체평가·정규강의·전산개발 수당 등)</li>
+              <li>평가 근거 없는 균등 배분 성과급, 타 사업과 중복 지급된 보직수당·성과급</li>
+              <li>당해연도 근무기간에 해당하지 않는 퇴직금 적립</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-foot">
+          보직수당+성과급 합산 <strong>사업비 총액의 5% 이내, 연간 1인당 최대 1,000만원</strong> (COSS는 1인당 최대 1,500만원, 보직수당은 불가) ·
+          <strong>4차 개정:</strong> 글로컬대학은 3차 개정('26.6.) 인건비 기준 변경사항 미적용
+        </div>
+      </div>
+
+      <div class="item-card" id="i2" data-kw="장학금 학자금 재학생 휴학생 근로장학금">
+        <div class="item-head"><span class="num">②</span><h3>장학금</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>(전문)학사학위과정 재학생 대상 학자 보조금</li>
+              <li>(전문기술)석사·박사학위과정 재학생 및 수료생 대상 학자 보조금</li>
+              <li>그 밖에 성인학습자 등(비학위 포함) 대상 학자 보조금</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>본 사업 미참여 학생에 대한 장학금</li>
+              <li>학자금 보조가 아닌 생활비 보조 성격의 장학금 (근로장학금은 예외)</li>
+              <li>한국장학재단 학자금 이중 지원 범위를 초과하는 장학금</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-foot">지급 대상은 재학생 한정 (휴학생·졸업생·졸업유예생 불가, 석·박사 수료생은 포함) · 세부 기준은 대학 장학금 지급 규정으로 관리</div>
+      </div>
+
+      <div class="item-card" id="i3" data-kw="교육 연구 프로그램 개발 운영비 강의료 원고료 국제화 현장실습 OJT">
+        <div class="item-head"><span class="num">③</span><h3>교육·연구 프로그램 개발·운영비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>개발비: 신규 교과목·교재·강의법 개발</li>
+              <li>운영비: 정책연구비, 강의료, 원고료, 교육학술활동비, 실험실습비, 현장실습학기제·현장훈련(OJT) 운영비</li>
+              <li>국제화 경비: 교류 경비, 국제화 프로그램 운영비 등 국외 교육·연구활동 관련 비용</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>내부 교·직원의 기존 업무범위(강의·연구·학생지도 등)에 이미 인건비·수당이 지급된 활동에 대한 중복 수당</li>
+              <li>중복·이중지원 성격 경비(예: 기존 교재 원고료), 개인 연구활동비·학원 수강료·자격증 응시료</li>
+              <li>외유성이거나 목적 불분명한 해외 연수비, 자율 현장실습학기제 지원비</li>
+              <li>대학 부속·부설기관 운영비성 경비, 통상적 교직원 연수비·워크숍 비용</li>
+              <li>기업에 지급하는 참여 독려용 대가성 비용(상품권 등)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-card" id="i4" data-kw="교육 연구 환경개선비 강의실 실험실 실습실 리모델링 시설 전산시스템">
+        <div class="item-head"><span class="num">④</span><h3>교육·연구 환경개선비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>강의실·실험실·실습실·도서관 등 내부 설비, 냉난방, 인테리어 개선</li>
+              <li>기존 건물·설비 유지보수, 사무실 임대료·관리비</li>
+              <li>책상·실험대 등 교육환경 개선용 기자재 구입 (환경개선 계약에 포함된 경우)</li>
+              <li>산학협력 공간 조성, 사업 관련 전산시스템 구축비</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>토지 매입, 건물 신축·증축·개축 비용</li>
+              <li>사업과 무관한 환경개선(캠퍼스 조경, 보도블록 교체, 학생회관 리모델링, 조명, 광장조성 등)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-foot">예외: 글로컬대학(증축·개축, 지방비는 신축 가능)·대학산학협력단지·조기취업형 계약학과는 사전 계획 명시 + 교육부 사전협의 시 건물 관련 비용 제한적 허용</div>
+      </div>
+
+      <div class="item-card" id="i5" data-kw="실험 실습장비 기자재 구입 운영비 3천만원 1억원 승인 자산관리대장">
+        <div class="item-head"><span class="num">⑤</span><h3>실험·실습장비 및 기자재 구입·운영비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>장비·기자재(H/W, S/W) 설치·구입, 임차·유지·보수·이전 비용</li>
+              <li>운영 관리를 위한 PC, S/W, 부품, 소모품, 라이선스 비용</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>사업과 무관한 기자재(서버 포함) 및 소프트웨어</li>
+              <li>교·직원·기관 직원 개인연구 활동을 위한 장비·기자재</li>
+              <li>사전 승인 없이 구입한 3천만원 이상 장비·기자재</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-foot">
+          <strong>승인 기준</strong> — 3천만원 이상: 대학(협의체) 자체 심의·의결 / 3천만원~1억원 미만: 지역앵커센터 사전승인 / 1억원 이상: 중앙앵커센터 사전승인 (COSS는 3천만원 이상부터 중앙승인) ·
+          자산관리대장 등재 및 관리번호·바코드·RFID 부착 필수 · 도입은 사업연도 종료 2개월 전까지 완료
+        </div>
+      </div>
+
+      <div class="item-card" id="i6" data-kw="지역 연계 협업 지원비 지자체 공동교육과정">
+        <div class="item-head"><span class="num">⑥</span><h3>지역 연계·협업 지원비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>기관 간 연계·협업 활동, 지·산·학·연 정보 공유, 대학 간 공동 교육과정 설계·운영</li>
+              <li>지자체와 연계한 지역문제 해결 등에 필요한 비용</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>대학의 역할 없이 지자체 행사 등에 예산만 지원</li>
+              <li>사업과 무관한 지역·대학 축제/행사 개최(주류 구입, 연예인 초청 등)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-card" id="i7" data-kw="기업 지원 협력 활동비 산학연 R&BD 컨설팅 재직자교육">
+        <div class="item-head"><span class="num">⑦</span><h3>기업 지원·협력 활동비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>산학연 공동 기술·지식 개발(R&BD) 비용 — 연구비 사용은 「국가연구개발사업 연구개발비 사용 기준」 준용</li>
+              <li>애로기술 지도·컨설팅, 재직자 교육, 융복합 기술사업화 등 기업·지역·협력기관 지원 비용</li>
+              <li>산학연계 공동 세미나·포럼, 산학협력·직업평생교육협의체 운영비</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>대학의 역할 없이 기업 등에 예산만 지원(홈페이지 구축, 홍보물 제작 등)</li>
+              <li>기업 등에 지급되는 대가성 비용(홍보물, 상품권, 기념품 등)</li>
+              <li>교·직원 및 기관 직원의 개인 연구활동비</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-card" id="i8" data-kw="성과 활용 확산 지원비 기술이전 사업화 특허 시제품 세미나">
+        <div class="item-head"><span class="num">⑧</span><h3>성과 활용·확산 지원비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>연구개발서비스 활용비: 시험·분석·검사, 임상시험, 특허정보조사, DB 사용료 등</li>
+              <li>기술이전·사업화 비용: 시제품 제작·검증, 지식재산권 출원·등록·유지, 사업화 분석·투자유치, 학생 창업 프로젝트 등</li>
+              <li>성과 공유·확산비: 세미나·포럼 개최비, 위원회 수당 등</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>대학·기관의 통상업무 경비(직원 워크숍 경비 등)</li>
+              <li>기술이전·사업화, 산학협력 확산과 무관한 행사비, 외유성 출장비</li>
+              <li>실제 기술이전이 발생하지 않은 관련 비용</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-card" id="i9" data-kw="그 밖의 사업운영 경비 여비 회의비 도서구입비 홍보비">
+        <div class="item-head"><span class="num">⑨</span><h3>그 밖의 사업운영 경비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>여비(대학 자체규정 준용, 국립대는 공무원 여비규정 준용), 교육활동지원비, 도서구입비</li>
+              <li>일반수용비(사무용품·인쇄비·수수료·사용료 등), 홍보비, 회의비(회의록 등 증빙 구비), 각종 행사경비</li>
+              <li>신규 채용인력 공개임용 시 필요 경비</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>통상업무 경비(직원 워크숍 경비 등)</li>
+              <li>사업과 무관한 홍보비·행사비·기념품비(광고, 입시설명회, 신입생 모집, 브로슈어 등)</li>
+              <li>무관한 일회성 행사비, 외유성 출장비, 개인 연구활동비·학회비(연회비 등)</li>
+              <li>내부 규정 미준수 회의비·주류 구입 비용, 사업 목적과 무관한 도서구입·교육훈련비</li>
+              <li>개인에 대한 포상 성격 비용(선물비, 경조사비, 화환 등)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-card" id="i10" data-kw="간접비 산학협력단 총괄관리">
+        <div class="item-head"><span class="num">⑩</span><h3>간접비</h3></div>
+        <div class="item-body">
+          <div class="item-col">
+            <div class="label">사용 용도</div>
+            <ul>
+              <li>교육연구단·산학협력단 등 앵커사업 총괄 관리를 위한 경비</li>
+              <li>산학협력단 회계로 계정을 설치한 대학에 한해, 직접 관리하는 사업비의 3% 이내에서 계상·집행</li>
+            </ul>
+          </div>
+          <div class="item-col limit">
+            <div class="label">주요 집행 제한</div>
+            <ul>
+              <li>사업과 관계없는 인건비 또는 경상운영비로의 집행</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-foot">세부 집행 내역은 별도 보고 의무는 없으나, 기관 자체적으로 증빙 구비·책임 관리 필요</div>
+      </div>
+    </section>
+
+    <section id="ratio">
+      <h2>편성 비율표</h2>
+      <div class="lede">직접 집행·관리하는 당해연도 총 사업비(지자체 대응자금 포함)를 기준으로 구간별로 편성합니다.</div>
+
+      <div class="table-scroll">
+      <table class="ratio">
+        <caption>인건비 — 지역별 앵커계획에 따라 수주한 사업비</caption>
+        <thead><tr><th>총 사업비 규모</th><th>10억 원 이하</th><th>10억~100억 원</th><th>100억~200억 원</th><th>200억 원 초과</th></tr></thead>
+        <tbody><tr><td>인건비 비율</td><td class="figure">30% 이내</td><td class="figure">25% 이내</td><td class="figure">20% 이내</td><td class="figure">15% 이내</td></tr></tbody>
+      </table>
+      </div>
+
+      <div class="table-scroll">
+      <table class="ratio">
+        <caption>인건비 — 특성화지방대학(글로컬대학)</caption>
+        <thead><tr><th>총 사업비 규모</th><th>100억 원 이하</th><th>100억~200억 원</th><th>200억~300억 원</th><th>300억 원 초과</th></tr></thead>
+        <tbody><tr><td>인건비 비율</td><td class="figure">25% 이내</td><td class="figure">15% 이내</td><td class="figure">5% 이내</td><td class="figure">3% 이내</td></tr></tbody>
+      </table>
+      </div>
+
+      <div class="table-scroll">
+      <table class="ratio">
+        <caption>인건비 — 의과대학 교육혁신 지원과제</caption>
+        <thead><tr><th>총 사업비 규모</th><th>10억 원 이하</th><th>10억 원 초과</th></tr></thead>
+        <tbody><tr><td>인건비 비율</td><td class="figure">30% 이내</td><td class="figure">25% 이내</td></tr></tbody>
+      </table>
+      </div>
+
+      <div class="table-scroll">
+      <table class="ratio">
+        <caption>인건비 — 초광역 과제 및 대학산학협력단지</caption>
+        <thead><tr><th>구분</th><th>인건비 편성 비율 (과제별 총 사업비 대비)</th></tr></thead>
+        <tbody>
+          <tr><td>COSS</td><td class="figure">40% 이내</td></tr>
+          <tr><td>SCOUT</td><td class="figure">25% 이내</td></tr>
+          <tr><td>대학산학협력단지</td><td class="figure">20% 이내</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="table-scroll">
+      <table class="ratio">
+        <caption>그 밖의 사업운영 경비 · 간접비</caption>
+        <thead><tr><th>구분</th><th>그 밖의 사업운영 경비</th><th>간접비</th></tr></thead>
+        <tbody>
+          <tr><td>앵커 / 글로컬대학 / 의과대학</td><td class="figure">5% 이내 (간접비 별도 편성 시 3% 이내)</td><td class="figure">3% 이내</td></tr>
+          <tr><td>COSS</td><td class="figure">10% 이내</td><td class="figure">3% 이내</td></tr>
+          <tr><td>SCOUT</td><td class="figure">5% 이내</td><td class="figure">5% 이내</td></tr>
+          <tr><td>대학산학협력단지</td><td class="figure">5% 이내</td><td class="figure">3% 이내</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="note">간접비는 산학협력단 회계 또는 법인회계에 한해 편성 가능합니다.</div>
+    </section>
+
+    <section id="change">
+      <h2>사업비 변경</h2>
+      <ul class="plain">
+        <li>단위과제 간, 또는 사업비 항목 내·항목 간 예산을 변경하려면 대학 자체 규정에 따라 심의·의결 기구를 통해 변경</li>
+        <li>복수 기관이 협의체로 참여하는 단위과제는 심의·의결 전 협의체 구성기관 간 사전협의 필요</li>
+        <li>변경 계획은 지역앵커센터에 사전 통지 → 심의·의결 후 수정사업계획서를 작성해 보고</li>
+        <li>e나라도움 보조비목·보조세목의 신설, 보조비목 간 전용은 지역앵커센터의 승인 필요 (사유·보조비목 명시)</li>
+        <li>항목 간 변경 시에도 항목별 편성 비율·기준은 준수해야 하며, 성과급·간접비는 상한 초과 증액 불가</li>
+        <li>변경 내역은 해당 사업연도 연차실적보고서에 포함 제출 (지역앵커센터 요청 시 반기·분기별 제출 가능)</li>
+      </ul>
+      <div class="note">단위과제 간 예산 변경 후 목표 성과지표를 달성하지 못하면, 지역앵커위원회 심의·의결을 거쳐 차년도 참여 제한·사업비 삭감 등의 조치가 가능합니다.</div>
+    </section>
+
+    <section id="settle">
+      <h2>이월 · 정산 · 반납</h2>
+
+      <h3 style="font-size:15px; margin-bottom:10px;">사업비 이월</h3>
+      <ul class="steps">
+        <li>원칙적으로 이월은 허용되지 않으며, 부득이한 경우에도 2회계연도를 초과할 수 없음</li>
+        <li>불가피한 경우 사업연도 보조금 예산의 <strong>10% 이내(총액 기준)</strong>에서 다음 사업연도로 이월</li>
+        <li>사업 종료일 30일 전까지 지역앵커센터에 이월 승인 신청</li>
+        <li>지역앵커센터는 종료 15일 전까지 승인 여부 통보</li>
+        <li>이월한 사업비는 특별한 사유가 없는 한 당해연도 사업비보다 먼저 집행</li>
+      </ul>
+
+      <h3 style="font-size:15px; margin: 22px 0 10px;">정산 · 검증</h3>
+      <ul class="plain">
+        <li>사업 종료, 폐지 승인, 또는 회계연도 종료 후 <strong>2개월 이내</strong> e나라도움을 통해 정산 실시 및 정산보고서 제출</li>
+        <li>국고보조금 총액이 <strong>1억 원 이상</strong>인 경우 외부감사인으로부터 정산보고서 적정성 검증 필요</li>
+        <li>같은 회계연도 교부액이 <strong>10억 원 이상</strong>인 경우, 교부결정 통지 후 3개월 이내 감사인 선임 → 사업연도 종료 후 4개월 이내 감사보고서 첨부 재무제표 제출</li>
+        <li>2년 이상 계속 교부 + 직전 회계연도 감사보고서 제출 완료 시 해당연도 감사보고서 생략 가능</li>
+      </ul>
+
+      <h3 style="font-size:15px; margin: 22px 0 10px;">반납 · 수익금 처리</h3>
+      <ul class="plain">
+        <li>정산 결과에 따른 집행잔액과 이자는 반납</li>
+        <li>위약금 수입, 환율차익, 4대보험 정산 반환금, 카드포인트 등 부수 수익은 재원별 비율에 따라 국비·지방비로 반납</li>
+        <li>사업 수행으로 발생한 유·무형 결과물(기자재, 저작권, 시작품, 산업재산권 등)은 협약에 따라 사업수행 주체가 소유하는 것이 원칙</li>
+        <li>부가가치세 등 사후 환급·공제 가능 금액은 원칙적으로 집행금액에서 제외</li>
+      </ul>
+    </section>
+
+    <section id="penalty">
+      <h2>사업비 부정수급 대응</h2>
+      <div class="lede">거짓 신청, 목적과 다른 사용, 교부목적 위배 등이 확인되면 법령에 따라 아래 조치가 가능합니다.</div>
+      <div class="pill-row">
+        <span class="pill">교부결정 전부·일부 취소</span>
+        <span class="pill">사업비 반환</span>
+        <span class="pill">제재부과금 부과·징수</span>
+        <span class="pill">앵커사업 수행배제</span>
+        <span class="pill">명단 공표</span>
+      </div>
+    </section>
+
+    <section id="downloads">
+      <h2>서식 다운로드</h2>
+      <div class="dl-box">
+        <span class="ic">📄</span>
+        <div class="txt"><strong>첨부2 인센티브 집행 체크리스트</strong> — 빈 서식(PDF)을 내려받아 대학·사업단명을 기재해 사용하세요.</div>
+        <a class="dl-btn" href="/_blob/89c132ecb90bfa60f2e601c53f472a5a" id="dlBtn" download="앵커지침_첨부2_인센티브집행체크리스트.pdf">⬇ 서식 다운로드 (PDF)</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  「지역성장 인재양성체계(앵커) 사업비 집행 및 관리 지침」(교육부, 2026. 9. 4차 개정) 원문을 바탕으로 열람 편의를 위해 재구성한 참고용 정리입니다. 실제 집행 시에는 원문 지침 및 소속 시·도의 세부 기준을 함께 확인하세요.
+</footer>
+
+<script>
+  // Active nav highlighting
+  const sections = document.querySelectorAll('main section, .item-card');
+  const links = document.querySelectorAll('nav.side a');
+  const linkMap = {};
+  links.forEach(l => linkMap[l.getAttribute('href').slice(1)] = l);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      if (!linkMap[id]) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        linkMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(s => { if (s.id) observer.observe(s); });
+
+  // Search filter across item cards
+  const searchBox = document.getElementById('searchBox');
+  const cards = document.querySelectorAll('.item-card');
+  searchBox.addEventListener('input', () => {
+    const q = searchBox.value.trim().toLowerCase();
+    cards.forEach(card => {
+      const text = (card.getAttribute('data-kw') + ' ' + card.textContent).toLowerCase();
+      card.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
