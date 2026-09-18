@@ -35,7 +35,7 @@
   }
   * { box-sizing: border-box; }
   html, body { margin:0; padding:0; }
-  body { background: var(--paper); color: var(--ink); font-family:'Noto Sans KR',sans-serif; line-height:1.7; font-size:15.3px; }
+  body { background: var(--paper); color: var(--ink); font-family:'Noto Sans KR',sans-serif; line-height: 1.55; font-size:15.3px; }
   h1,h2,h3,h4 { font-family:'Noto Serif KR',serif; color: var(--ink); margin:0; }
   a { color: inherit; }
 
@@ -134,7 +134,7 @@ nav.side a:focus-visible { outline-offset: -2px; }
   .tree-card { display: none !important; }
 
   html { -webkit-text-size-adjust: 100%; }
-  body { line-height: 1.78; }
+  body { line-height: 1.5; }
 
   nav.side {
     -webkit-overflow-scrolling: touch;
@@ -191,6 +191,31 @@ nav.side a:focus-visible { outline-offset: -2px; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+}
+</style>
+
+<style>
+/* ===== Line-height tightened + author badge pinned top-right on mobile ===== */
+@media (max-width: 860px) {
+  .meta-badge {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    display: block !important;
+    margin-top: 0 !important;
+    text-align: right !important;
+    font-size: 9.5px !important;
+    line-height: 1.4 !important;
+    padding: 5px 8px !important;
+    max-width: 42vw;
+    border-radius: 6px !important;
+  }
+  .meta-badge .k { display: block; margin-right: 0 !important; font-size: 9px !important; }
+  .masthead-inner { padding-right: 100px; }
+}
+@media (max-width: 480px) {
+  .meta-badge { font-size: 8.5px !important; padding: 4px 7px !important; max-width: 40vw; }
 }
 </style>
 </head>
