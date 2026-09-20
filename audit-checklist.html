@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사업비 회계감사 대비 체크리스트 및 규정 보완 제안</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F2; --panel: #FFFFFF; --ink: #16241C; --ink-soft: #55635B;
+    --line: #D8E0D9; --line-soft: #E6ECE7;
+    --ku-green: #0F5B3B; --ku-green-deep: #0A3F28; --ku-green-soft: #E7F1EB;
+    --ku-orange: #D9822B; --ku-orange-soft:#FBF0E2;
+    --red: #9A3B3B; --red-bg: #F7E8E6; --red-soft:#FBEFEE;
+    --amber:#9A6A1E; --amber-bg:#FBF1DE;
+    --blue: #2F5C8A; --blue-soft: #E9EFF6;
+    --chip: #E6ECE7; --shadow: rgba(15,60,40,0.10);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+      --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+      --ku-green-soft:#173327; --ku-orange:#E8A968; --ku-orange-soft:#2D2418;
+      --red:#E09A9A; --red-bg:#2E1F1F; --red-soft:#241C1C; --amber:#E0C088; --amber-bg:#2C2417;
+      --blue:#7FA8D6; --blue-soft:#1B2A38; --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+    --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+    --ku-green-soft:#173327; --ku-orange:#E8A968; --ku-orange-soft:#2D2418;
+    --red:#E09A9A; --red-bg:#2E1F1F; --red-soft:#241C1C; --amber:#E0C088; --amber-bg:#2C2417;
+    --blue:#7FA8D6; --blue-soft:#1B2A38; --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body { background: var(--paper); color: var(--ink); font-family:'Noto Sans KR',sans-serif; line-height:1.55; font-size:15.4px; }
+  h1,h2,h3,h4 { font-family:'Noto Serif KR',serif; color: var(--ink); margin:0; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--ku-orange); outline-offset:2px; border-radius:4px; }
+  *{ -webkit-tap-highlight-color: rgba(0,0,0,0.08); }
+
+  .masthead { background: var(--ku-green-deep); color:#F4F8F5; padding:30px 28px 26px; border-bottom:4px solid var(--ku-orange); position:relative; }
+  .masthead-inner { max-width:1220px; margin:0 auto; display:flex; align-items:flex-start; gap:16px; position:relative; }
+  .bull-badge { width:46px; height:46px; border-radius:50%; background: var(--ku-orange); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+  .masthead .tag { font-size:12.5px; letter-spacing:.02em; color:#CFE3D6; margin-bottom:10px; }
+  .masthead h1 { font-size:23px; font-weight:600; color:#FBFDFB; line-height:1.4; max-width:760px; }
+  .masthead .sub { margin-top:8px; color:#BFDBC9; font-size:14px; max-width:760px; }
+
+  .meta-badge { position:absolute; top:0; right:0; text-align:right; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:10px 14px; font-size:12px; color:#DCE7E0; line-height:1.6; }
+  .meta-badge .k { color:#B7D9C6; margin-right:6px; }
+  .meta-badge a { color:#F0D9A6; text-decoration:underline; }
+
+  .summary-bar { max-width:1220px; margin:-14px auto 0; padding:0 28px; position:relative; z-index:2; }
+  .summary-card { background: var(--panel); border:1px solid var(--line-soft); border-radius:8px; padding:16px 20px; box-shadow:0 6px 18px var(--shadow); display:flex; gap:18px; flex-wrap:wrap; }
+  .sfact { flex:1; min-width:140px; }
+  .sfact .num { font-family:'Noto Serif KR',serif; font-size:23px; font-weight:700; color: var(--ku-green); }
+  .sfact .desc { font-size:12px; color: var(--ink-soft); margin-top:2px; }
+  .sfact.warn .num { color: var(--red); }
+  .sfact.amber .num { color: var(--amber); }
+
+  .layout { max-width:1220px; margin:30px auto 80px; padding:0 28px; display:grid; grid-template-columns:240px 1fr; gap:40px; }
+  nav.side { position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow-y:auto; padding-right:6px; }
+  nav.side .group { margin-bottom:16px; }
+  nav.side .group-label { font-size:11.5px; color:var(--ink-soft); letter-spacing:.03em; margin-bottom:6px; padding-left:10px; }
+  nav.side a { display:block; text-decoration:none; font-size:12.8px; color:var(--ink-soft); padding:5px 10px; border-left:2px solid transparent; border-radius:0 4px 4px 0; transition:color .15s,border-color .15s,background .15s; }
+  nav.side a:hover { color:var(--ku-green); background:var(--panel); }
+  nav.side a.active { color:var(--ku-green); border-left-color:var(--ku-orange); background:var(--panel); font-weight:600; }
+
+  main { min-width:0; }
+  section { margin-bottom:52px; }
+  section h2 { font-size:19.5px; font-weight:600; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:6px; scroll-margin-top:20px; }
+  section .chapter-sub { font-size:13px; color:var(--ink-soft); margin-bottom:18px; }
+  section > .lede { color:var(--ink-soft); font-size:13.8px; margin-bottom:20px; }
+
+  ul.plain { margin:8px 0 0; padding-left:18px; } ul.plain li { margin-bottom:7px; font-size:14.2px; }
+  .note { font-size:12.8px; color:var(--ink-soft); border-left:2px solid var(--line); padding-left:10px; margin:10px 0; }
+
+  /* Gap-analysis cards */
+  .gap-card { border:1px solid var(--line-soft); border-radius:8px; background:var(--panel); margin-bottom:14px; overflow:hidden; scroll-margin-top:20px; }
+  .gap-head { display:flex; align-items:center; gap:10px; padding:13px 18px; border-bottom:1px solid var(--line-soft); flex-wrap:wrap; }
+  .gap-head .gnum { font-family:'Noto Serif KR',serif; color:var(--ku-green); font-weight:700; font-size:14px; }
+  .gap-head h3 { font-size:15px; font-weight:600; flex:1; min-width:160px; }
+  .gap-body { padding:12px 18px 16px; font-size:13.4px; }
+  .gap-body p { margin:0 0 8px; }
+  .gap-body .propose { background: var(--ku-green-soft); border-left:3px solid var(--ku-green); padding:8px 12px; border-radius:0 6px 6px 0; margin-top:8px; font-size:13px; }
+  .gap-body .propose strong { color: var(--ku-green-deep); }
+
+  .risk-tag { font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:12px; white-space:nowrap; }
+  .risk-tag.high { background: var(--red); color:#fff; }
+  .risk-tag.mid { background: var(--amber); color:#fff; }
+  .risk-tag.low { background: var(--blue); color:#fff; }
+
+  /* Checklist categories */
+  .cat-card { border:1px solid var(--line-soft); border-radius:10px; background:var(--panel); margin-bottom:22px; overflow:hidden; scroll-margin-top:20px; }
+  .cat-head {
+    display:flex; align-items:center; gap:12px; padding:15px 20px;
+    background: var(--ku-green-soft); border-bottom:1px solid var(--line-soft); flex-wrap:wrap;
+  }
+  .cat-head.risk-high { background: var(--red-bg); }
+  .cat-head.risk-mid { background: var(--amber-bg); }
+  .cat-head .cnum { font-family:'Noto Serif KR',serif; font-weight:700; font-size:16px; color: var(--ku-green); }
+  .cat-head.risk-high .cnum { color: var(--red); }
+  .cat-head.risk-mid .cnum { color: var(--amber); }
+  .cat-head h3 { font-size:16px; font-weight:600; flex:1; min-width:160px; }
+  .cat-refs { padding: 10px 20px 0; display:flex; flex-wrap:wrap; gap:6px; }
+  .ref-pill { font-size:11px; background:var(--chip); color:var(--ink-soft); padding:3px 9px; border-radius:12px; }
+  .check-list { list-style:none; margin:0; padding: 10px 20px 18px; }
+  .check-list li {
+    display:flex; align-items:flex-start; gap:10px; padding:8px 4px;
+    border-bottom:1px dashed var(--line-soft); font-size:13.6px;
+  }
+  .check-list li:last-child { border-bottom:none; }
+  .check-list input[type="checkbox"] {
+    width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color: var(--ku-green);
+  }
+  .check-list .citem { flex:1; }
+  .check-list .csub { display:block; font-size:11.8px; color: var(--ink-soft); margin-top:2px; }
+
+  .table-scroll { overflow-x:auto; }
+  table.ratio { width:100%; border-collapse:collapse; font-size:13px; margin:10px 0 18px; }
+  table.ratio th, table.ratio td { border:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+  table.ratio thead th { background:var(--chip); font-weight:600; }
+  table.ratio td.figure { color: var(--ku-orange); font-weight:600; }
+
+  .priority-card { border-radius:8px; padding:14px 18px; margin-bottom:12px; border:1px solid; }
+  .priority-card.now { background: var(--red-bg); border-color: var(--red); }
+  .priority-card.soon { background: var(--amber-bg); border-color: var(--amber); }
+  .priority-card.later { background: var(--blue-soft); border-color: var(--blue); }
+  .priority-card .ptitle { font-weight:700; font-size:13.5px; margin-bottom:6px; }
+  .priority-card.now .ptitle { color: var(--red); }
+  .priority-card.soon .ptitle { color: var(--amber); }
+  .priority-card.later .ptitle { color: var(--blue); }
+  .priority-card ul { margin:0; padding-left:18px; }
+  .priority-card li { font-size:13px; margin-bottom:5px; }
+
+  .search-wrap { margin-bottom:22px; }
+  .search-wrap input { width:100%; font-family:inherit; font-size:14px; padding:11px 14px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); }
+  .search-wrap input:focus { outline:2px solid var(--ku-green); outline-offset:1px; }
+  .search-hint { font-size:12px; color:var(--ink-soft); margin-top:6px; }
+
+  footer { max-width:1220px; margin:0 auto 60px; padding:20px 28px; color:var(--ink-soft); font-size:12.3px; border-top:1px solid var(--line); }
+
+  @media (max-width:860px) {
+    .layout { grid-template-columns:1fr; padding-left:16px !important; padding-right:16px !important; gap:24px !important; }
+    nav.side { position:static; max-height:none; display:flex; overflow-x:auto; gap:4px; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:10px; -webkit-overflow-scrolling: touch; }
+    nav.side .group { display:flex; gap:4px; margin-bottom:0; flex-shrink:0; }
+    nav.side .group-label { display:none; }
+    nav.side a { white-space:nowrap; border-left:none; border-bottom:2px solid transparent; padding:11px 16px !important; min-height:40px; display:flex; align-items:center; font-size:13.6px !important; }
+    nav.side a.active { border-left:none; border-bottom-color:var(--ku-orange); }
+    .masthead { padding:22px 18px 20px !important; }
+    .masthead h1 { font-size:19px !important; line-height:1.45 !important; }
+    .masthead .sub { font-size:13.3px !important; }
+    .meta-badge { position:absolute !important; top:0 !important; right:0 !important; font-size:9.5px !important; padding:5px 8px !important; line-height:1.4 !important; max-width:42vw; }
+    .meta-badge .k { display:block; font-size:9px !important; }
+    .masthead-inner { padding-right:100px; }
+    section h2 { font-size:17.5px !important; }
+    .cat-head h3 { font-size:14.5px !important; }
+    table.ratio { font-size:12.4px !important; }
+  }
+  @media (max-width:480px) {
+    .masthead h1 { font-size:17px !important; }
+    body { font-size:14.6px !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="meta-badge">
+      <div><span class="k">작성자</span>앵커김군 (<a href="mailto:coolzet@konkuk.ac.kr">coolzet@konkuk.ac.kr</a>)</div>
+      <div><span class="k">업데이트</span>2026. 9. 18.</div>
+    </div>
+    <div class="bull-badge">🔎</div>
+    <div>
+      <div class="tag">규정·행정·감사 관점 종합 검토</div>
+      <h1>사업비 회계감사 대비 체크리스트 및 규정 보완 제안</h1>
+      <div class="sub">대시보드에 게시된 9개 규정 전체를 감사 전문가 관점에서 재검토해 미비사항·보완사항을 제시하고, 교육부 등 정부재정지원사업 감사에서 공통적으로 지적되는 항목을 기준으로 사전점검 체크리스트를 구성했습니다.</div>
+    </div>
+  </div>
+</header>
+
+<div class="summary-bar">
+  <div class="summary-card">
+    <div class="sfact warn"><div class="num">10건</div><div class="desc">규정 체계 미비·보완 제안 사항</div></div>
+    <div class="sfact"><div class="num">11개</div><div class="desc">감사 대비 점검 카테고리</div></div>
+    <div class="sfact amber"><div class="num">50+</div><div class="desc">체크리스트 항목 수</div></div>
+    <div class="sfact"><div class="num">3단계</div><div class="desc">우선순위별 개선 로드맵</div></div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="side" id="sideNav">
+    <div class="group">
+      <div class="group-label">개요</div>
+      <a href="#overview">검토 방법·범위</a>
+    </div>
+    <div class="group">
+      <div class="group-label">Ⅰ. 규정 체계 보완</div>
+      <a href="#gap">미비사항·보완 제안 (10건)</a>
+    </div>
+    <div class="group">
+      <div class="group-label">Ⅱ. 감사 대비 체크리스트</div>
+      <a href="#c1">① 인건비</a>
+      <a href="#c2">② 학생인건비·연구수당</a>
+      <a href="#c3">③ 물품·장비 구매</a>
+      <a href="#c4">④ 회의비·출장비</a>
+      <a href="#c5">⑤ 사업비 집행 일반</a>
+      <a href="#c6">⑥ 성과급·인센티브</a>
+      <a href="#c7">⑦ 정산·보고</a>
+      <a href="#c8">⑧ 협약·계약 관리</a>
+      <a href="#c9">⑨ 간접비</a>
+      <a href="#c10">⑩ 윤리·이해충돌·보안</a>
+      <a href="#c11">⑪ 문서관리·정보공시</a>
+    </div>
+    <div class="group">
+      <div class="group-label">Ⅲ. 로드맵</div>
+      <a href="#roadmap">우선순위별 개선 권고</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="search-wrap">
+      <input type="text" id="searchBox" placeholder="키워드로 찾기 (예: 쪼개기, 겸직, 검수, 정산)">
+      <div class="search-hint">입력하면 체크리스트 항목이 실시간으로 필터링됩니다.</div>
+    </div>
+
+    <section id="overview">
+      <h2>검토 방법·범위</h2>
+      <ul class="plain">
+        <li><strong>검토 대상</strong>: 대시보드에 게시된 9개 문서 전체(운영규정·앵커지침·서울기준·산학연매뉴얼·건국대 사업단지침·산학협력연구비내규·구매계약업무요강·검수요강·국가계약법) 및 그간의 조문별 개정 제안 결과</li>
+        <li><strong>관점</strong>: 교육부·감사원·조달청 등이 국고보조사업(연구개발비·인건비·물품구매 등)에서 반복적으로 지적하는 유형을 기준으로, 현재 규정 체계가 이를 예방·적발할 수 있는 절차를 갖추고 있는지 점검</li>
+        <li><strong>구성</strong>: (Ⅰ) 규정 자체의 공백·보완 필요 사항 10건, (Ⅱ) 실무자가 감사 전 자체 점검에 바로 쓸 수 있는 11개 영역·50여개 체크리스트, (Ⅲ) 우선순위별 개선 로드맵</li>
+      </ul>
+      <div class="note">이 체크리스트는 특정 감사 결과를 인용한 것이 아니라, 정부재정지원사업(국고보조사업) 전반에서 반복적으로 관찰되는 지적 유형을 근거로 예방적 관점에서 구성한 참고 자료입니다.</div>
+    </section>
+
+    <section id="gap">
+      <h2>Ⅰ. 규정 체계 미비사항 및 보완 제안 (10건)</h2>
+      <div class="lede">현재 9개 문서는 "얼마를, 어떤 절차로 집행하는가"는 촘촘히 규정하지만, "부정·오류를 사전에 어떻게 막고 상시 점검하는가"에 대한 내부통제 장치는 상대적으로 얇습니다.</div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">1</span><h3>사업비 자체점검·내부통제 운영 규정 부재</h3><span class="risk-tag high">위험 높음</span></div>
+        <div class="gap-body">
+          <p>월 1회 이상 집행점검은 지역앵커센터·서울앵커센터 등 <strong>외부기관</strong> 중심으로만 규정되어 있고, 대학(사업단) 자체의 정기 자체점검 일정·방법·책임자를 명시한 규정이 없습니다.</p>
+          <div class="propose"><strong>제안</strong>: 「앵커사업비 자체점검 및 내부통제 운영지침」을 신설하여 분기별 자체점검 체크리스트, 점검 책임자, 적발 시 시정조치 확인(follow-up) 절차를 명문화</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">2</span><h3>부정사용 제보(공익신고) 채널 및 처리절차 미비</h3><span class="risk-tag high">위험 높음</span></div>
+        <div class="gap-body">
+          <p>산학협력연구비내규는 연구부정행위 "금지"만 규정할 뿐, 제보자 보호·익명신고 채널·처리 절차에 대한 구체적 규정이 없습니다.</p>
+          <div class="propose"><strong>제안</strong>: 사업단 홈페이지에 익명 제보 채널(핫라인)을 개설하고, 제보 접수 → 조사 → 조치 → 제보자 보호까지의 절차를 문서화</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">3</span><h3>포괄적 이해충돌방지 정책 부재</h3><span class="risk-tag mid">위험 중간</span></div>
+        <div class="gap-body">
+          <p>특수관계인 참여 시 확인서(별지8호) 제출 규정은 있으나, 구매·용역 계약 시 계약담당자와 업체 간 이해관계, 평가위원과 신청기관 간 이해관계를 <strong>포괄적으로</strong> 다루는 이해충돌방지 정책은 없습니다.</p>
+          <div class="propose"><strong>제안</strong>: 계약담당자·평가위원 전원에 대해 매 계약 건마다 "이해관계 없음 확인서" 서명을 의무화</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">4</span><h3>계약 분할("쪼개기") 방지 장치 부재</h3><span class="risk-tag high">위험 높음</span></div>
+        <div class="gap-body">
+          <p>동일 목적의 구매를 여러 건으로 나누어 수의계약·비교견적 금액기준을 회피하는 "쪼개기"를 사전에 걸러낼 연간 구매계획 등록·모니터링 절차가 규정에 없습니다.</p>
+          <div class="propose"><strong>제안</strong>: 연간 구매예정 품목을 사전 등록하게 하고, 동일 업체·동일 품목의 반복 발주를 시스템적으로 경보(alert)하는 절차 도입</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">5</span><h3>겸직·중복참여 통합 관리 체계 부재</h3><span class="risk-tag mid">위험 중간</span></div>
+        <div class="gap-body">
+          <p>산학연공동 기술개발과제 매뉴얼은 "참여교원 1인당 사업연도 1과제"로 제한하지만, 이를 사업단 지침·내규 전체와 연계해 인건비·연구수당 이중수령 여부를 통합 조회하는 절차가 없습니다.</p>
+          <div class="propose"><strong>제안</strong>: 참여인력 통합 DB를 구축해 과제 간 인건비·수당 중복 지급 여부를 자동 대조</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">6</span><h3>성과관리(중간·종합평가) 학내 세부 대응계획 미비</h3><span class="risk-tag mid">위험 중간</span></div>
+        <div class="gap-body">
+          <p>운영규정 제33조는 교육부의 연차점검·중간평가·종합평가를 규정하지만, 대학이 이에 대응해 사전 자료를 준비하는 내부 일정·담당·체크리스트는 문서화되어 있지 않습니다.</p>
+          <div class="propose"><strong>제안</strong>: 성과평가 대응 매뉴얼(자료 준비 체크리스트, 담당 부서·기한)을 사업단 지침 별첨으로 추가</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">7</span><h3>사업비카드 발급·해지·분실 처리절차 미비</h3><span class="risk-tag low">위험 낮음</span></div>
+        <div class="gap-body">
+          <p>연구비 법인카드 발급 절차는 있으나, 참여인력 교체·과제 종료 시 카드 회수·해지, 분실 시 대응절차가 명확히 규정되어 있지 않습니다.</p>
+          <div class="propose"><strong>제안</strong>: 카드 발급대장에 회수·해지 확인란을 추가하고, 인력 교체 시 카드 반납을 인사처리와 연동</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">8</span><h3>참여대학 재교부금 사후관리(정산 확인) 절차 구체화 필요</h3><span class="risk-tag mid">위험 중간</span></div>
+        <div class="gap-body">
+          <p>주관대학이 참여대학에 사업비를 재교부하는 구조이나, 참여대학의 집행·정산 결과를 주관대학이 어떤 절차·양식으로 확인하는지 구체적 규정이 없습니다(전체 정산 책임은 주관대학에 귀속).</p>
+          <div class="propose"><strong>제안</strong>: 참여대학별 분기 집행보고 양식을 표준화하고, 주관대학의 확인·승인 절차를 사업단 지침에 명문화</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">9</span><h3>명칭·서식 불일치의 감사 리스크</h3><span class="risk-tag high">위험 높음</span></div>
+        <div class="gap-body">
+          <p>이전 검토에서 발견된 <strong>"RISE→앵커" 명칭 미정비</strong>, <strong>서식23~25 상호참조 오류</strong>가 방치되면, 감사 시 "규정 정비 소홀" 또는 "증빙서류 불일치"로 별도 지적될 수 있습니다.</p>
+          <div class="propose"><strong>제안</strong>: 「규정 정합성 검토 및 개정 제안」 페이지의 23건 개정사항을 이번 학기 내 반영 완료 — 감사 전 최우선 처리 권고</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-head"><span class="gnum">10</span><h3>연구실안전·개인정보보호 연계 조항 산재</h3><span class="risk-tag low">위험 낮음</span></div>
+        <div class="gap-body">
+          <p>연구실안전, 개인정보 수집·동의(참여인력 개인정보 동의서 등)가 여러 문서에 단편적으로만 언급되어 있어 통합적인 준수 여부 확인이 어렵습니다.</p>
+          <div class="propose"><strong>제안</strong>: 사업단 지침 부속서로 "안전·개인정보 준수 체크리스트"를 별도 신설해 산재된 조항을 통합</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="checklist-intro">
+      <h2>Ⅱ. 감사 대비 사전점검 체크리스트</h2>
+      <div class="lede">교육부 등 정부재정지원사업 감사에서 공통적으로 지적되는 11개 영역입니다. 체크박스는 자체점검 시 표시용이며 저장되지 않습니다(새로고침 시 초기화).</div>
+    </section>
+
+    <div class="cat-card" id="c1">
+      <div class="cat-head risk-high"><span class="cnum">①</span><h3>인건비 관리</h3><span class="risk-tag high">위험 높음</span></div>
+      <div class="cat-refs">
+        <span class="ref-pill">앵커지침 가.인건비</span><span class="ref-pill">산학협력연구비내규 제21~27조</span><span class="ref-pill">사업단지침 Ⅲ장</span>
+      </div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">전담인력 여부와 실제 업무 내용이 인사발령·업무분장표와 일치하는지 확인<span class="csub">전담업무 아닌 자에게 인건비를 지급한 사례가 감사에서 가장 빈번히 지적됨</span></span></li>
+        <li><input type="checkbox"><span class="citem">겸직자(타 부서·타 과제 겸무)에게 사업비 인건비를 이중 지급하지 않았는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">내부인건비 계상률 합계가 100%를 초과하지 않는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">4대보험 가입일자와 실제 근무 시작일이 일치하는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">인건비 지급명세서·근로계약서·출근부(근태기록)가 모두 구비되어 있는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">보직수당+성과급 합산이 1인당 연간 한도(1,000만원 등)를 초과하지 않는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">조직명·사업명 표기(RISE/앵커 등)가 최신 명칭과 일치하는지 확인<span class="csub">문서 간 명칭 불일치는 감사 시 "관리 소홀"로 지적될 수 있음</span></span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c2">
+      <div class="cat-head risk-high"><span class="cnum">②</span><h3>학생인건비·연구수당</h3><span class="risk-tag high">위험 높음</span></div>
+      <div class="cat-refs"><span class="ref-pill">산학협력연구비내규 제29~32조</span><span class="ref-pill">산학연매뉴얼 연구수당</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">학생인건비 통합관리계정에서 참여학생 본인 명의 계좌로만 이체되었는지 확인<span class="csub">대리 계좌·공동 계좌 이체는 유용 의심 사례</span></span></li>
+        <li><input type="checkbox"><span class="citem">참여율 합계가 개인별 100%를 초과하지 않는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">연구수당이 수정인건비의 20% 및 개인별 70% 지급률 한도를 초과하지 않았는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">연구수당과 성과급(인센티브)이 동일 성과에 대해 중복 지급되지 않았는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">앵커 참여 학생 2명 이상 참여 요건이 실제로 충족되는지 확인(산학연공동기술개발과제)</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c3">
+      <div class="cat-head risk-high"><span class="cnum">③</span><h3>물품·장비 구매</h3><span class="risk-tag high">위험 높음</span></div>
+      <div class="cat-refs"><span class="ref-pill">구매계약업무요강</span><span class="ref-pill">검수요강</span><span class="ref-pill">국가계약법 시행령 제26·30조</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">동일 목적 구매를 여러 건으로 분할해 수의계약·견적 금액기준을 회피("쪼개기")한 사례가 없는지 확인<span class="csub">감사에서 가장 흔히 지적되는 유형 중 하나</span></span></li>
+        <li><input type="checkbox"><span class="citem">수의계약 시 업체지정사유서, 2인 이상 견적서가 모두 구비되어 있는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">3천만원 이상 장비 구매 전 자체 심의·의결 및 사전승인(지역앵커센터/중앙앵커센터)을 받았는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">검수가 서류상 처리가 아닌 실물 확인으로 이루어졌는지, 발주자와 검수자가 동일인이 아닌지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">자산관리대장 등재, 관리번호·바코드 부착 여부 확인</span></li>
+        <li><input type="checkbox"><span class="citem">구매 장비가 실제 사업목적에 사용 중인지(유휴·사적유용 여부) 현장 점검을 실시했는지 확인</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c4">
+      <div class="cat-head risk-mid"><span class="cnum">④</span><h3>회의비·출장비</h3><span class="risk-tag mid">위험 중간</span></div>
+      <div class="cat-refs"><span class="ref-pill">앵커지침 자.운영경비</span><span class="ref-pill">서울기준 첨부5</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">회의록에 일시·장소·참석자·안건·결과가 모두 기재되어 있는지 확인<span class="csub">참석자 명부만 있고 내용이 부실한 경우 "형식적 회의"로 지적됨</span></span></li>
+        <li><input type="checkbox"><span class="citem">회의비 사용이 실제 사업 관련 회의였는지, 유흥성 경비가 포함되지 않았는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">출장 증빙(항공권·숙박영수증·결과보고서)이 출장 기간과 일치하는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">법인카드 사용제한업종(유흥·위생·사행 등) 결제 내역이 없는지 정기 점검했는지 확인</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c5">
+      <div class="cat-head risk-high"><span class="cnum">⑤</span><h3>사업비 집행 일반</h3><span class="risk-tag high">위험 높음</span></div>
+      <div class="cat-refs"><span class="ref-pill">운영규정 제28·31조</span><span class="ref-pill">앵커지침 Ⅱ장</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">사업비카드 대신 개인카드로 집행한 사례가 없는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">목적 외 사용(전용) 사례가 없는지, 세목 간 전용 시 사전 승인을 받았는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">간이영수증 사용이 직접비의 2% 이내로 관리되는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">협약기간(사업연도) 외 집행 건이 없는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">증빙서류(전자문서 포함)가 지출결의서·계약서·검수조서와 상호 대조 가능한 상태로 보관되어 있는지 확인</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c6">
+      <div class="cat-head risk-mid"><span class="cnum">⑥</span><h3>성과급·인센티브</h3><span class="risk-tag mid">위험 중간</span></div>
+      <div class="cat-refs"><span class="ref-pill">앵커지침 첨부2</span><span class="ref-pill">서울기준 첨부7</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">성과평가 규정·기준이 지급 전에 사전 수립·공지되었는지 확인<span class="csub">사후 소급 기준 마련은 "근거없는 지급"으로 지적</span></span></li>
+        <li><input type="checkbox"><span class="citem">평가 결과에 따른 차등 지급 근거가 문서화되어 있는지 확인(균등 배분 금지)</span></li>
+        <li><input type="checkbox"><span class="citem">타 사업과 동일 성과에 대한 중복 지급이 없는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">인센티브 집행 체크리스트(서식)를 작성해 5년간 보존하고 있는지 확인</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c7">
+      <div class="cat-head risk-mid"><span class="cnum">⑦</span><h3>정산·보고</h3><span class="risk-tag mid">위험 중간</span></div>
+      <div class="cat-refs"><span class="ref-pill">운영규정 제32조</span><span class="ref-pill">앵커지침 Ⅳ장</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">사업연도 종료 후 정해진 기한(2개월) 내 정산보고서를 제출했는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">집행잔액 및 이자를 기한 내 반납했는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">1억원 이상 국고보조금 과제에 대해 외부감사인 검증을 받았는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">참여대학 재교부분에 대한 정산 확인 절차가 이루어졌는지 확인(주관대학 책임)</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c8">
+      <div class="cat-head risk-low"><span class="cnum">⑧</span><h3>협약·계약 관리</h3><span class="risk-tag low">위험 낮음</span></div>
+      <div class="cat-refs"><span class="ref-pill">운영규정 제20~22조</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">협약서상 명시된 사업기간·사업비·성과목표가 실제 집행과 일치하는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">사업비 변경 시 사전 통지 및 심의·의결 절차를 거쳤는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">참여기관 간 역할분담이 사업계획서와 일치하는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">대응자금이 정한 비율대로 확보·교부되었는지 확인</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c9">
+      <div class="cat-head risk-low"><span class="cnum">⑨</span><h3>간접비</h3><span class="risk-tag low">위험 낮음</span></div>
+      <div class="cat-refs"><span class="ref-pill">산학협력연구비내규 제42~56조</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">간접비가 직접 관리 사업비의 3% 이내에서 계상되었는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">간접비를 인건비·경상운영비 등 목적 외로 전용하지 않았는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">간접비 집행 증빙을 기관 자체적으로 구비하고 있는지 확인(별도 보고는 없으나 감사 시 요구됨)</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c10">
+      <div class="cat-head risk-mid"><span class="cnum">⑩</span><h3>윤리·이해충돌·보안</h3><span class="risk-tag mid">위험 중간</span></div>
+      <div class="cat-refs"><span class="ref-pill">산학협력연구비내규 제61~66조</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">특수관계인(미성년자·4촌 이내 가족·산학협력단 직원)이 참여할 경우 사전 확인서를 제출했는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">심사·평가위원 중 이해관계자(소속기관 관련자 등)가 배제되었는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">연구부정행위(위조·변조·표절 등) 신고·처리 절차가 마련되어 있는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">보안과제의 경우 보안서약서를 징구했는지 확인</span></li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="c11">
+      <div class="cat-head risk-low"><span class="cnum">⑪</span><h3>문서관리·정보공시</h3><span class="risk-tag low">위험 낮음</span></div>
+      <div class="cat-refs"><span class="ref-pill">운영규정 제31조</span><span class="ref-pill">산학협력연구비내규 제64조</span></div>
+      <ul class="check-list">
+        <li><input type="checkbox"><span class="citem">증빙서류(전자문서 포함)를 사업 종료 후 5년 이상 보존하고 있는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">연구노트를 30년간 보존하고 있는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">정보공시 대상 항목을 기한 내 공시했는지 확인</span></li>
+        <li><input type="checkbox"><span class="citem">서식 번호·명칭 등 내부 문서 간 상호참조 오류가 없는지 확인<span class="csub">이번 검토에서 발견된 서식23~25 오류 등이 대표 사례</span></span></li>
+      </ul>
+    </div>
+
+    <section id="roadmap">
+      <h2>Ⅲ. 우선순위별 개선 로드맵</h2>
+      <div class="priority-card now">
+        <div class="ptitle">🔴 즉시 (감사 전 최우선)</div>
+        <ul>
+          <li>규정 정합성 검토 페이지의 개정 제안 23건(RISE→앵커 명칭, 서식번호 오류 등) 반영 완료</li>
+          <li>최근 1년 구매 내역 전수조사 — 계약 분할("쪼개기") 의심 건 확인</li>
+          <li>인건비 지급 대상자 전원의 겸직·중복 참여 여부 교차 점검</li>
+        </ul>
+      </div>
+      <div class="priority-card soon">
+        <div class="ptitle">🟠 단기 (1개월 이내)</div>
+        <ul>
+          <li>「앵커사업비 자체점검 및 내부통제 운영지침」 초안 마련</li>
+          <li>이해관계 없음 확인서 서식을 만들어 구매·평가위원 위촉 시 의무화</li>
+          <li>참여대학 재교부금 분기 집행보고 양식 표준화</li>
+        </ul>
+      </div>
+      <div class="priority-card later">
+        <div class="ptitle">🔵 중기 (분기 이내)</div>
+        <ul>
+          <li>부정사용 제보(공익신고) 채널 개설 및 처리절차 문서화</li>
+          <li>참여인력 통합 DB 구축(과제 간 인건비·수당 중복 자동 대조)</li>
+          <li>성과평가 대응 매뉴얼, 안전·개인정보 준수 체크리스트 별첨 신설</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  이 페이지는 대시보드에 게시된 9개 규정과 「규정 정합성 검토 및 개정 제안」 결과를 바탕으로, 정부재정지원사업 감사에서 공통적으로 관찰되는 지적 유형을 기준 삼아 예방적 관점에서 작성한 참고용 자체점검 자료입니다. 특정 감사 결과를 인용한 것이 아니며, 실제 감사 대응 시에는 관련 부서(산학협력단·감사실·회계법인)의 전문적 검토가 필요합니다.
+</footer>
+
+<script>
+  const links = document.querySelectorAll('nav.side a');
+  const linkMap = {};
+  links.forEach(l => linkMap[l.getAttribute('href').slice(1)] = l);
+  const targets = document.querySelectorAll('main section, .cat-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      if (!linkMap[id]) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        linkMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+  targets.forEach(s => { if (s.id) observer.observe(s); });
+
+  const searchBox = document.getElementById('searchBox');
+  const items = document.querySelectorAll('.check-list li, .gap-card');
+  searchBox.addEventListener('input', () => {
+    const q = searchBox.value.trim().toLowerCase();
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
