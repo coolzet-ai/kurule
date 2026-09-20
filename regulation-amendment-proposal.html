@@ -220,6 +220,32 @@ nav.side a:focus-visible { outline-offset: -2px; }
 </style>
 </head>
 <body>
+<div id="pw-gate" style="
+  position:fixed; inset:0; z-index:9999; background: var(--ku-green-deep, #0A3F28);
+  display:flex; align-items:center; justify-content:center; padding:20px;
+  font-family:'Noto Sans KR',sans-serif;
+">
+  <div style="
+    background: var(--panel, #fff); border-radius:12px; padding:36px 32px;
+    max-width:360px; width:100%; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,0.35);
+  ">
+    <div style="font-size:34px; margin-bottom:10px;">🔒</div>
+    <h2 style="font-family:'Noto Serif KR',serif; font-size:18px; margin:0 0 8px; color: var(--ink, #16241C);">비밀번호 확인</h2>
+    <p style="font-size:13px; color: var(--ink-soft, #55635B); margin:0 0 18px; line-height:1.6;">이 페이지는 접근이 제한되어 있습니다.<br>비밀번호를 입력해 주세요.</p>
+    <input type="password" id="pw-input" placeholder="비밀번호" autocomplete="off" style="
+      width:100%; box-sizing:border-box; padding:11px 14px; font-size:15px; border-radius:6px;
+      border:1px solid var(--line, #D8E0D9); margin-bottom:10px; text-align:center;
+    ">
+    <button id="pw-submit" style="
+      width:100%; padding:11px 14px; font-size:14px; font-weight:600; color:#fff;
+      background: var(--ku-green, #0F5B3B); border:none; border-radius:6px; cursor:pointer;
+    ">확인</button>
+    <div id="pw-error" style="display:none; margin-top:10px; font-size:12.5px; color:#9A3B3B;">비밀번호가 올바르지 않습니다.</div>
+  </div>
+</div>
+
+<div id="site-content" style="display:none;">
+
 
 <header class="masthead">
   <div class="masthead-inner">
@@ -589,5 +615,47 @@ nav.side a:focus-visible { outline-offset: -2px; }
   });
 </script>
 
+
+</div>
+
+<script>
+(function() {
+  var STORAGE_KEY = "kurule-unlock-" + location.pathname;
+  var PASSWORD = "coolzet";
+  var gate = document.getElementById('pw-gate');
+  var content = document.getElementById('site-content');
+  var input = document.getElementById('pw-input');
+  var submitBtn = document.getElementById('pw-submit');
+  var errorMsg = document.getElementById('pw-error');
+
+  function unlock() {
+    gate.style.display = 'none';
+    content.style.display = 'block';
+  }
+
+  try {
+    if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+      unlock();
+    }
+  } catch (e) {}
+
+  function check() {
+    if (input.value === PASSWORD) {
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+      errorMsg.style.display = 'none';
+      unlock();
+    } else {
+      errorMsg.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  submitBtn.addEventListener('click', check);
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') check();
+  });
+})();
+</script>
 </body>
 </html>
