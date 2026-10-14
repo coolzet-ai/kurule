@@ -118,6 +118,11 @@
     nav.side a.active { border-left:none; border-bottom-color:var(--ku-orange); }
     table.amend td.before, table.amend td.after, table.amend td.why { width:auto; }
   }
+  .newtag { display:inline-block; font-size:10.5px; font-weight:700; color:#fff; background:#B4472F; border-radius:4px; padding:1px 6px; margin-right:6px; vertical-align:middle; font-family:'Noto Sans KR',sans-serif; letter-spacing:0; }
+  .prio-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:10px; margin:14px 0 6px; }
+  .prio { border:1px solid var(--line-soft); border-radius:8px; padding:10px 14px; background: var(--panel); border-left-width:4px; }
+  .prio.p1 { border-left-color: var(--red); } .prio.p2 { border-left-color: #C08A2B; } .prio.p3 { border-left-color: var(--blue); }
+  .prio .pk { font-size:12.5px; font-weight:700; } .prio .pv { font-size:12.8px; color: var(--ink-soft); margin-top:3px; }
 </style>
 
 <style>
@@ -251,7 +256,7 @@ nav.side a:focus-visible { outline-offset: -2px; }
   <div class="masthead-inner">
     <div class="meta-badge">
       <div><span class="k">작성자</span>앵커김군 (<a href="mailto:coolzet@konkuk.ac.kr">coolzet@konkuk.ac.kr</a>)</div>
-      <div><span class="k">업데이트</span>2026. 9. 18.</div>
+      <div><span class="k">업데이트</span>2026. 10. 14.</div>
     </div>
     <div class="bull-badge">🐂</div>
     <div>
@@ -264,10 +269,11 @@ nav.side a:focus-visible { outline-offset: -2px; }
 
 <div class="summary-bar">
   <div class="summary-card">
-    <div class="sfact warn"><div class="num">23건</div><div class="desc">즉시 개정 제안 (건국대 사업단 지침)</div></div>
+    <div class="sfact warn"><div class="num">23건</div><div class="desc">즉시 개정 제안 — 명칭·서식 정비</div></div>
+    <div class="sfact warn"><div class="num">19건</div><div class="desc">최신 규정 반영 실질 개정 제안 (2026.10. 추가)</div></div>
     <div class="sfact"><div class="num">4개</div><div class="desc">상위규정 — 정합성 확인, 개정 불필요</div></div>
     <div class="sfact"><div class="num">3개</div><div class="desc">건국대 산단규정 — 연계 확인, 개정 불필요</div></div>
-    <div class="sfact warn"><div class="num">8건</div><div class="desc">추가 검토 필요 (확정 전 확인 사항)</div></div>
+    <div class="sfact warn"><div class="num">12건</div><div class="desc">추가 검토 필요 (확정 전 확인 사항)</div></div>
   </div>
 </div>
 
@@ -285,6 +291,13 @@ nav.side a:focus-visible { outline-offset: -2px; }
       <a href="#reg1-change">사업비 변경·이월</a>
       <a href="#reg1-forms">서식 명칭·번호</a>
       <a href="#reg1-tracked">문서 내 자체 검토 메모</a>
+    </div>
+    <div class="group">
+      <div class="group-label">①-2 최신 규정 반영 <span class="newtag">NEW</span></div>
+      <a href="#latest-basis">A. 근거규정·인용 차수</a>
+      <a href="#latest-indirect">B. 간접비(산단 4차 연계)</a>
+      <a href="#latest-contract">C. 구매·계약(국가계약법)</a>
+      <a href="#latest-rnd">D. 산학연공동과제(R&amp;D 사용기준)</a>
     </div>
     <div class="group">
       <div class="group-label">② 상위규정 확인</div>
@@ -528,6 +541,172 @@ nav.side a:focus-visible { outline-offset: -2px; }
       </div>
     </section>
 
+    <section id="reg-latest">
+      <h2>①-2 최신 규정 개정사항 반영 — 실질 개정 제안 <span class="newtag">2026.10.14. 추가</span></h2>
+      <div class="reg-header status-high">
+        <span class="status">내용 보완 필요</span>
+        <span class="rtitle">명칭 정비(①)와 별도로, 2026.7.~10. 사이 개정된 상위·연계 규정의 내용을 사업단 지침에 반영해야 하는 조문 19건</span>
+      </div>
+      <div class="lede">반영 대상 개정: ① 산학협력연구비 내규 <strong>4차 개정(2026.9.9.)</strong> ② 구매계약업무요강 <strong>28차(2026.7.14.)</strong> ③ 「국가연구개발사업 연구개발비 사용기준」 <strong>2026.1.22.·3.11.·5.6. 개정</strong> 및 혁신법 시행령 <strong>2026.3.10.</strong> 개정(산학연공동 기술개발과제가 준용) ④ 지역앵커센터 담당자 교육연수(3차, 2026.10.) 국가계약법 유권해석·감사사례. 각 행의 [교육 p.N]은 교육연수 자료집 쪽수입니다.</div>
+
+      <div class="prio-grid">
+        <div class="prio p1"><div class="pk">1순위 · 즉시</div><div class="pv">근거규정 차수 갱신, 간접비 적용 우선순위, 산학연과제 회의비·연구수당·이자 기준 (A·B·D)</div></div>
+        <div class="prio p2"><div class="pk">2순위 · 차기 개정</div><div class="pv">구매·계약 유의사항 조문 신설, 금액구간 결재선 재정비 (C)</div></div>
+        <div class="prio p3"><div class="pk">3순위 · 확인 후</div><div class="pv">검수 간소화 근거, 연구혁신비 도입 대응 (④ 추가검토 9~12)</div></div>
+      </div>
+
+      <h3 id="latest-basis" style="font-size:15px; margin: 22px 0 10px; scroll-margin-top:20px;">A. 관련법·규정 목록 및 인용 차수</h3>
+      <div class="table-scroll">
+      <table class="amend">
+        <thead><tr><th class="loc">조문/위치</th><th class="before">현행(원안)</th><th class="after">개정안</th><th class="why">개정 사유·근거</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="loc">Ⅲ.3.라 (법인카드)·관련법규정</td>
+            <td class="before"><span class="del">산학협력연구비 중앙관리 및 연구지원 내규</span> (개정차수 미표기)</td>
+            <td class="after"><span class="ins">산학협력연구비 중앙관리 및 연구지원 내규(4차 개정 2026.9.9.)</span></td>
+            <td class="why">내규 4차 개정으로 간접비 배분기준(제45조)이 바뀌어 인용 차수를 명시해야 적용 시점 혼선이 없음</td>
+          </tr>
+          <tr>
+            <td class="loc">관련법규정 (신설 항)</td>
+            <td class="before">국가연구개발혁신법만 열거, 하위 고시 미표기</td>
+            <td class="after"><span class="ins">「국가연구개발사업 연구개발비 사용기준」(과학기술정보통신부 고시) 및 「국가연구개발혁신법 매뉴얼」 — 사. 기업지원·협력활동비 중 산학연공동 기술개발과제에 한하여 준용</span></td>
+            <td class="why">산학연공동 매뉴얼(5차)·서울기준 첨부6이 연구개발비 9개 비목을 혁신법 사용기준에 따라 운용하도록 규정. 2026년 3차례 개정된 사용기준을 직접 근거로 두어야 함 [교육 p.142~144]</td>
+          </tr>
+          <tr>
+            <td class="loc">관련법규정 (신설 항)</td>
+            <td class="before">건국대 구매·검수 규정 인용 없음(내규 경유 간접 준용)</td>
+            <td class="after"><span class="ins">건국대학교 구매계약업무요강(28차, 2026.7.14.)·검수요강(23차, 2025.7.24.)</span></td>
+            <td class="why">요강 제3조⑤ 단일견적 직접구매 대상(출장·행사 교통·숙박·식음료, 출판물 제작 등) 신설 — 앵커 행사 경비와 직결되므로 지침에서 직접 인용</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 id="latest-indirect" style="font-size:15px; margin: 26px 0 10px; scroll-margin-top:20px;">B. 간접비 — 산단 내규 4차 개정 연계</h3>
+      <div class="table-scroll">
+      <table class="amend">
+        <thead><tr><th class="loc">조문/위치</th><th class="before">현행(원안)</th><th class="after">개정안</th><th class="why">개정 사유·근거</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="loc">Ⅳ.차 간접비 (단서 신설)</td>
+            <td class="before">직접 관리 사업비의 3% 이내 계상·집행 (배분·사용 기준 미규정)</td>
+            <td class="after">3% 이내 계상 유지 + <span class="ins">"간접비의 배분·사용은 앵커 사업비 집행 및 관리 지침 및 서울 앵커 기준을 우선 적용하고, 정함이 없는 사항은 산학협력연구비 내규 제45조·제46조를 따른다."</span></td>
+            <td class="why">내규 4차 제45조① 단서 신설("지원기관의 규정 또는 지침이 있는 경우 그 규정 또는 지침을 따를 수 있다") — 앵커 간접비에 산단 일반 배분율(65·10·20·5%)이 자동 적용되지 않도록 우선순위 명문화</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅳ.차 간접비 (사용불가 명시)</td>
+            <td class="before">사용불가 항목 별도 규정 없음</td>
+            <td class="after"><span class="ins">이미 인건비를 받는 교원·연구자 인건비, 학생 장학금, 과제 수주 보상금, 건축·증축·리모델링 비용, 배상금·위약금·환수금은 간접비로 집행 불가</span></td>
+            <td class="why">내규 제46조 지급불가 항목 및 국가R&D 간접비 네거티브 규제의 공통 사용불가 항목과 일치 [교육 p.219~221]</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅳ.사 산학연공동 과제</td>
+            <td class="before">간접비 편성 여부 미기재</td>
+            <td class="after"><span class="ins">산학연공동 기술개발과제는 간접비를 편성하지 않는다(산학연공동 매뉴얼 5차)</span></td>
+            <td class="why">매뉴얼상 간접비 편성 불가 — 내규 제44조 일률 징수(최소 15%)와의 충돌을 방지하는 예외 근거 필요</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 id="latest-contract" style="font-size:15px; margin: 26px 0 10px; scroll-margin-top:20px;">C. 구매·계약 — 국가계약법 유권해석·감사사례 반영</h3>
+      <div class="table-scroll">
+      <table class="amend">
+        <thead><tr><th class="loc">조문/위치</th><th class="before">현행(원안)</th><th class="after">개정안</th><th class="why">개정 사유·근거</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="loc">Ⅲ.4.다 결재선 (금액구간)</td>
+            <td class="before">시행품의 1억원 초과/이하/<span class="del">500만원 이하</span>(삭제 메모)</td>
+            <td class="after"><span class="ins">구매방식 연동 표로 재정비: 직접구매(물품 500만원 미만·용역 1,000만원 미만, 복수견적) / 중앙구매 복수견적(2,000만원 미만) / 경쟁입찰(2,000만원 이상)</span></td>
+            <td class="why">500만원 이하 행 삭제 시 대체 경로가 비어 있음. 구매계약업무요강 금액기준과 결재선을 1:1로 대응시켜 분할발주 오해 소지 제거</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅲ 지출관리 (신설) — 견적·수의계약</td>
+            <td class="before">미규정</td>
+            <td class="after"><span class="ins">2천만원 초과 소액수의계약은 전자조달시스템 2인 이상 견적 원칙, 다른 기관 낙찰단가는 거래실례가격으로 원용 불가, 견적 제출 후 계약 미체결 업체는 3개월간 수의계약 대상에서 제외</span></td>
+            <td class="why">국가계약법 시행령 제26조①5호·제30조, 시행규칙 제5조; 유권해석 3·18 [교육 p.107, 125~126]</td>
+          </tr>
+          <tr>
+            <td class="loc">[서식13] 업체지정 사유서</td>
+            <td class="before">지정 사유 기재</td>
+            <td class="after">사유 기재 + <span class="ins">특허·독점 사유일 때 특허등록원부(통상실시권 범위: 기간·지역·실시내용)와 대체품 시장조사 결과 첨부</span></td>
+            <td class="why">감사사례1 — 실시내용이 '생산·사용'으로 한정된 통상실시권자와 특허수의 체결해 징계 통보 [교육 p.129~130]</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅲ 지출관리 (신설) — 부가가치세</td>
+            <td class="before">미규정</td>
+            <td class="after"><span class="ins">면세사업자와 계약 시 공고문·계약서에 부가세 제외 금액임을 명시하고, 지급 전 과세유형을 확인한다</span></td>
+            <td class="why">감사사례8 — 면세사업자 12건 부가세 2,054만원 미공제 지급 [교육 p.108, 135]</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅲ 지출관리 (신설) — 계약 체결·변경</td>
+            <td class="before">미규정</td>
+            <td class="after"><span class="ins">① 계약 체결 직전 부정당업자 제재 여부 재조회 ② 계약기간 연장 시 연장된 보증증권을 먼저 받은 후 변경계약 ③ 납품 포기는 감액변경이 아니라 계약해제·보증금 귀속 대상으로 처리</span></td>
+            <td class="why">감사사례 4·6·7 (제재 중 업체 계약 27억원, 증권 미확보로 보증금 지급거절, 납품포기 감액처리) [교육 p.132~134]</td>
+          </tr>
+          <tr>
+            <td class="loc">[서식24] 납품 확인 및 검수조서</td>
+            <td class="before">검수 확인 항목</td>
+            <td class="after">항목 추가: <span class="ins">납품기한 대비 지연일수·적용 지체상금률(물품 0.75/1000, 용역 1.25/1000, SW 물품·용역 일괄은 0.75/1000, 상한 계약금액의 30%)</span></td>
+            <td class="why">감사사례5 — 일괄입찰에 용역요율 1.25/1000 오적용 [교육 p.133]</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅳ.다·자 용역 기성대가</td>
+            <td class="before">청구서 기준 지급</td>
+            <td class="after"><span class="ins">기성·실비정산 청구액은 증빙과 대조 후 지급, 산출내역서를 계약문서로 첨부(보험료 등 사후정산 항목은 납부확인 후 정산, 증액정산 불가)</span></td>
+            <td class="why">감사사례 9·10 (보험료 미정산, 증빙 초과 청구액 3,676만원 지급) [교육 p.135~136]</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3 id="latest-rnd" style="font-size:15px; margin: 26px 0 10px; scroll-margin-top:20px;">D. 사. 기업지원·협력활동비 — 산학연공동 기술개발과제(연구개발비 사용기준 2026 개정)</h3>
+      <div class="table-scroll">
+      <table class="amend">
+        <thead><tr><th class="loc">조문/위치</th><th class="before">현행(원안)</th><th class="after">개정안</th><th class="why">개정 사유·근거</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="loc">Ⅳ.사 회의비</td>
+            <td class="before">일반 회의비 기준(회의록 구비) 준용</td>
+            <td class="after"><span class="ins">산학연공동 과제 회의 식비는 사전 내부결재 불요. 단, 해당 과제 참여연구자만 참석한 회의는 식비 계상 불가(소속기관이 다른 주관·공동·위탁 연구자 참석 시 가능)</span></td>
+            <td class="why">사용기준 2026.5.6. 개정, 혁신법 매뉴얼('26.7) FAQ [교육 p.208~209, 223]. 앵커 일반 회의비(서울기준 첨부5)와 기준이 다르므로 구분 명시</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅳ.사 연구수당</td>
+            <td class="before">매뉴얼 준용(구체 한도 미기재)</td>
+            <td class="after"><span class="ins">수정인건비의 20% 이내, 2인 이상 과제 1인 70% 상한, 연구수당 집행비율−직접비 집행비율 ≤ 20%p, 기여도 평가 및 지급은 종료 후 3개월 이내, 성과급과 중복 지급 불가</span></td>
+            <td class="why">사용기준 연구수당 기준 [교육 p.187~188]; 매뉴얼상 성과급 중복 금지</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅳ.사 이자 처리 (신설)</td>
+            <td class="before">미규정 (Ⅴ장 일반 반납 규정만)</td>
+            <td class="after"><span class="ins">산학연공동 과제 연구개발비 발생이자는 국고 납입을 원칙으로 하고, 재투자 등 다른 용도로 쓰려면 중앙행정기관의 장 승인을 받는다</span></td>
+            <td class="why">혁신법 시행령 2026.3.10. 개정(이자 국고납입 원칙화) [교육 p.224]; 앵커 지침의 "집행잔액·이자 반납"과도 일치</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅳ.사 내부거래 (신설)</td>
+            <td class="before">미규정</td>
+            <td class="after"><span class="ins">산학협력단–대학 간, 같은 과제 수행기관 간 거래 비용은 계상 불가. 공동활용 장비 이용료는 ZEUS 등록 장비에 한해 예외</span></td>
+            <td class="why">사용기준 제21조④, 2026.1.1.부터 ZEUS 미등록 장비 유예 종료 [교육 p.153~154]</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅳ.사 연구시설·장비비</td>
+            <td class="before">마. 항목 3천만원/1억원 승인 기준 준용</td>
+            <td class="after"><span class="ins">단계 종료 2개월 전까지 검수 완료, 3천만원 이상 장비 사전심의번호 등록 후 구매, 자산등록 후 30일 이내 ZEUS 등록</span></td>
+            <td class="why">사용기준 및 시설·장비 표준지침 — 공동정산 이지체크·상시점검 단골 항목 [교육 p.193~199, 228]</td>
+          </tr>
+          <tr>
+            <td class="loc">Ⅳ.사 증빙·입력기한</td>
+            <td class="before">증빙 5년 보관(협약 조항 인용)</td>
+            <td class="after"><span class="ins">증빙은 종료 후 5년 보관(전자문서 갈음 가능), 연구비카드 사용분은 결제대금 이체일부터 5일 이내 시스템 입력, 사용실적보고는 종료 후 3개월 이내</span></td>
+            <td class="why">사용기준 제72조, 입력기한표 [교육 p.163, 165, 227]</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="note">D항은 앵커 사업비 전체가 아니라 <strong>산학연공동 기술개발과제(9개 비목)</strong>에만 적용되는 기준입니다. 앵커 사업비 일반 항목(가~자)은 보조금 성격으로 앵커 지침·서울기준이 우선하며, 혁신법 사용기준을 일괄 적용하지 않도록 조문 위치를 Ⅳ.사 안에 한정했습니다.</div>
+    </section>
+
     <section id="reg2">
       <h2>② 상위규정 정합성 확인 — 운영규정·앵커지침·서울기준·산학연매뉴얼</h2>
       <div class="reg-header status-ok">
@@ -550,6 +729,7 @@ nav.side a:focus-visible { outline-offset: -2px; }
         <span class="rtitle">3개 문서는 RISE/앵커 명칭과 무관한 대학 공통 규정으로, 사업단 지침과의 준용 관계에 이상 없음</span>
       </div>
       <ul class="plain">
+        <li><span class="newtag">4차</span><strong>산학협력연구비 내규 4차 개정(2026.9.9.)</strong> — 제45조 간접비 배분기준이 산학협력단 65%·능률성과급 10%·지정연구소 지원금 20%·연구지원비 5%로 바뀌고(종전 70·10·15·5), 이공계 간접비 총액 300만원·기타계열 100만원 이상 과제에 적용, 지원기관 규정 우선 단서가 신설되었습니다. 대응자금 차감 기준도 간접비의 25%→30%로 상향. 사업단 지침에는 ①-2 B항의 "앵커 지침 우선" 단서를 두는 것으로 대응합니다.</li>
         <li><strong>산학협력연구비 중앙관리 및 연구지원 내규</strong> 제73조가 구매계약업무요강·검수요강을 준용하도록 규정하고 있고, 사업단 지침 Ⅲ.3.라 항도 법인카드 사용 시 이 내규를 인용하고 있어 상호 참조가 정확합니다.</li>
         <li><strong>구매계약업무요강·검수요강</strong>은 RISE/앵커 명칭을 포함하지 않는 대학 전체 공통 규정이므로 이번 명칭 전환의 영향을 받지 않습니다.</li>
         <li>사업단 지침의 결재선(Ⅲ.4.다)이 참조하는 위임전결요강[3-1-5]는 구매계약업무요강·검수요강과 같은 문서번호 체계(3-1-XX)를 사용하고 있어 번호 체계상 문제는 없습니다.</li>
@@ -568,6 +748,10 @@ nav.side a:focus-visible { outline-offset: -2px; }
       <div class="review-card"><span class="rnum">6</span>서식19 "건국RISE인재지원금"의 실제 확정 명칭(예: 건국앵커인재지원금 등) 확인 — 학생지원·장학 부서 협의 필요</div>
       <div class="review-card"><span class="rnum">7</span>서식23~25 번호 정정 후, 본문 전체(특히 제출서류 안내 부분)에서 서식 번호를 재검증하는 전수 조사 필요 — 이번 검토에서 발견한 2건 외에 추가 오류가 있을 가능성</div>
       <div class="review-card"><span class="rnum">8</span>"라이즈사업단", "Rise", "RIS" 등 표기 변형이 문서 전체에 더 있을 수 있어, 단순 "RISE→앵커" 문자열 치환만으로는 불충분할 수 있음 — 전문 재독 검토 권장</div>
+      <div class="review-card"><span class="rnum">9</span><span class="newtag">NEW</span>산학협력연구비 내규 4차 개정 후 <strong>제48조 표(지정연구소 지원금 적립재원 "간접비의 15%")</strong>가 제45조 배분비율(20%)과 불일치 — 산학협력단에 후속 정비 여부 확인</div>
+      <div class="review-card"><span class="rnum">10</span><span class="newtag">NEW</span>산학연공동 기술개발과제 관리 매뉴얼(5차, 2026.9.14.)이 연구개발비 사용기준 2026.5.6. 개정(회의비)·시행령 2026.3.10. 개정(이자 국고납입)을 반영했는지 서울앵커센터 확인 — 미반영 시 ①-2 D항은 "사용기준 우선" 문구로 처리</div>
+      <div class="review-card"><span class="rnum">11</span><span class="newtag">NEW</span>연구재료 검수 간소화(건당 100만원 이하·연차별 1,000만원 이내, 사용기준 제22조③ 단서 2026.1.22. 신설)는 <strong>학교 자체규정</strong>이 있어야 적용 가능 — 검수요강(관재처) 또는 사업단 지침 중 근거 위치 결정 필요</div>
+      <div class="review-card"><span class="rnum">12</span><span class="newtag">NEW</span>연구혁신비(비영리기관, 2026 하반기 시범·2027 본격, 연구재료비+연구활동비의 10% 이내)가 산학연공동과제 9개 비목에 추가될지 서울앵커센터 지침 확인 후 Ⅳ.사 비목 목록 갱신</div>
     </section>
 
   </main>
