@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>사업단 지침 개정안 검토 | 규정김군</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F2; --panel: #FFFFFF; --ink: #16241C; --ink-soft: #55635B;
+    --line: #D8E0D9; --line-soft: #E6ECE7;
+    --ku-green: #0F5B3B; --ku-green-deep: #0A3F28; --ku-green-soft: #E7F1EB;
+    --ku-orange: #D9822B; --ku-orange-soft:#FBF0E2;
+    --red: #9A3B3B; --red-bg: #F7E8E6; --red-soft:#FBEFEE;
+    --blue: #2F5C8A; --blue-soft: #E9EFF6;
+    --chip: #E6ECE7; --shadow: rgba(15,60,40,0.10);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+      --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+      --ku-green-soft:#173327; --ku-orange:#E8A968; --ku-orange-soft:#2D2418;
+      --red:#E09A9A; --red-bg:#2E1F1F; --red-soft:#241C1C; --blue:#7FA8D6; --blue-soft:#1B2A38;
+      --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#121914; --panel:#182119; --ink:#E8EEE9; --ink-soft:#A7B3AB;
+    --line:#2B372E; --line-soft:#222C25; --ku-green:#4FAE83; --ku-green-deep:#7FCBA6;
+    --ku-green-soft:#173327; --ku-orange:#E8A968; --ku-orange-soft:#2D2418;
+    --red:#E09A9A; --red-bg:#2E1F1F; --red-soft:#241C1C; --blue:#7FA8D6; --blue-soft:#1B2A38;
+    --chip:#222C25; --shadow: rgba(0,0,0,0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body { background: var(--paper); color: var(--ink); font-family:'Noto Sans KR',sans-serif; line-height: 1.55; font-size:15.3px; }
+  h1,h2,h3,h4 { font-family:'Noto Serif KR',serif; color: var(--ink); margin:0; }
+  a { color: inherit; }
+
+  .masthead { background: var(--ku-green-deep); color:#F4F8F5; padding:30px 28px 26px; border-bottom:4px solid var(--ku-orange); position:relative; }
+  .masthead-inner { max-width:1220px; margin:0 auto; display:flex; align-items:flex-start; gap:16px; position:relative; }
+  .bull-badge { width:46px; height:46px; border-radius:50%; background: var(--ku-orange); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+  .masthead .tag { font-size:12.5px; letter-spacing:.02em; color:#CFE3D6; margin-bottom:10px; }
+  .masthead h1 { font-size:24px; font-weight:600; color:#FBFDFB; line-height:1.4; max-width:760px; }
+  .masthead .sub { margin-top:8px; color:#BFDBC9; font-size:14px; max-width:760px; }
+
+  .meta-badge { position:absolute; top:0; right:0; text-align:right; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:10px 14px; font-size:12px; color:#DCE7E0; line-height:1.6; }
+  .meta-badge .k { color:#B7D9C6; margin-right:6px; }
+  .meta-badge a { color:#F0D9A6; text-decoration:underline; }
+  @media (max-width:860px){ .meta-badge{ position:static; display:inline-block; margin-top:14px; } }
+
+  .summary-bar { max-width:1220px; margin:-14px auto 0; padding:0 28px; position:relative; z-index:2; }
+  .summary-card { background: var(--panel); border:1px solid var(--line-soft); border-radius:8px; padding:16px 20px; box-shadow:0 6px 18px var(--shadow); display:flex; gap:18px; flex-wrap:wrap; }
+  .sfact { flex:1; min-width:150px; }
+  .sfact .num { font-family:'Noto Serif KR',serif; font-size:24px; font-weight:700; color: var(--ku-green); }
+  .sfact .desc { font-size:12.3px; color: var(--ink-soft); margin-top:2px; }
+  .sfact.warn .num { color: var(--red); }
+
+  .layout { max-width:1220px; margin:30px auto 80px; padding:0 28px; display:grid; grid-template-columns:240px 1fr; gap:40px; }
+  nav.side { position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow-y:auto; padding-right:6px; }
+  nav.side .group { margin-bottom:18px; }
+  nav.side .group-label { font-size:11.5px; color:var(--ink-soft); letter-spacing:.03em; margin-bottom:6px; padding-left:10px; }
+  nav.side a { display:block; text-decoration:none; font-size:13px; color:var(--ink-soft); padding:5px 10px; border-left:2px solid transparent; border-radius:0 4px 4px 0; transition:color .15s,border-color .15s,background .15s; }
+  nav.side a:hover { color:var(--ku-green); background:var(--panel); }
+  nav.side a.active { color:var(--ku-green); border-left-color:var(--ku-orange); background:var(--panel); font-weight:600; }
+
+  main { min-width:0; }
+  section { margin-bottom:56px; }
+  section h2 { font-size:20px; font-weight:600; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:6px; scroll-margin-top:20px; }
+  section .chapter-sub { font-size:13px; color:var(--ink-soft); margin-bottom:18px; }
+  section > .lede { color:var(--ink-soft); font-size:14px; margin-bottom:20px; }
+
+  .reg-header {
+    display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:8px;
+    background: var(--ku-green-soft); border:1px solid var(--ku-green); margin-bottom:18px;
+  }
+  .reg-header .status { font-size:12px; font-weight:700; padding:4px 10px; border-radius:14px; white-space:nowrap; }
+  .reg-header.status-high .status { background: var(--red); color:#fff; }
+  .reg-header.status-ok { background: var(--blue-soft); border-color: var(--blue); }
+  .reg-header.status-ok .status { background: var(--blue); color:#fff; }
+  .reg-header .rtitle { font-weight:600; font-size:15.5px; flex:1; }
+
+  table.amend { width:100%; border-collapse:collapse; font-size:13.2px; margin: 4px 0 26px; }
+  table.amend th, table.amend td { border:1px solid var(--line); padding:10px 11px; text-align:left; vertical-align:top; }
+  table.amend thead th { background:var(--chip); font-weight:600; font-size:12.5px; }
+  table.amend td.loc { font-size:12.3px; color: var(--ink-soft); white-space:nowrap; width:13%; }
+  table.amend td.before { background: var(--red-soft); width:29%; }
+  table.amend td.after { background: var(--ku-green-soft); width:29%; }
+  table.amend td.why { width:29%; font-size:12.8px; color: var(--ink-soft); }
+  table.amend .del { text-decoration: line-through; color: var(--red); }
+  table.amend .ins { color: var(--ku-green); font-weight:600; }
+  .table-scroll { overflow-x:auto; }
+
+  ul.plain { margin:8px 0 0; padding-left:18px; } ul.plain li { margin-bottom:8px; font-size:14.2px; }
+  .note { font-size:13px; color:var(--ink-soft); border-left:2px solid var(--line); padding-left:10px; margin:10px 0; }
+
+  .review-card {
+    border:1px solid var(--ku-orange); background: var(--ku-orange-soft); border-radius:8px;
+    padding:14px 18px; margin-bottom:12px;
+  }
+  .review-card .rnum { font-family:'Noto Serif KR',serif; font-weight:700; color: var(--ku-orange); margin-right:8px; }
+
+  .search-wrap { margin-bottom:22px; }
+  .search-wrap input { width:100%; font-family:inherit; font-size:14px; padding:11px 14px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); }
+  .search-wrap input:focus { outline:2px solid var(--ku-green); outline-offset:1px; }
+  .search-hint { font-size:12px; color:var(--ink-soft); margin-top:6px; }
+
+  footer { max-width:1220px; margin:0 auto 60px; padding:20px 28px; color:var(--ink-soft); font-size:12.5px; border-top:1px solid var(--line); }
+
+  @media (max-width:860px) {
+    .layout { grid-template-columns:1fr; }
+    nav.side { position:static; max-height:none; display:flex; overflow-x:auto; gap:4px; padding-bottom:10px; border-bottom:1px solid var(--line); margin-bottom:10px; }
+    nav.side .group { display:flex; gap:4px; margin-bottom:0; flex-shrink:0; }
+    nav.side .group-label { display:none; }
+    nav.side a { white-space:nowrap; border-left:none; border-bottom:2px solid transparent; }
+    nav.side a.active { border-left:none; border-bottom-color:var(--ku-orange); }
+    table.amend td.before, table.amend td.after, table.amend td.why { width:auto; }
+  }
+  .newtag { display:inline-block; font-size:10.5px; font-weight:700; color:#fff; background:#B4472F; border-radius:4px; padding:1px 6px; margin-right:6px; vertical-align:middle; font-family:'Noto Sans KR',sans-serif; letter-spacing:0; }
+  .prio-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:10px; margin:14px 0 6px; }
+  .prio { border:1px solid var(--line-soft); border-radius:8px; padding:10px 14px; background: var(--panel); border-left-width:4px; }
+  .prio.p1 { border-left-color: var(--red); } .prio.p2 { border-left-color: #C08A2B; } .prio.p3 { border-left-color: var(--blue); }
+  .prio .pk { font-size:12.5px; font-weight:700; } .prio .pv { font-size:12.8px; color: var(--ink-soft); margin-top:3px; }
+  table.amend th.loc, table.amend td.loc { width:17%; white-space:normal; } table.amend th.before, table.amend td.before { width:26%; } table.amend th.after, table.amend td.after { width:34%; } table.amend th.why, table.amend td.why { width:23%; }
+  .st { display:inline-block; font-size:11px; font-weight:700; border-radius:10px; padding:1px 8px; margin:0 4px 3px 0; white-space:nowrap; font-family:"Noto Sans KR",sans-serif; }
+  .st.ok { background:#DDEFE4; color:#0F5B3B; } .st.part,.st.chk { background:#FFF0CC; color:#7A4E00; } .st.no,.st.conf { background:#F9DCDC; color:#9B1C1C; } .st.miss { background:#FCE6D6; color:#8A3A0B; } .st.fix { background:#E2E6F7; color:#2D3A8C; }
+  table.amend th.stc, table.amend td.stc { width:10%; } table.amend th.why2, table.amend td.why2 { width:47%; }
+</style>
+
+<style>
+/* ===== Mobile accessibility & legibility enhancements ===== */
+*{ -webkit-tap-highlight-color: rgba(0,0,0,0.08); }
+a, button, input, .pill, .flag, .cflag, .apill { overflow-wrap: break-word; word-break: break-word; }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+  outline: 3px solid #D9822B; outline-offset: 2px; border-radius: 4px;
+}
+nav.side a:focus-visible { outline-offset: -2px; }
+
+@media (max-width: 860px) {
+  /* 규정 위계 관계도는 모바일에서 숨김 */
+  .tree-card { display: none !important; }
+
+  html { -webkit-text-size-adjust: 100%; }
+  body { line-height: 1.5; }
+
+  nav.side {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 8px;
+  }
+  nav.side a {
+    padding: 11px 16px !important;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 13.8px !important;
+  }
+
+  .search-wrap input {
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+  }
+
+  .open-btn, .dl-btn, .proposal-link, .proposal-pill, .ok-pill, .flow-step, a.open-btn {
+    min-height: 42px;
+  }
+  .open-btn, .dl-btn { padding-top: 12px !important; padding-bottom: 12px !important; }
+  .proposal-link, .proposal-pill, .ok-pill { padding-top: 9px !important; padding-bottom: 9px !important; }
+
+  .masthead { padding: 22px 18px 20px !important; }
+  .masthead h1 { font-size: 20px !important; line-height: 1.45 !important; }
+  .masthead .sub { font-size: 13.5px !important; }
+  .masthead-inner { flex-wrap: wrap; }
+
+  section h2 { font-size: 18px !important; }
+  .item-head h3, .art-head h3, .doc-title { font-size: 15px !important; }
+
+  .pill, .flag, .cflag, .apill, .tflag { font-size: 12px !important; padding: 5px 10px !important; }
+
+  table.ratio, table.amend, .cross-table { font-size: 12.6px !important; }
+  table.amend td.before, table.amend td.after, table.amend td.why { width: auto !important; }
+
+  .layout { padding-left: 16px !important; padding-right: 16px !important; gap: 24px !important; }
+  .wrap { padding-left: 16px !important; padding-right: 16px !important; }
+
+  .amend-banner, .summary-bar { padding-left: 16px !important; padding-right: 16px !important; }
+  .amend-card, .summary-card { padding: 14px 16px !important; }
+
+  .doc-grid { gap: 16px !important; }
+  .doc-card:active { transform: scale(0.99); }
+}
+
+@media (max-width: 480px) {
+  .masthead h1 { font-size: 18px !important; }
+  body { font-size: 14.8px !important; }
+  .info-box, .item-card, .art-card, .fact, .review-card { padding: 12px 14px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+
+<style>
+/* ===== Line-height tightened + author badge pinned top-right on mobile ===== */
+@media (max-width: 860px) {
+  .meta-badge {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    display: block !important;
+    margin-top: 0 !important;
+    text-align: right !important;
+    font-size: 9.5px !important;
+    line-height: 1.4 !important;
+    padding: 5px 8px !important;
+    max-width: 42vw;
+    border-radius: 6px !important;
+  }
+  .meta-badge .k { display: block; margin-right: 0 !important; font-size: 9px !important; }
+  .masthead-inner { padding-right: 100px; }
+}
+@media (max-width: 480px) {
+  .meta-badge { font-size: 8.5px !important; padding: 4px 7px !important; max-width: 40vw; }
+}
+</style>
+<!-- KU-PROTECT:HEAD -->
+<meta name="copyright" content="© 2026 건국대학교 ANCHOR사업단. 무단 복제·배포 금지">
+<style id="ku-protect-css">
+body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-select:text}
+img{-webkit-user-drag:none;user-drag:none}
+.ku-copy{margin:28px auto 0;max-width:1180px;padding:14px 28px 26px;font-size:12px;line-height:1.7;color:#6A6E70;border-top:1px solid rgba(128,128,128,.25)}
+.ku-copy b{color:inherit}
+.ku-copy .ku-c1{font-weight:700;color:#00703E}
+.ku-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:#1C2430;color:#F4F2EC;padding:10px 16px;border-radius:8px;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s}
+.ku-toast.on{opacity:1}
+@media (prefers-color-scheme: dark){.ku-copy{color:#A7ACA9}.ku-copy .ku-c1{color:#4FAE83}}
+@media print{body{display:block}.ku-copy{color:#333}}
+</style>
+<!-- /KU-PROTECT:HEAD -->
+<!-- KU-FOLD:HEAD -->
+<style id="ku-fold-css">
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* 안전 영역(펀치홀·제스처 바) */
+.ku-copy{padding-bottom:calc(26px + env(safe-area-inset-bottom,0px))}
+.ku-toast{bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+/* 넓은 표는 가로 스크롤 영역 안에서만 움직이게(페이지 전체가 옆으로 밀리지 않도록) */
+.tbl-scroll,.table-scroll,.ku-tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;max-width:100%}
+.ku-tscroll:focus-visible,.tbl-scroll:focus-visible,.table-scroll:focus-visible{outline:2px solid #00703E;outline-offset:2px}
+.ku-scrollhint{display:none;font-size:12px;color:#5C6B63;margin:4px 0 6px}
+.ku-scrollhint.on{display:block}
+img,svg,video{max-width:100%}
+pre,code{overflow-wrap:anywhere}
+/* 전체 메뉴(드로어) */
+.ku-gnb-all{border:0;cursor:pointer;font:inherit;padding:0}
+.ku-drawer{position:fixed;inset:0;z-index:200;display:none}
+.ku-drawer.on{display:block}
+.ku-drawer-bg{position:absolute;inset:0;background:rgba(10,30,20,.45)}
+.ku-drawer-p{position:absolute;top:0;right:0;bottom:0;width:min(360px,88vw);background:#fff;color:#14201A;display:flex;flex-direction:column;box-shadow:-8px 0 24px rgba(0,0,0,.18);
+  padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) 0;font-family:'Noto Sans KR',sans-serif}
+.ku-drawer-h{display:flex;align-items:center;justify-content:space-between;background:#00703E;color:#fff;min-height:56px;padding:0 6px 0 16px}
+.ku-drawer-h b{font-size:16px}
+.ku-drawer-x{width:48px;height:48px;border:0;background:transparent;color:#fff;font-size:26px;line-height:1;cursor:pointer;border-radius:6px}
+.ku-drawer-x:focus-visible,.ku-drawer a:focus-visible{outline:2px solid #E3B34C;outline-offset:-2px}
+.ku-drawer nav{overflow:auto;padding:6px 0 16px;overscroll-behavior:contain}
+.ku-drawer h3{margin:14px 16px 4px;font-size:12.5px;color:#56655D;font-weight:700;letter-spacing:.04em}
+.ku-drawer h3::before{display:none}
+.ku-drawer a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:0 16px;color:#14201A;text-decoration:none;font-size:15px;border-left:4px solid transparent}
+.ku-drawer a:hover{background:#EEF5F0}
+.ku-drawer a[aria-current="page"]{border-left-color:#00703E;background:#E2F1E8;color:#00703E;font-weight:700}
+.ku-drawer .lk{font-size:11.5px;color:#8A5A00;background:#FFF3D6;border-radius:3px;padding:1px 7px;white-space:nowrap}
+@media (prefers-color-scheme: dark){.ku-drawer-p{background:#17201B;color:#E3ECE6}.ku-drawer a{color:#E3ECE6}.ku-drawer a:hover{background:#1B3326}.ku-drawer a[aria-current="page"]{background:#1B3326;color:#7FD3A6;border-left-color:#3FBF7F}.ku-drawer h3{color:#9DB0A5}}
+/* 맨 위로 */
+.ku-top{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:150;width:48px;height:48px;border-radius:50%;border:0;background:#00703E;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.2);display:none;place-items:center;cursor:pointer}
+.ku-top.on{display:grid}
+.ku-top svg{width:22px;height:22px}
+.ku-top:focus-visible{outline:3px solid #E3B34C;outline-offset:2px}
+/* 터치 화면: 누르는 영역 최소 44px(체크박스 24px + 라벨 여백) */
+@media (pointer:coarse){
+  button,select,.cmp-tab,.cmp-pill,.gs-filters button,.filters button{min-height:44px}
+  input[type="checkbox"],input[type="radio"]{width:24px;height:24px;margin:10px}
+  input[type="text"],input[type="search"],input[type="password"],select,textarea{font-size:16px!important}
+  .ku-gnb-nav a{padding:12px 12px}
+  .meta-badge a{display:inline-block;padding:8px 0}
+  .group a,.toc a,.doc-foot a,.ok-pill,.proposal-pill,.masthead a[style*="padding:4px 10px"]{min-height:44px;display:inline-flex;align-items:center}
+  .group a,.toc a{display:flex}
+}
+/* 폴드 펼침·태블릿(721~1023px): 여백·글자 조정 */
+@media (max-width:1023px){
+  .ku-gnb-nav a{font-size:13.5px;padding-inline:9px}
+  /* 작성자·업데이트 배지: 제목을 가리지 않게 제목 위 한 줄 띠로 */
+  .meta-badge{position:static!important;display:flex!important;flex-wrap:wrap;gap:2px 14px;width:fit-content;max-width:100%!important;margin:0 0 12px!important;text-align:left!important;font-size:12px!important;line-height:1.5!important;padding:5px 10px!important;border-radius:6px!important}
+  .meta-badge .k{display:inline!important;margin-right:5px!important;font-size:11.5px!important}
+  .masthead-inner{padding-right:0!important}
+}
+/* 모바일·폴드 커버(≤720px) */
+@media (max-width:720px){
+  body{overflow-wrap:break-word;word-break:keep-all}
+  .masthead-inner{flex-wrap:wrap}
+  .masthead-inner>*{min-width:0}
+  /* 필터 버튼 줄: 여러 줄로 쌓이지 않고 옆으로 밀어서 선택 */
+  .gs-filters,.filters,.cmp-tabs{flex-wrap:nowrap!important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px;scroll-snap-type:x proximity}
+  .gs-filters::-webkit-scrollbar,.filters::-webkit-scrollbar,.cmp-tabs::-webkit-scrollbar{display:none}
+  .gs-filters>*,.filters>*,.cmp-tabs>*{flex:none;white-space:nowrap;scroll-snap-align:start}
+  .ku-top{width:44px;height:44px}
+}
+/* 폴드 커버 등 아주 좁은 화면(≤380px) */
+@media (max-width:380px){
+  body{font-size:15px}
+  .masthead h1{font-size:22px!important;line-height:1.3!important}
+  th,td{padding:8px!important}
+}
+/* 두 화면에 걸쳐 펼친 경우: 전체 메뉴를 오른쪽 화면에 딱 맞춰 열어 접힘선에 걸리지 않게 */
+@media (horizontal-viewport-segments:2){
+  .ku-drawer-p{left:env(viewport-segment-left 1 0);width:auto}
+  .ku-top{right:calc(100vw - env(viewport-segment-right 0 0) + 14px)}
+}
+/* 모바일 3선(햄버거) 아이콘 · 하단 고정 메뉴 */
+.ku-ham{display:none}
+.ku-bbar{display:none}
+@media (max-width:720px){
+  .ku-gnb-all svg:not(.ku-ham){display:none}
+  .ku-gnb-all .ku-ham{display:block;width:24px;height:24px}
+  .ku-bbar{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:160;background:#fff;border-top:1px solid #D5DED8;box-shadow:0 -4px 14px rgba(0,0,0,.08);
+    padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);font-family:'Noto Sans KR',sans-serif}
+  .ku-bbar a,.ku-bbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:58px;padding:4px 2px;border:0;background:transparent;color:#56655D;font:inherit;font-size:11.5px;font-weight:500;text-decoration:none;cursor:pointer;position:relative}
+  .ku-bbar svg{width:22px;height:22px}
+  .ku-bbar [aria-current="page"]{color:#00703E;font-weight:700}
+  .ku-bbar [aria-current="page"]::before{content:"";position:absolute;top:0;left:22%;right:22%;height:3px;border-radius:0 0 3px 3px;background:#00703E}
+  .ku-bbar a:focus-visible,.ku-bbar button:focus-visible{outline:2px solid #00703E;outline-offset:-3px}
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+  .ku-top{bottom:calc(58px + 14px + env(safe-area-inset-bottom,0px))}
+  .ku-toast{bottom:calc(58px + 16px + env(safe-area-inset-bottom,0px))}
+}
+@media (prefers-color-scheme: dark){.ku-bbar{background:#17201B;border-top-color:#2B3A32}.ku-bbar a,.ku-bbar button{color:#9DB0A5}.ku-bbar [aria-current="page"]{color:#7FD3A6}.ku-bbar [aria-current="page"]::before{background:#3FBF7F}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{.ku-drawer,.ku-top,.ku-scrollhint,.ku-bbar{display:none!important}}
+</style>
+<!-- /KU-FOLD:HEAD -->
+<!-- KU-READ:HEAD -->
+<style id="ku-read-css">
+/* 글자 크기 버튼(상단 바) */
+.ku-gnb-fs{display:grid;place-items:center;width:64px;flex:none;border:0;border-left:1px solid #E3E6E4;background:#fff;color:#00703E;cursor:pointer;font:700 19px/1 'Noto Sans KR',sans-serif;padding:0;position:relative}
+.ku-gnb-fs small{position:absolute;bottom:8px;left:0;right:0;font-size:10.5px;font-weight:700;color:#56655D;letter-spacing:-.02em}
+.ku-gnb-fs b{display:block;transform:translateY(-5px)}
+.ku-gnb-fs:hover{background:#EEF5F0}
+.ku-gnb-fs:focus-visible{outline:2px solid #E3B34C;outline-offset:-2px}
+@media (max-width:380px){.ku-gnb-fs{width:52px}}
+.ku-fs-note{position:fixed;left:50%;top:calc(72px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:210;background:#1E4E2C;color:#fff;font:700 14px/1.4 'Noto Sans KR',sans-serif;padding:8px 16px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s}
+.ku-fs-note.on{opacity:1}
+/* 강조 링크·포커스 표시를 조금 더 또렷하게 */
+a:focus-visible,button:focus-visible{outline-width:3px}
+/* 글자를 키워도 버튼이 화면 밖으로 나가지 않게 */
+@media (max-width:720px){a[class*="btn"],button[class*="btn"]:not(.ku-gnb-btn){white-space:normal!important;max-width:100%;overflow-wrap:anywhere}}
+@media print{.ku-gnb-fs,.ku-fs-note{display:none!important}}
+</style>
+<!-- /KU-READ:HEAD -->
+<!-- KU-UI:HEAD -->
+<link rel="icon" type="image/png" sizes="64x64" href="./assets/ku-favicon-64.png">
+<link rel="apple-touch-icon" href="./assets/ku-touch-180.png">
+<style id="ku-ui-css">
+/* 토큰: KU 문서다듬과 같은 값(헤리티지 그린 #00703E·짙은 그린 #115029·버튼 #005128·제목 바 #E84855·Teams #4B53BC) */
+:root{--ku-heritage:#00703E;--ku-heritage-deep:#115029;--ku-btn:#005128;--ku-heritage-mid:#5AA77C;--ku-soft:#E2F1E8;--ku-bg:#F3F6F4;--ku-line:#D5DED8;--ku-ink:#14201A;--ku-muted:#56655D;--ku-red:#E84855;--ku-teams:#4B53BC;--ku-paper:#fff;
+  --ku-rule:#036B3F;--ku-man:#0F7D82;--ku-guide:#7A8F1C;--ku-norm:#5B6B63}
+@media (prefers-color-scheme: light){:root{--ku-green:#00703E;--ku-green-deep:#115029}body{background:var(--ku-bg)!important}}
+@media (prefers-color-scheme: dark){:root{--ku-paper:#17201B;--ku-line:#2B3A32;--ku-ink:#E3ECE6;--ku-muted:#9DB0A5;--ku-soft:#1B3326;--ku-teams:#A9B0FF;--ku-red:#FF6B77}}
+/* ── 한 줄 고정 헤더 ── */
+.ku-gnb{position:sticky;top:0;z-index:120;display:flex;max-width:100%;box-sizing:border-box;align-items:center;gap:12px;min-height:56px;padding:6px max(16px,calc((100% - 1480px)/2 + 16px));background:var(--ku-paper);color:var(--ku-ink);border-bottom:1px solid var(--ku-line);font-family:'Noto Sans KR',sans-serif;box-shadow:none}
+.ku-gnb a{text-decoration:none}
+.ku-logo{display:flex;align-items:center;gap:8px;flex:none;margin:0;padding:0;background:none;box-shadow:none}
+.ku-logo img{height:30px;width:auto;display:block}
+.ku-logo .ku-w{display:none}
+.ku-nm{display:flex;flex-direction:column;line-height:1.15;border-left:1px solid var(--ku-line);padding-left:10px;margin-left:2px;color:var(--ku-ink)}
+.ku-nm b{display:flex;align-items:center;gap:5px;font-size:17px;font-weight:900;letter-spacing:-.03em;white-space:nowrap}
+.ku-nm small{font-size:9.5px;letter-spacing:.12em;color:var(--ku-muted);white-space:nowrap}
+@media (prefers-color-scheme: dark){.ku-logo .ku-g{display:none}.ku-logo .ku-w{display:block}}
+.beta-tag{font-style:normal;font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--ku-red);border-radius:3px;padding:1px 5px;line-height:1.4}
+.ku-gnb-nav{display:flex;align-items:center;gap:2px;margin-left:8px}
+.ku-gnb-nav a{color:var(--ku-ink);font-size:14px;font-weight:700;padding:8px 10px;border-bottom:2px solid transparent;white-space:nowrap}
+.ku-gnb-nav a:hover{color:var(--ku-heritage)}
+.ku-gnb-nav a[aria-current="page"]{color:var(--ku-heritage);border-bottom-color:var(--ku-heritage)}
+.ku-bp{display:flex;gap:8px;margin-left:auto;flex-wrap:nowrap}
+.ku-bp span{font-size:11.5px;color:var(--ku-muted);white-space:nowrap;display:inline-flex;gap:4px;align-items:center}
+.ku-bp b{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--c);border-radius:3px;padding:1px 6px}
+.ku-gnb .ku-sp{flex:1}
+.ku-who{display:flex;flex-direction:column;line-height:1.2;text-align:right;font-size:12px;color:var(--ku-muted)}
+.ku-who b{color:var(--ku-ink);font-size:12.5px}.ku-who span{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:11px}
+/* 아이콘 버튼(검색·전체·글자 크기): 학교 블록 대신 문서다듬식 테두리 버튼 */
+.ku-gnb .ku-gnb-btn,.ku-gnb .ku-gnb-fs{display:grid;place-items:center;width:40px;height:40px;flex:none;border:1px solid var(--ku-line);border-radius:6px;background:var(--ku-paper);color:var(--ku-ink);cursor:pointer;padding:0;position:relative}
+.ku-gnb .ku-gnb-btn:hover,.ku-gnb .ku-gnb-fs:hover{border-color:var(--ku-heritage);color:var(--ku-heritage)}
+.ku-gnb .ku-gnb-all{background:var(--ku-heritage);border-color:var(--ku-heritage);color:#fff}
+.ku-gnb .ku-gnb-all:hover{color:#fff;background:var(--ku-btn)}
+.ku-gnb-btn svg{width:20px;height:20px}
+.ku-gnb .ku-gnb-fs{font:700 16px/1 'Noto Sans KR',sans-serif;color:var(--ku-heritage)}
+.ku-gnb .ku-gnb-fs b{transform:translateY(-4px)}
+.ku-gnb .ku-gnb-fs small{bottom:3px;font-size:9px;color:var(--ku-muted)}
+.ku-gnb a:focus-visible,.ku-gnb button:focus-visible{outline:2px solid var(--ku-heritage);outline-offset:2px}
+/* ── 베타 Teams 채팅 ── */
+.tm-menu{position:relative;flex:none}
+.tm-btn{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 12px;border:1px solid color-mix(in srgb,var(--ku-teams) 40%,var(--ku-line));border-radius:6px;background:var(--ku-paper);color:var(--ku-teams);font:700 13px/1 'Noto Sans KR',sans-serif;cursor:pointer;white-space:nowrap}
+.tm-btn:hover{border-color:var(--ku-teams);background:color-mix(in srgb,var(--ku-teams) 8%,var(--ku-paper))}
+.tm-btn .beta-tag{font-size:9px}
+.tm-ic{width:17px;height:17px;flex:none}
+.tm-pop{position:absolute;top:calc(100% + 8px);right:0;z-index:130;width:min(380px,calc(100vw - 32px));display:flex;flex-direction:column;gap:10px;background:var(--ku-paper);color:var(--ku-ink);border:1px solid var(--ku-line);border-top:3px solid var(--ku-teams);border-radius:8px;box-shadow:0 10px 28px rgba(0,0,0,.16);padding:12px 14px;font-family:'Noto Sans KR',sans-serif;text-align:left}
+.tm-pop[hidden]{display:none!important}
+.tm-head{display:flex;gap:10px;align-items:center;padding-bottom:8px;border-bottom:1px solid var(--ku-line);color:var(--ku-teams)}
+.tm-head .tm-ic{width:26px;height:26px}
+.tm-head div{display:flex;flex-direction:column;line-height:1.3}
+.tm-head b{color:var(--ku-ink);font-size:14px}.tm-head span{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;color:var(--ku-muted)}
+.tm-f{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:700;color:var(--ku-muted)}
+.tm-f select,.tm-f textarea{font:inherit;font-weight:400;font-size:14px;color:var(--ku-ink);background:var(--ku-paper);border:1px solid var(--ku-line);border-radius:6px;padding:7px 9px;width:100%}
+.tm-f textarea{min-height:88px;resize:vertical;line-height:1.5}
+.tm-f select:focus-visible,.tm-f textarea:focus-visible{outline:2px solid var(--ku-heritage);outline-offset:0}
+.tm-ctx{display:flex;gap:6px;align-items:flex-start;font-size:13px;color:var(--ku-muted)}
+.tm-note{margin:0;font-size:11.5px;color:var(--ku-muted);line-height:1.5}
+.tm-acts{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tm-acts a,.tm-acts button{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13.5px;border:1px solid var(--ku-line);background:var(--ku-paper);color:var(--ku-ink);border-radius:6px;padding:7px 12px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.tm-acts .pri{background:var(--ku-teams);border-color:var(--ku-teams);color:#fff;font-weight:700}
+.tm-acts .ghost{border-color:transparent;color:var(--ku-muted);text-decoration:underline;padding-inline:6px}
+.tm-acts a:focus-visible,.tm-acts button:focus-visible{outline:2px solid var(--ku-teams);outline-offset:2px}
+/* ── 서브비주얼(마스트헤드) ── */
+.masthead{background:linear-gradient(120deg,var(--ku-heritage) 0%,var(--ku-heritage-deep) 100%)!important;border-bottom:0!important}
+.masthead .tag,.masthead .sub{color:#E6F3EC!important}
+.masthead h1{font-weight:900!important;letter-spacing:-.03em}
+.bull-badge{font-size:0!important;width:58px!important;height:58px!important;border-radius:4px!important;background:#fff url(./assets/ku-initial-green.png) center/72% auto no-repeat!important;box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px rgba(0,112,62,.35);flex:none}
+/* 소제목: 빨간 6px 세로 바 */
+h2::before{content:"";display:inline-block;width:6px;height:.95em;margin-right:10px;border-radius:3px;background:var(--ku-red);vertical-align:-.1em}
+/* 탭: 선택 탭 짙은 그린 + 흰 안쪽 테두리 */
+.cmp-tab.on{background:var(--ku-heritage-deep)!important;border-color:var(--ku-heritage-deep)!important;color:#fff!important;box-shadow:inset 0 0 0 1px #fff}
+.cmp-pill.on{background:var(--ku-heritage)!important;border-color:var(--ku-heritage)!important}
+/* 베타 안내 띠(푸터 위) */
+.ku-beta{max-width:1180px;margin:28px auto 0;padding:10px 28px;font-size:12.5px;line-height:1.6;color:var(--ku-ink);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.ku-beta .beta-foot{color:var(--ku-red);font-weight:700}
+.ku-beta a{color:var(--ku-teams);font-weight:700}
+.ku-beta + .ku-copy{margin-top:0}
+.ku-drawer .tm-d{color:var(--ku-teams)!important;font-weight:700}
+/* 반응형 */
+@media (max-width:1440px){.ku-bp{display:none}.ku-gnb .ku-sp{display:block}}
+@media (max-width:1180px){.ku-who{display:none}}
+@media (max-width:900px){.tm-btn .tm-lb,.tm-btn .beta-tag{display:none}.tm-btn{width:40px;padding:0;justify-content:center}}
+@media (max-width:720px){
+  .ku-gnb{gap:6px;min-height:52px;padding:5px max(10px,env(safe-area-inset-left,0px)) 5px 12px}
+  .ku-gnb-nav{display:none}
+  .ku-logo img{height:26px}
+  .ku-nm{padding-left:8px}.ku-nm b{font-size:15.5px}.ku-nm small{display:none}
+  .ku-gnb .ku-gnb-search{display:none}
+  .tm-pop{position:fixed;left:12px;right:12px;top:60px;width:auto}
+}
+@media (max-width:380px){.ku-nm .beta-tag{display:none}.ku-nm b{font-size:14.5px}.ku-logo img{height:22px}.ku-gnb .ku-gnb-btn,.ku-gnb .ku-gnb-fs,.tm-btn{width:38px;height:38px}}
+@media print{.ku-gnb,.ku-beta{display:none}}
+</style>
+<!-- /KU-UI:HEAD -->
+</head>
+<body>
+<!-- KU-UI:GNB -->
+<div class="ku-gnb" role="banner">
+  <a class="ku-logo" href="./index.html" aria-label="규정김군 베타 · ANCHOR 규정 통합 대시보드 홈">
+    <img class="ku-g" src="./assets/ku-initial-green.png" alt=""><img class="ku-w" src="./assets/ku-initial-white.png" alt="">
+    <span class="ku-nm" aria-hidden="true"><b>규정김군<em class="beta-tag">BETA</em></b><small>ANCHOR REGULATION GUIDE</small></span>
+  </a>
+  <nav class="ku-gnb-nav" aria-label="주요 메뉴">
+    <a href="./index.html" data-p="index.html">대시보드</a><a href="./index.html#cmp" data-p="cmp">규정 비교</a><a href="./anchor-training-materials.html" data-p="anchor-training-materials.html">교육자료</a>
+  </nav>
+  <span class="ku-sp"></span>
+  <div class="ku-bp" title="대시보드에 반영한 기준 문서 차수">
+    <span style="--c:var(--ku-rule)">앵커 지침 <b>4차</b></span><span style="--c:var(--ku-man)">서울 기준 <b>3차</b></span><span style="--c:var(--ku-guide)">산학연 <b>5차</b></span><span style="--c:var(--ku-norm)">산단 내규 <b>4차</b></span>
+  </div>
+  <div class="tm-menu" id="tmMenu">
+    <button type="button" class="tm-btn" id="tmBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="tmPop" title="Teams로 앵커김군(coolzet@konkuk.ac.kr)에게 채팅 (베타)"><svg class="tm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-4.6 3.7c-.5.4-1.4.1-1.4-.6V16h-.5A2.5 2.5 0 0 1 2 13.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 8.5h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="tm-lb">Teams 채팅</span><em class="beta-tag">BETA</em></button>
+    <div class="tm-pop" id="tmPop" hidden role="dialog" aria-label="Teams 채팅 문의">
+      <div class="tm-head"><svg class="tm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-4.6 3.7c-.5.4-1.4.1-1.4-.6V16h-.5A2.5 2.5 0 0 1 2 13.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 8.5h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div><b>규정김군 문의 → 앵커김군 Teams 채팅</b><span>coolzet@konkuk.ac.kr</span></div></div>
+      <label class="tm-f"><span>문의 유형</span>
+        <select id="tmType"><option>사용 문의</option><option>오류 신고</option><option>규정 내용 정정 요청</option><option>베타 사용 의견</option><option>기능 개선 제안</option><option>기타</option></select></label>
+      <label class="tm-f"><span>보낼 내용</span>
+        <textarea id="tmMsg" rows="4" placeholder="궁금한 점, 잘못된 조문·금액, 오류가 난 상황을 적어 주세요."></textarea></label>
+      <label class="tm-ctx"><input type="checkbox" id="tmCtx" checked><span>현재 화면 정보 함께 보내기 (페이지·보던 위치)</span></label>
+      <p class="tm-note">개인정보와 내부 금액 자료는 적지 마세요.</p>
+      <div class="tm-acts">
+        <a class="pri" id="tmGo" href="https://teams.microsoft.com/l/chat/0/0?users=coolzet@konkuk.ac.kr" target="_blank" rel="noopener">Teams에서 채팅 열기</a>
+        <button type="button" id="tmCopy">내용 복사</button>
+        <a class="ghost" id="tmMail" href="mailto:coolzet@konkuk.ac.kr">메일로 보내기</a>
+      </div>
+      <p class="tm-note">Teams 앱 또는 웹이 열리면 받는 사람과 내용이 채워져 있습니다. 보내기는 Teams에서 직접 누르세요.</p>
+    </div>
+  </div>
+  <span class="ku-who"><b>앵커김군</b><span>coolzet@konkuk.ac.kr</span></span>
+  <a class="ku-gnb-btn ku-gnb-search" href="./index.html#search" aria-label="규정 통합 검색"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></a>
+  <a class="ku-gnb-btn ku-gnb-all" href="./index.html" aria-label="전체 규정 보기"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="5" r="2.1"/><circle cx="12" cy="5" r="2.1"/><circle cx="19" cy="5" r="2.1"/><circle cx="5" cy="12" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="19" cy="12" r="2.1"/><circle cx="5" cy="19" r="2.1"/><circle cx="12" cy="19" r="2.1"/><circle cx="19" cy="19" r="2.1"/></svg></a>
+</div>
+<!-- /KU-UI:GNB -->
+<div id="pw-gate" style="
+  position:fixed; inset:0; z-index:9999; background: var(--ku-green-deep, #0A3F28);
+  display:flex; align-items:center; justify-content:center; padding:20px;
+  font-family:'Noto Sans KR',sans-serif;
+">
+  <div style="
+    background: var(--panel, #fff); border-radius:12px; padding:36px 32px;
+    max-width:360px; width:100%; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,0.35);
+  ">
+    <div style="font-size:34px; margin-bottom:10px;">🔒</div>
+    <h2 style="font-family:'Noto Serif KR',serif; font-size:18px; margin:0 0 8px; color: var(--ink, #16241C);">비밀번호 확인</h2>
+    <p style="font-size:13px; color: var(--ink-soft, #55635B); margin:0 0 18px; line-height:1.6;">이 페이지는 접근이 제한되어 있습니다.<br>비밀번호를 입력해 주세요.</p>
+    <input type="password" id="pw-input" placeholder="비밀번호" autocomplete="off" style="
+      width:100%; box-sizing:border-box; padding:11px 14px; font-size:15px; border-radius:6px;
+      border:1px solid var(--line, #D8E0D9); margin-bottom:10px; text-align:center;
+    ">
+    <button id="pw-submit" style="
+      width:100%; padding:11px 14px; font-size:14px; font-weight:600; color:#fff;
+      background: var(--ku-green, #0F5B3B); border:none; border-radius:6px; cursor:pointer;
+    ">확인</button>
+    <div id="pw-error" style="display:none; margin-top:10px; font-size:12.5px; color:#9A3B3B;">비밀번호가 올바르지 않습니다.</div>
+  </div>
+</div>
+
+<div id="site-content" style="display:none;">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="meta-badge">
+      <div><span class="k">작성자</span>앵커김군 (<a href="mailto:coolzet@konkuk.ac.kr">coolzet@konkuk.ac.kr</a>)</div>
+      <div><span class="k">업데이트</span>2026. 10. 21.</div>
+    </div>
+    <div class="bull-badge">🔍</div>
+    <div>
+      <div class="tag">ANCHOR사업 사업비 관리 지침 원안(수정본)·개정 전후표 (2026.10.21.) · 종합 검토</div>
+      <h1>사업단 지침 개정안 종합 검토 — 반영 여부 · 상위규정 충돌 · 전후표 정합성</h1>
+      <div class="sub">개정 원안(96쪽, 수정 표시본)과 개정 전후표(23쪽)를 앵커 사업비 지침 4차·서울 앵커 기준 3차·산학연 매뉴얼 5차·산단 내규 4차·구매계약업무요강 28차와 대조하고, 10.14. 개정 제안과 2026.9.18. 합동 현장점검·교육연수 감사사례 반영 여부를 점검했습니다.</div>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;font-size:12.5px;"><a href="./index.html" style="color:#F0D9A6;border:1px solid rgba(240,217,166,.5);border-radius:6px;padding:4px 10px;text-decoration:none;">← 규정 통합 대시보드</a><a href="./regulation-amendment-proposal.html" style="color:#F0D9A6;border:1px solid rgba(240,217,166,.5);border-radius:6px;padding:4px 10px;text-decoration:none;">🔒 10.14. 개정 제안</a><a href="./konkuk-main-budget-guide.html" style="color:#F0D9A6;border:1px solid rgba(240,217,166,.5);border-radius:6px;padding:4px 10px;text-decoration:none;">사업단 지침 항목별 정리</a><a href="./campus-town-amendment-review.html" style="color:#F0D9A6;border:1px solid rgba(240,217,166,.5);border-radius:6px;padding:4px 10px;text-decoration:none;">🔒 캠타 지침 개정 검토</a><a href="./anchor-training-materials.html" style="color:#F0D9A6;border:1px solid rgba(240,217,166,.5);border-radius:6px;padding:4px 10px;text-decoration:none;">교육자료</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="summary-bar">
+  <div class="summary-card">
+    <div class="sfact warn"><div class="num">20건</div><div class="desc">① 전후표 ↔ 원안 불일치</div></div>
+    <div class="sfact warn"><div class="num">18건</div><div class="desc">② 상위규정 미반영·충돌 (충돌 4건)</div></div>
+    <div class="sfact"><div class="num">3 · 5 · 13</div><div class="desc">③ 10.14. 제안 반영 · 일부 · 미반영</div></div>
+    <div class="sfact warn"><div class="num">10건</div><div class="desc">④ 감사·현장점검 지적 보완 필요</div></div>
+    <div class="sfact"><div class="num">26건</div><div class="desc">⑤ 오탈자·표기 (원안 16 · 전후표 10)</div></div>
+    <div class="sfact"><div class="num">9건</div><div class="desc">⑥ 위계·체계</div></div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="side" id="sideNav">
+    <div class="group"><div class="group-label">개요</div><a href="#overview">종합 판정</a></div>
+    <div class="group"><div class="group-label">내용 검토</div><a href="#r1">① 전후표 ↔ 원안</a><a href="#r2">② 상위규정 미반영·충돌</a><a href="#r3">③ 10.14. 제안 반영 점검</a><a href="#r4">④ 감사·현장점검 반영</a></div>
+    <div class="group"><div class="group-label">형식 검토</div><a href="#r5">⑤ 오탈자·표기</a><a href="#r6">⑥ 위계·체계</a></div>
+    <div class="group"><div class="group-label">마무리</div><a href="#r7">확인 필요 사항</a></div>
+  </nav>
+
+  <main>
+    <div class="search-wrap">
+      <input type="text" id="searchBox" placeholder="키워드로 찾기 (예: 사업비 변경, PBS, 회의비, 서식11, 쪽수)">
+      <div class="search-hint">입력하면 검토 표의 행이 실시간으로 필터링됩니다.</div>
+    </div>
+
+    <section id="overview">
+      <h2>종합 판정</h2>
+      <div class="reg-header status-high"><span class="status">보완 후 상정</span><span class="rtitle">명칭 정비와 서식 재번호는 거의 끝났지만, 상위규정과 어긋나는 조문 4건과 현장점검 재발 방지 조항이 빠져 있어 이 상태로 심의하기는 이릅니다.</span></div>
+      <ul class="plain">
+        <li><strong>대상</strong>: 「서울 지역성장 인재양성체계(ANCHOR)사업 사업비 관리 지침」 원안 수정본(2026.10., 본문 51쪽·서식 26종·별첨 2종)과 개정 전후표(본문 연번 1~5, 양식 연번 1)</li>
+        <li><strong>잘 된 점</strong>: RISE→앵커 명칭, 서식 1~26 재번호와 본문 참조, 앵커 4차의 장비 도입기한·글로컬/조기취업형 단서, 장학금성 지원 제한, 겸직자 인건비 제한, 창업보육부담금·재원별 반납, 산학연과제 간접비 불가, 국외여비 사전보고가 들어갔습니다.</li>
+        <li><strong>먼저 고칠 것 (상정 전)</strong>: ② 사업비 변경 '서울 앵커사업단 승인' 삭제 · PBS 인건비 단서 · 다. 연구개발비 신설 보류(센터 확인) · 회의비 '총액'→'1인당' · 창업지원금 부가세 제외 · 시설공사 금액 기준 복원 · 산학연 적용 단위과제 ⑨ 추가</li>
+        <li><strong>함께 넣을 것</strong>: ④ 현장점검 6건·소명 1건 대응 조항(견적 요건, 서식11 개편, 평가위원 외부 과반, 창업지원금 사유서·환수, 운영비 수불대장, 매입세액 불공제 확인서)</li>
+        <li><strong>정리할 것</strong>: ① 전후표를 원안 기준으로 다시 맞추고(누락 신설 항목 포함), ⑤ 오탈자 26건·⑥ 목차 쪽수</li>
+      </ul>
+      <div class="note">쪽수는 원안의 인쇄 쪽번호 기준입니다. 원안은 수정 표시본(파란색·빨간색)이라 색 표시된 문구를 전후표와 하나씩 대조했습니다.</div>
+    </section>
+
+    <section id="r1">
+      <h2>① 전후표 ↔ 원안(수정본) 불일치</h2>
+      <div class="reg-header status-high"><span class="status">정합성</span><span class="rtitle">전후표의 '개정 후' 문안과 원안이 다르거나, 원안에서 바뀌었는데 전후표에 없는 곳</span></div>
+      <div class="table-scroll"><table class="amend"><thead><tr><th class="loc">위치</th><th class="before">전후표 (개정 후)</th><th class="after">원안 (수정본)</th><th class="why">조치</th></tr></thead><tbody>
+<tr><td class="loc">Ⅰ.2 하·거·너 (1p)</td><td class="before">「건국대학교 지역성장 인재양성체계사업 관리운영 규정」 등 — (ANCHOR) 표기 없음</td><td class="after">「건국대학교 지역성장 인재양성체계<b>(ANCHOR)</b>사업 관리운영 규정」, 「서울시 지역성장 인재양성체계(ANCHOR) 캠퍼스타운 사업 운영 매뉴얼」</td><td class="why">학내 규정 실제 개정 명칭으로 한쪽에 맞춤. 캠타 매뉴얼은 서울시 발간 정식 명칭 「2026년 서울캠퍼스타운 사업 운영 매뉴얼」(대학협력과, 2026.4.)로 인용</td></tr>
+<tr><td class="loc">Ⅰ.2 가·나·다 (1p)</td><td class="before">차수 표기 없음</td><td class="after">앵커 지침 <b>(4차 개정)</b>, 서울 기준 <b>(3차 개정)</b> 추가, 라항 국고보조금 통합관리지침 삭제 표시(카와 중복)</td><td class="why">전후표 연번1에 차수 추가·라항 정리 내용을 반영</td></tr>
+<tr><td class="loc">Ⅱ.1 사업연도 (2p)</td><td class="before">(개정 내용 없음)</td><td class="after">1차연도 근거 문구, <b>캠퍼스타운 1차연도 '26.1.1.~'27.2.28.</b> 단서 신설(파란색)</td><td class="why">전후표에 신설 항목으로 추가</td></tr>
+<tr><td class="loc">Ⅳ.가 인건비 1)3 (7p)</td><td class="before">"<b>사업 전담조직</b> 책임자에 대한 보직수당…"</td><td class="after">"<b>사업단 등 전담조직</b> 책임자에 대한 보직수당…"(구 문구 잔존)</td><td class="why">원안을 전후표대로 "사업 전담조직"으로 수정 — 서울 기준 3차 Ⅴ.가와 같은 문구</td></tr>
+<tr><td class="loc">Ⅳ.다 1) 집행개요 5 (11p)</td><td class="before">(없음)</td><td class="after"><b>"5. 연구개발비 — 대학 자체 연구개발 활동 경비"</b> 신설(빨간색)</td><td class="why">전후표 누락. 또한 상위 근거가 없는 항목이라 ②-C1 검토 결과에 따라 존치 여부 결정</td></tr>
+<tr><td class="loc">Ⅳ.다 회의 운영 경비 주석 (14p)</td><td class="before">"※ 2025년 RISE 사업까지는 회의비의 경우 업무추진비-사업추진비로 집행 가능"</td><td class="after">"※ 2026년 ANCHOR사업 회의비의 경우 운영비-일반수용비로 집행"</td><td class="why">원안 문구가 최신 — 전후표를 원안대로 수정</td></tr>
+<tr><td class="loc">국외여비 사전보고 (16·17·32·34·42·45p, 6곳)</td><td class="before">(없음)</td><td class="after">"※ 국외여비는 지출 전 서울앵커센터에 사전보고…" 신설(빨간색)</td><td class="why">전후표에 일괄 신설 항목으로 추가(근거: 서울 기준 3차 [첨부5])</td></tr>
+<tr><td class="loc">Ⅳ.다 장학금성 지원 각주 (11p)</td><td class="before">(없음)</td><td class="after">"ANCHOR 사업의 혁신인재지원금*에 준하는"</td><td class="why"><b>상위 원문은 "기존 RIS 사업의 혁신인재지원금"</b> — RIS(지자체-대학 협력기반 지역혁신사업)는 별개 선행사업이므로 원문대로 복원 <i>(10.14. 제안의 'RIS→RISE 오기' 의견 정정)</i></td></tr>
+<tr><td class="loc">Ⅳ.라 집행 제한 1 단서 (26p)</td><td class="before">글로컬 "최초 실행계획"만 표시</td><td class="after"><b>조기취업형 계약학과</b> 건물 증·개축 단서(10% 범위, 교육부 사전 협의) 신설</td><td class="why">앵커 지침 4차와 일치 — 전후표에 추가</td></tr>
+<tr><td class="loc">Ⅳ.마 심의 절차 표 3천만~1억 (29p)</td><td class="before">'서울라이즈센터-<b>168</b>(2026.4.8.), 2026년 제1차 서울RISE센터 연구시설·장비·기자재 도입심의 안내' / 심의요청서 "서울RISE센터 자체 배포"</td><td class="after">'서울라이즈센터-<b>426</b>(2026.8.10.), …2026년 제3차 연구시설·장비 도입 심의 절차 안내' / "서울앵커센터 자체 배포"</td><td class="why">두 문서가 서로 다른 공문을 인용 — 서울앵커센터 심의(3천만~1억)와 중앙 심의(1억 이상) 안내 공문을 각각 확인해 맞춤</td></tr>
+<tr><td class="loc">Ⅳ.사 연구개발비 인건비 (35p)</td><td class="before">(없음)</td><td class="after">"인건비 : 외부인건비(외부참여자) 한정 지급" 신설(빨간색)</td><td class="why">전후표에 추가</td></tr>
+<tr><td class="loc">Ⅳ.사 회의비 참조 (36·38p)</td><td class="before">집행기준 "[기관업무비 - 사업추진비 - 회의비]", 제출서류 "기관업무비-사업추진비(회의비)"</td><td class="after">"[그 밖의 사업운영경비 - 업무추진비 - 기관업무비(회의비)]", "업무추진비-기관업무비(회의비)"</td><td class="why">'기관업무비-사업추진비'는 존재하지 않는 조합 — 원안 기준으로 통일하되 ②-C5 의견 참고</td></tr>
+<tr><td class="loc">Ⅳ.사 제출서류 번호 (37p)</td><td class="before">"<b>4.</b> 주요 집행항목 별 제출서류"</td><td class="after">"<b>3.</b> 주요 집행항목 별 제출서류"(3이 두 번)</td><td class="why">원안을 4로 수정</td></tr>
+<tr><td class="loc">Ⅳ.자 기관업무비(기타운영비) (45p)</td><td class="before">"업무협의, 간담회 등… 회의비 기준은 <b>[별첨1] 서울연구원 예산집행지침</b> 참조" 존치</td><td class="after">해당 행 삭제</td><td class="why">원안이 맞음. 현재 [별첨1]은 출장비(국내)라 참조가 틀림 — 전후표에서 삭제 표시</td></tr>
+<tr><td class="loc">Ⅳ.차 간접비 ※ (47p)</td><td class="before">「<b>지역성장 인재양성체계</b> 운영규정」 제3조 및 별표1</td><td class="after">「<b>지역혁신중심 대학지원체계</b> 운영규정」 제3조 및 별표1 (미수정)</td><td class="why">원안을 Ⅰ.2 가항과 같은 명칭으로 수정</td></tr>
+<tr><td class="loc">Ⅳ.3 사업비 변경 나.1) (48p)</td><td class="before">"[사업비 항목 내 <b>및 사업비 항목 간</b>] 변경 절차"</td><td class="after">"[사업비 항목 내] 변경 절차"</td><td class="why">원안이 서울 기준 [첨부4]와 일치(항목 간 변경은 2)로 처리) — 전후표 수정</td></tr>
+<tr><td class="loc">Ⅳ.3 e나라도움·플랫폼 안내 박스 (48p)</td><td class="before">(없음)</td><td class="after">신청 대상·내용·격월 첫째주 안내 박스 신설</td><td class="why">전후표에 추가. 박스 안 "서울RISE센터로 ①공문 제출" 문구는 서울앵커센터로 수정</td></tr>
+<tr><td class="loc">별첨 목차 쪽수 (52p)</td><td class="before">지출서식 52 / 별첨1 89 / 별첨2 91</td><td class="after">52 / 88 / 90</td><td class="why"><b>실제 인쇄 쪽수는 서식1 53 · 별첨1 90 · 별첨2 92</b> — 둘 다 틀림(⑥ 참고)</td></tr>
+<tr><td class="loc">[서식23] 인센티브 체크리스트 (82p)</td><td class="before">"COSS·<b>SOUT</b>의 경우"</td><td class="after">"COSS·SCOUT의 경우"</td><td class="why">전후표 오기 정정</td></tr>
+<tr><td class="loc">[서식1] 붙임 (53p)</td><td class="before">서식2 사업비 지급내역서 <b>삭제</b></td><td class="after">붙임 "2. 사업비 지급내역서 1부" 그대로</td><td class="why">삭제한 서식을 예시가 계속 요구 — 붙임 2 삭제 또는 "지급 대상자 명단"으로 대체</td></tr>
+</tbody></table></div>
+    </section>
+
+    <section id="r2">
+      <h2>② 상위규정 대비 미반영·충돌</h2>
+      <div class="reg-header status-high"><span class="status">상위규정</span><span class="rtitle">앵커 지침 4차 · 서울 기준 3차 · 산학연 매뉴얼 5차 · 산단 내규 4차 · 구매계약업무요강 28차</span></div>
+      <div class="table-scroll"><table class="amend"><thead><tr><th class="loc">위치</th><th class="before">원안 현재</th><th class="after">수정안</th><th class="why">근거</th></tr></thead><tbody>
+<tr><td class="loc"><span class="st conf">충돌</span> Ⅳ.3 나.2) 단위과제·항목 간 변경 (48p)</td><td class="before">…서울 앵커센터 보고 → <b>서울 앵커사업단 승인</b> → e나라도움 반영 / 가항 "보고 후 승인을 원칙"</td><td class="after">"승인" 단계 삭제: <b>서울앵커센터에 변경계획 사전 통지(공문) → 운영위원회 심의·의결 → 수정사업계획서 보고(플랫폼 최종 제출) → e나라도움 반영</b>. 가항도 "보고"로 정비. 단, 보조비목·세목 신설·전용만 서울앵커센터 <b>승인</b>(마항 단서, 현행 유지)</td><td class="why">앵커 지침 4차 Ⅲ 사업비 변경(사전 통지→심의→보고), 서울 기준 3차 [첨부4]. "서울 앵커사업단"이라는 승인 주체는 없음 — 10.14. 제안 때부터 남아 있는 오류</td></tr>
+<tr><td class="loc"><span class="st miss">누락</span> Ⅳ.가 인건비 1)1 ※ (7p)</td><td class="before">①대학 본부·산단 교직원이 전담조직에서 전담하는 경우만 지급 가능</td><td class="after"><b>"②PBS 방식에 의하여 운영되는 기관(출연연 등)의 직원이 앵커 업무에 참여하는 경우"</b> 추가 + "과제 참여율 등 공신력 있는 증빙"</td><td class="why"><b>앵커 지침 4차 개정의 유일한 신구대조 항목</b>(인건비 14쪽), 서울 기준 3차 Ⅴ.가 동일. 전후표·원안 모두 빠짐</td></tr>
+<tr><td class="loc"><span class="st miss">누락</span> Ⅳ.가 인건비 편성 비율 (신설)</td><td class="before">비율 규정 없음(서식23에서 "인건비 비율 초과 여부"만 점검)</td><td class="after">총사업비 구간별 인건비 편성·집행 비율 표 신설: <b>10억 이하 30% · 10억 초과~100억 25% · 100억 초과~200억 20% · 200억 초과 15%</b>, ∑(구간 사업비×비율)</td><td class="why">서울 기준 3차 Ⅱ.3. 체크리스트가 점검하는 기준을 본문이 정하지 않음</td></tr>
+<tr><td class="loc"><span class="st conf">충돌</span> Ⅳ.다 집행개요 5·연구개발비(260) (11·15~17p)</td><td class="before">다. 교육·연구 프로그램 개발·운영비에 "5. 연구개발비" 신설, 연구개발비(260-01) 집행기준 표 운용</td><td class="after"><b>서울앵커센터 사전 확인 전까지 신설 보류</b>. 상위 기준에서 연구개발비(260-01)는 '기업 지원·협력 활동비 — 산학공동기술개발과제'에만 매칭됨. 존치하려면 센터 회신 근거를 각주로 명시</td><td class="why">앵커 지침 4차 Ⅴ.다·서울 기준 3차 Ⅴ.다 사용용도에 연구개발비 없음, 서울 기준 [첨부2] 필수 매칭·[첨부3]. 다. 집행제한 3 "교·직원의 개인 연구활동비"와도 충돌 소지</td></tr>
+<tr><td class="loc"><span class="st conf">충돌</span> Ⅳ.다 회의 운영 경비 (14p)</td><td class="before">"회의 식대 및 다과비 (<b>총액</b> 50,000원)"</td><td class="after">"회의 참석자 식비 및 다과비 <b>1인당</b> 50,000원 이내(청탁금지법), 외부 인원이 참석하는 회의에 한함"</td><td class="why">서울 기준 3차 [첨부5] 준수사항 — 한도는 1인 기준. '총액'으로 쓰면 회의 1건 전체 5만원으로 읽혀 운영 혼선</td></tr>
+<tr><td class="loc"><span class="st part">일부 반영</span> Ⅳ.자 회의비 단가 (44p)</td><td class="before">내부 회의 30,000원 이내 / 외부 50,000원 이내 (단위 없음)</td><td class="after">"<b>1인당</b>" 명시. 서울 [첨부5]의 기본 단가(식비·다과 1인 25,000원)보다 높은 대학 자체 기준이므로 "대학 자체 기준(서울 기준 [첨부5] 단서에 따름)" 근거 표기</td><td class="why">서울 기준 3차 [첨부5]: 대학 별도 규정이 없을 때만 [첨부5] 단가 적용, 외부회의 5만원 상한은 공통 준수</td></tr>
+<tr><td class="loc"><span class="st miss">누락</span> Ⅳ.사 창업지원금 (33p)</td><td class="before">"창업기업(팀) 당 연간 3천만원 이내 지원(지출증빙 필수)"</td><td class="after">"… 3천만원 이내 지원(지출증빙 필수) <b>※ 부가가치세 제외</b>"</td><td class="why">서울 기준 3차 Ⅴ.사 원문. 현장점검 소명(부가세 미환급)과 직결</td></tr>
+<tr><td class="loc"><span class="st miss">누락</span> Ⅳ.사 2)1 적용 대상 단위과제 (34p)</td><td class="before">'① 글로벌 산학협력 선도, ④ 산학협력 생태계 활성화, ⑤ AI·BIO 클러스터'에 한함</td><td class="after"><b>①④⑤⑨</b> 단위과제(⑨ 추가)로 정정, 또는 "산학연 매뉴얼에서 정한 단위과제"로 위임만 규정(사.1) ※와 중복 정리)</td><td class="why">산학연공동 기술개발과제 관리 매뉴얼 5차 Ⅰ: ①④⑤⑨번 단위과제</td></tr>
+<tr><td class="loc"><span class="st miss">누락</span> Ⅳ.사 연구수당·학생인건비 (34~35p)</td><td class="before">연구수당: 외부 참여인원 지급·성과급 중복 불가만 규정</td><td class="after">연구수당 <b>수정인건비의 20% 이내, 개인별 총액의 70% 초과 불가</b>, 기여도 평가 후 지급. 학생인건비는 <b>앵커 참여 학생 2명 이상 필수 참여</b> 요건 추가</td><td class="why">산학연 매뉴얼 5차 Ⅲ 자항·학생인건비, 국가연구개발사업 연구개발비 사용기준</td></tr>
+<tr><td class="loc"><span class="st part">일부 반영</span> Ⅲ.4.마 증빙 보관 (3p)</td><td class="before">「서울시 지역혁신중심 대학지원체계(<b>RISE</b>) 사업 협약」 제12조 2항, 「지역성장 인재양성체계 운영규정」 제31조제4항</td><td class="after">RISE 협약 문구 삭제 → "「앵커 사업비 집행 및 관리 지침」 Ⅱ.2.라 및 운영규정에 따라 <b>사업 종료 후 5년</b> 보존(e나라도움 등록 자료 제외), 원본은 전자문서시스템 등록·사본에 진본 확인"</td><td class="why">앵커 지침 4차 Ⅱ.2.라. 2026년 협약은 앵커 명칭으로 체결되므로 RISE 협약 인용은 근거 소멸. 운영규정 조문 번호는 원문 대조 필요</td></tr>
+<tr><td class="loc"><span class="st miss">누락</span> Ⅲ.4 지출관리 (신설)</td><td class="before">대응자금 관련 규정 없음</td><td class="after">"사업비는 <b>국고보조금과 대응자금 집행내역을 각각 구분</b>하여 처리" 추가</td><td class="why">앵커 지침 4차 Ⅱ.2.라</td></tr>
+<tr><td class="loc"><span class="st part">일부 반영</span> Ⅱ.1 사업연도 ※ (2p)</td><td class="before">"1차 연도는 <b>RISE운영규정</b> 제21조에 따라 2025.6.1.~2026.2.28."</td><td class="after">"1차 연도(2025년)는 「지역혁신중심 대학지원체계 운영규정」 제21조에 따라 2025.6.1.~2026.2.28.로 하고, <b>2차 연도부터는 3.1.~익년 2월 말</b>"으로 정비</td><td class="why">약칭 'RISE운영규정'은 Ⅰ.2 가항 명칭과 불일치. 2026년 사업연도가 몇 차인지 명확히</td></tr>
+<tr><td class="loc"><span class="st conf">충돌</span> Ⅳ.라·마 시설공사 공통 집행기준 (25p)</td><td class="before">시설공사 칸: "ANCHOR기획IR센터와 협의 후 진행"만 기재(금액 기준 없음)</td><td class="after">금액 기준 존치 + 협의 절차 추가: <b>1,000만원 이상 산단 중앙구매(비교견적), 2,000만원 이상 입찰</b>(산단 내규 제67조), 1,500만원 이상은 공사내역서·시방서·설계서 포함 원안결재 후 총무처 계약(구매요강 제3·4조), <b>사전에 기획IR센터 협의</b></td><td class="why">산학협력연구비 내규 4차 제67조①(시설공사=용역 칸), 구매계약업무요강 28차. 현재 문안은 금액 구간이 사라져 부서 직접 발주로 오해될 소지</td></tr>
+<tr><td class="loc"><span class="st part">일부 반영</span> Ⅳ.자 2)1 (44p)</td><td class="before">"서울 지역성장 인재양성체계(앵커) 집행 및 관리 <b>지침</b>과 같이"</td><td class="after">"「서울 지역성장 인재양성체계(앵커) 사업비 집행 및 관리 <b>기준</b>」에 따라"</td><td class="why">서울시 문서 명칭은 '기준' — 10.14. 제안 반영 미완</td></tr>
+<tr><td class="loc"><span class="st part">일부 반영</span> 회의비 비목 참조 전반 (14·36·38·42·44p)</td><td class="before">다.·아.: 운영비-일반수용비 / 사.: 업무추진비-기관업무비 / 자.: 업무추진비-기관업무비</td><td class="after">① 그 밖의 사업운영경비 회의비 → 업무추진비(240)-기관업무비(02) ② 그 외 항목 회의비 → 운영비(210)-일반수용비(01)(외부 인원 참석 시) ③ <b>사. 산학연공동과제 회의비 → 연구개발비(260) 연구활동비</b>, 국가R&D 사용기준 적용(단가는 일반수용비 기준 준용) — 3단 원칙을 Ⅳ.다에 한 번 정하고 각 항목은 참조만</td><td class="why">서울 기준 3차 [첨부2]·[첨부5], 산학연 매뉴얼 5차(연구개발비 9개 비목)</td></tr>
+<tr><td class="loc"><span class="st miss">누락</span> Ⅳ.차 간접비 (47p)</td><td class="before">3% 이내 계상, 사업 무관 인건비·경상운영비 불가</td><td class="after">"배분·사용은 앵커 지침·서울 기준을 우선하고, 정함이 없는 사항은 산학협력연구비 내규 제45·46조를 따른다" + 사용불가 항목(기존 인건비 수령자 인건비, 학생 장학금, 수주 보상금, 건축·리모델링, 배상금·위약금) 명시. e나라도움 매칭 <b>보전금(310)-기타보전금</b> 표기</td><td class="why">산단 내규 4차 제45조① 단서(지원기관 규정 우선), 서울 기준 [첨부2] 9번 — 10.14. 제안 B항 미반영</td></tr>
+<tr><td class="loc"><span class="st miss">누락</span> Ⅰ.2 관련 법·규정 (1p)</td><td class="before">산단 내규·구매요강·국가R&D 사용기준 미열거</td><td class="after">아래 항 추가: 건국대 「산학협력연구비 중앙관리 및 연구지원 내규」(4차), 「구매계약업무요강」(28차, 2026.7.14.)·「검수요강」, 「국가연구개발사업 연구개발비 사용 기준」(사. 산학연공동과제에 한함), 「서울 앵커 산학연공동 기술개발과제 관리 매뉴얼」(5차)</td><td class="why">본문 전 항목이 "내규 준수"를 반복 인용하는데 목록에 없음 — 10.14. 제안 A항 미반영</td></tr>
+<tr><td class="loc"><span class="st chk">확인</span> Ⅳ.라 2)5 선급금 (24p)</td><td class="before">"계약금액의 70% 초과 집행 불가능", 예시 "100억원 이상인 경우 최대 70억원"</td><td class="after">"계약금액의 70% 이내(정부 입찰·계약 집행기준 제33조 등 최신 기준 확인)"로 쓰고 예시는 "계약금액 100억원이면 최대 70억원"으로 정정</td><td class="why">'100억원 이상'이면 상한이 고정되지 않음 — 예시 문장 오류. 선금 한도는 기재부 계약예규 개정 여부 확인</td></tr>
+</tbody></table></div>
+    </section>
+
+    <section id="r3">
+      <h2>③ 10.14. 개정 제안 반영 점검</h2>
+      <div class="table-scroll"><table class="amend"><thead><tr><th class="loc">제안 항목</th><th class="before">제안 요지</th><th class="stc">반영</th><th class="why2">원안 위치·비고</th></tr></thead><tbody>
+<tr><td class="loc">① 명칭 정비 23건</td><td class="before">RISE→앵커, 조직명, 표기문구, 서식 제목</td><td class="stc"><span class="st part">일부 반영</span></td><td class="why2">대부분 반영. 잔존 9곳: 증빙 근거 RISE 협약(3p), 'RISE운영규정'(2p), 간접비 운영규정(47p), 'RISE사업간담회 답변서' 발신기관(13p), 변경 박스 '서울RISE센터'(48p), '지역앵커센터'(31p), 서식7 사업기간(60p), 서식20 협약기간(76p), 장비 심의 공문 명칭</td></tr>
+<tr><td class="loc">① 서식 번호 정정</td><td class="before">[서식24]·[서식23] 상호참조 오류</td><td class="stc"><span class="st ok">반영</span></td><td class="why2">서식 1~26 일괄 재번호, 본문 참조 대부분 일치. 예외: 일용직 활용비 제출서류(40p) '표준 근로계약서 [서식3]'·'근무상황부 [서식4]' → ⑤ 참고</td></tr>
+<tr><td class="loc">① 강사료 [별첨1] 서울연구원 기준 교체</td><td class="before">서울 기준 [첨부5]·전문가활용비 기준 인용</td><td class="stc"><span class="st ok">반영</span></td><td class="why2">자. 기타운영비 강사료 → 다. 전문가활용비 지침 준수(45p)</td></tr>
+<tr><td class="loc">① 자. '서울 Rise 지침' 명칭</td><td class="before">서울 앵커 사업비 집행 및 관리 기준</td><td class="stc"><span class="st part">일부 반영</span></td><td class="why2">'Rise'는 정비했으나 '지침'으로 남음(44p)</td></tr>
+<tr><td class="loc">① 장학금성 RIS 각주</td><td class="before">RIS→RISE(현 앵커)</td><td class="stc"><span class="st fix">정정</span></td><td class="why2"><b>제안이 틀렸음</b> — 서울 기준 원문 'RIS'가 맞음. 원안의 'ANCHOR 사업의…'도 원문대로 되돌릴 것</td></tr>
+<tr><td class="loc">①-2 A 관련규정 차수·목록</td><td class="before">산단 내규(4차)·구매요강(28차)·R&D 사용기준 추가</td><td class="stc"><span class="st part">일부 반영</span></td><td class="why2">앵커 4차·서울 3차 차수만 반영, 학내 규정·사용기준 미열거</td></tr>
+<tr><td class="loc">①-2 B 간접비 우선순위·사용불가</td><td class="before">앵커 지침 우선 단서, 사용불가 항목</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">47p 변경 없음</td></tr>
+<tr><td class="loc">①-2 B 산학연과제 간접비 편성 불가</td><td class="before">매뉴얼 5차 반영</td><td class="stc"><span class="st ok">반영</span></td><td class="why2">35p "산학연 공동 기술개발과제에서 별도의 간접비 편성 불가"</td></tr>
+<tr><td class="loc">①-2 C 결재선 금액구간 재정비</td><td class="before">구매방식과 결재선 1:1 대응</td><td class="stc"><span class="st part">일부 반영</span></td><td class="why2">500만원 이하 행을 센터장 전결로 존치, 기획IR 부서협조 삭제. 구매방식(개별·비교견적·입찰)과의 연동 표는 없음</td></tr>
+<tr><td class="loc">①-2 C 견적·수의계약</td><td class="before">2천만원 초과 전자조달 2인 이상 견적, 낙찰단가 원용 불가, 미체결 업체 3개월 제외</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">본문·서식11 변경 없음</td></tr>
+<tr><td class="loc">①-2 C 업체지정 사유서(특허·독점)</td><td class="before">특허등록원부·통상실시권 범위·대체품 조사 첨부</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">서식11 양식 그대로</td></tr>
+<tr><td class="loc">①-2 C 부가세(면세사업자)</td><td class="before">공고·계약서에 부가세 제외 명시, 과세유형 확인</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">—</td></tr>
+<tr><td class="loc">①-2 C 계약 체결·변경</td><td class="before">부정당 재조회, 연장 시 보증증권 선수령, 납품포기 해제 처리</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">—</td></tr>
+<tr><td class="loc">①-2 C 검수조서 지체상금</td><td class="before">지연일수·지체상금률 기재란</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">서식22 그대로</td></tr>
+<tr><td class="loc">①-2 C 용역 기성대가 정산</td><td class="before">증빙 대조·산출내역서 계약문서화</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">—</td></tr>
+<tr><td class="loc">①-2 D 산학연 회의비</td><td class="before">참여연구자만 참석한 회의 식비 불가 등</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">사. 회의비는 업무추진비 기준 참조로만 기재(36p)</td></tr>
+<tr><td class="loc">①-2 D 연구수당 기준</td><td class="before">20% 이내·70% 상한·성과급 중복 불가</td><td class="stc"><span class="st part">일부 반영</span></td><td class="why2">성과급 중복 불가만 반영(35p)</td></tr>
+<tr><td class="loc">①-2 D 이자 국고 납입</td><td class="before">산학연과제 이자 국고 납입 원칙</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">Ⅴ.2.라 일반 '이자 반납'만</td></tr>
+<tr><td class="loc">①-2 D 내부거래 금지·ZEUS</td><td class="before">산단-대학 간 거래 계상 불가, ZEUS 등록 30일</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">중복성검토(ZEUS) 서류만 있음</td></tr>
+<tr><td class="loc">①-2 D 증빙·입력기한</td><td class="before">카드 사용분 5일 이내 입력, 종료 후 3개월 내 실적보고</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">—</td></tr>
+<tr><td class="loc">①-2 C 간이영수증 배제</td><td class="before">앵커 사업비 간이영수증 불인정 명시</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">인정 증빙 목록(2p)만 있음 — 내규 제12조 특례 적용 배제 문구 필요</td></tr>
+<tr><td class="loc">④-13 현장점검 조항 확대 적용</td><td class="before">캠타 지침 ④ 조항을 사업단 지침에도</td><td class="stc"><span class="st no">미반영</span></td><td class="why2">아래 ④ 표 참고</td></tr>
+</tbody></table></div>
+      <div class="note warn">명칭(①) 항목은 대부분 반영됐지만 <b>①-2 실질 개정(B·C·D)은 대부분 빠졌습니다.</b> C(구매·계약)는 ④ 현장점검 지적과 겹치므로 같이 넣는 것이 효율적입니다.</div>
+    </section>
+
+    <section id="r4">
+      <h2>④ 감사·현장점검 지적 반영</h2>
+      <div class="reg-header status-high"><span class="status">미반영</span><span class="rtitle">2026.9.18. 합동 현장점검 지적은 공문상 앵커사업단 확대 적용 예정 — 원안에는 대응 조항이 없음</span></div>
+      <div class="table-scroll"><table class="amend"><thead><tr><th class="loc">지적 사항</th><th class="before">원안 상태</th><th class="after">보완안</th><th class="why">위치·서식</th></tr></thead><tbody>
+<tr><td class="loc">현장① 비교견적 객관성·업체 영업상태</td><td class="before">제출서류에 '견적서, 비교견적서'만 열거</td><td class="after">Ⅲ.6 집행 절차에 견적 요건 신설: 서로 독립된 2개 이상 업체(대표자·주소·연락처 동일 업체 불가), 견적일·직인·품목별 단가, <b>국세청 휴·폐업 조회 결과 첨부</b>, 2천만원 초과는 전자조달 2인 이상 견적</td><td class="why">Ⅲ.6 신설, 각 항목 제출서류에 '사업자 상태 조회 결과' 추가</td></tr>
+<tr><td class="loc">현장② 수의계약 사유·근거 서류</td><td class="before">[서식11] 근거 법령 예시 한 줄, 근거서류 첨부란 없음</td><td class="after">서식11 개편: 근거 조문 선택란, 근거서류(여성기업 확인서·특허등록원부·직접생산확인 등) 목록, 시장조사 결과, <b>부정당업자 조회일</b>. 미첨부 시 반려</td><td class="why">[서식11]. 수신 '총무처장 귀하'는 산단 구매 건이면 산학협력단장으로 구분</td></tr>
+<tr><td class="loc">현장③ 평가위원 외부 과반</td><td class="before">평가·심사비 단가만 있음(11·13p), 구성 기준 없음</td><td class="after">Ⅳ.다에 평가위원회 구성 조항: 공모·선발·경진대회·협상계약 평가는 <b>외부 위원 과반</b>, 제척·회피, 이해충돌 확인서·청렴서약서, 평가표 원본 보관. 캠타는 서울시 담당자 입회</td><td class="why">근거: 캠타 운영 매뉴얼 Ⅲ.2. 신설 서식 [평가위원 구성·이해충돌 확인서]</td></tr>
+<tr><td class="loc">현장④ 창업지원금 매뉴얼·기준 준수</td><td class="before">3천만원 한도·사업자등록 환수 조건만(33p)</td><td class="after">창업지원금 집행 가이드라인(캠타 매뉴얼 붙임2) 준수 명시, <b>부가세 제외</b>, 기업별 집행계획 승인 → 집행 → 2단계 검토(담당·센터장)</td><td class="why">Ⅳ.사 3. 상세는 캠타 지침 개정 검토 ④ 참고</td></tr>
+<tr><td class="loc">현장⑤ 창업지원금 증빙 미비·미집행</td><td class="before">규정 없음</td><td class="after">사용기간 내 미집행·증빙 불가 시 <b>사유서·대체증빙 제출 → 미인정분 환수 또는 재배정</b> 절차</td><td class="why">Ⅳ.사 3, Ⅳ.사 3) 집행 제한</td></tr>
+<tr><td class="loc">현장⑥ 운영비 실제 사용내역</td><td class="before">회의록 요건만(44p)</td><td class="after">소모품·홍보물·기념품은 <b>수불(배부) 대장·배부 사진</b>, 행사비는 참석자 명단·결과보고 첨부, 인쇄물은 실물 사진</td><td class="why">Ⅳ.다·자 제출서류에 추가</td></tr>
+<tr><td class="loc">현장 소명: 부가세 미환급</td><td class="before">부가세 공제 원칙(Ⅴ.3.다) 있음</td><td class="after">산학협력단 <b>매입세액 불공제 확인서</b>를 매년 정산 시 첨부, 면세사업 여부를 사업 시작 시 확인</td><td class="why">Ⅴ.3.다 2) 뒤에 3) 신설</td></tr>
+<tr><td class="loc">교육연수 감사사례 4·6·7</td><td class="before">규정 없음</td><td class="after">계약 직전 부정당 재조회, 기간 연장 시 연장 보증증권 선수령 후 변경계약, 납품 포기는 계약해제·보증금 귀속</td><td class="why">Ⅲ.4 지출관리 신설 또는 구매 공통기준 주석</td></tr>
+<tr><td class="loc">교육연수 감사사례 5</td><td class="before">서식22에 지체 기재란 없음</td><td class="after">납품기한·지연일수·지체상금률(공사 0.5/1000, 물품 0.75/1000, 용역 1.25/1000) 기재란</td><td class="why">[서식22]. 구매요강 28차 제19조</td></tr>
+<tr><td class="loc">검수자 분리 (업무분장)</td><td class="before">서식22 확인자 '담당교수 및 부(센터)장'</td><td class="after">집행 요청자와 검수자를 다른 사람으로 지정하고 <b>단가 50만원 이상·용역 총액 1,000만원 이상은 산단 중앙검수</b> 안내</td><td class="why">[서식22], 산단 내규 제68조</td></tr>
+</tbody></table></div>
+    </section>
+
+    <section id="r5">
+      <h2>⑤ 오탈자·표기</h2>
+      <h3 style="margin:14px 0 6px;font-size:15px;">원안(수정본)</h3>
+      <div class="table-scroll"><table class="amend"><thead><tr><th class="loc">위치</th><th class="before">현재</th><th class="after">수정</th></tr></thead><tbody>
+<tr><td class="loc">Ⅰ.2 라 (1p)</td><td class="before">"국고보조금 통합관리지침 (카와 중복)" 메모</td><td class="after">라항에서 해당 문구 삭제, 메모 제거(카항만 유지)</td></tr>
+<tr><td class="loc">Ⅰ.1 목적 (1p)</td><td class="before">"본 <b>사업체</b>에 참여한다고 인정하는"</td><td class="after">"본 <b>사업</b>에 참여한다고 인정하는"</td></tr>
+<tr><td class="loc">Ⅲ.1.가 (2p)</td><td class="before">"계상하는것을"</td><td class="after">"계상하는 것을"</td></tr>
+<tr><td class="loc">Ⅳ.가 일용임금 (8p)</td><td class="before">"근로계약 <b>채결</b>"</td><td class="after">"근로계약 <b>체결</b>"</td></tr>
+<tr><td class="loc">Ⅳ.다 온라인 콘텐츠 강의료 (14p)</td><td class="before">"75분 <b>미만 → 이상</b>"(2곳, 수정 표시가 문구에 남음)</td><td class="after">"75분 이상"</td></tr>
+<tr><td class="loc">Ⅳ.다 전문가활용비 5) (13p)</td><td class="before">"…보완을 요청할 수 있음.<b>></b>"</td><td class="after">"…보완을 요청할 수 있음."</td></tr>
+<tr><td class="loc">Ⅳ.다 전문가활용비 1) (13p)</td><td class="before">"2025.12.11. <b>서울앵커센터</b> '서울 RISE사업간담회 사전질문 답변서'"</td><td class="after">"2025.12.11. 서울RISE센터(현 서울앵커센터) …" — 문서 발행 당시 기관명</td></tr>
+<tr><td class="loc">Ⅳ.라 2)1 (24p)</td><td class="before">"'앵커사업단 기술혁신<b>위원회의</b>' 심의"</td><td class="after">"앵커사업단 기술혁신위원회의 심의" 또는 "기술혁신위원회 심의"</td></tr>
+<tr><td class="loc">Ⅳ.라 2)3 (24p)</td><td class="before">"제26조(수의계약에 의할 수 있는 경우」준수"</td><td class="after">"제26조(수의계약에 의할 수 있는 경우)」 준수" — 괄호 닫힘</td></tr>
+<tr><td class="loc">Ⅳ.마 3) 집행 제한 3 (31p)</td><td class="before">"<b>지역앵커센터</b> 또는 중앙앵커센터"</td><td class="after">"서울앵커센터 또는 중앙앵커센터"</td></tr>
+<tr><td class="loc">Ⅳ.사 제출서류 (40p)</td><td class="before">일용직 활용비: "표준 근로계약서 [서식3]", "근무상황부 [서식4]"</td><td class="after">"근로계약서 또는 근로확인서 [서식3]", "일용근무자 출근부 [서식4], 활동보고서 [서식5]" — 22p 문구와 통일</td></tr>
+<tr><td class="loc">'건국ANCHOR인재지원금' 표기 (15·19·34·72·87p)</td><td class="before">"건국ANCHOR(구. RISE)인재 지원금" / "건국 ANCHOR(구.RISE)" / "건국ANCHOR인재지원금"</td><td class="after">하나로 통일(예: "건국ANCHOR인재지원금(구. 건국RISE인재지원금)"은 첫 표기에만)</td></tr>
+<tr><td class="loc">Ⅴ 제목 (50p)</td><td class="before">"사업비 이월 ž 정산 ž 반납"(텍스트 추출 시 'ž')</td><td class="after">가운뎃점(·) 문자 재입력 — 검색·복사 시 깨짐</td></tr>
+<tr><td class="loc">[서식1] (53p)</td><td class="before">"결재하여 주시기 바랍니다.."</td><td class="after">마침표 하나</td></tr>
+<tr><td class="loc">[서식7]·[서식20] (60·76p)</td><td class="before">사업기간 "2025. 06. 01. ~ 2026. 02. 28.", 협약기간 "2025.00.00. ~ 2026.2.28."</td><td class="after">"2026. 03. 01. ~ 2027. 02. 28."(또는 0000.00.00. 빈칸). 서식7 '사업 책임자 성명' 예시는 실명 대신 빈칸 권장</td></tr>
+<tr><td class="loc">[별첨2] 학생 대외활동 여비 (92p)</td><td class="before">"<b>급류</b> 구분은 [별첨2]…", 표 머리 "급류"</td><td class="after">"<b>급지</b> 구분" 확인</td></tr>
+</tbody></table></div>
+      <h3 style="margin:18px 0 6px;font-size:15px;">개정 전후표</h3>
+      <div class="table-scroll"><table class="amend"><thead><tr><th class="loc">위치</th><th class="before">현재</th><th class="after">수정</th></tr></thead><tbody>
+<tr><td class="loc">연번1 개정내용</td><td class="before">"지역<b>혁심</b>중심 대학지원체계(RISE)"(연번1·3 두 곳)</td><td class="after">"지역혁신중심"</td></tr>
+<tr><td class="loc">연번1 관련</td><td class="before">"미래자동차부트캠프사업단, <b>RISR</b>사업단"</td><td class="after">"RISE사업단"</td></tr>
+<tr><td class="loc">연번2 적용대상</td><td class="before">"ANC HOR 사업운영센터", "AN CHO R사업운영센터장"</td><td class="after">"ANCHOR" 띄어쓰기 제거(양식 연번1 'A N C H O R'도 동일)</td></tr>
+<tr><td class="loc">연번3 자. 집행개요</td><td class="before">"ANCHOR(앵 커 )"</td><td class="after">"ANCHOR(앵커)"</td></tr>
+<tr><td class="loc">연번5 수익금</td><td class="before">"전기·수도·<b>가수</b>·통신 요금"</td><td class="after">"가스" (원안은 정상)</td></tr>
+<tr><td class="loc">연번5 사업비 변경</td><td class="before">"서울 앵커센터" / "서울앵커센터" 혼용</td><td class="after">"서울앵커센터"로 통일(원안도 48p에 혼용)</td></tr>
+<tr><td class="loc">양식 연번1 [54p]·[62p]·[64p]</td><td class="before">"…문구 수정<b>]]</b>", "67p, 사업부서…]"·"79p, …]" 여는 괄호 누락</td><td class="after">"[54p, …]" 형식 통일</td></tr>
+<tr><td class="loc">양식 연번1 [76p]</td><td class="before">개정 전 "연구과<b>졔</b> 계획서"</td><td class="after">개정 전 원문 오기 — 개정 후는 정상</td></tr>
+<tr><td class="loc">양식 연번1 개정사유</td><td class="before">"추가근무 지급을 위한 양식… 제수당 지급을 위한 추가근무 지급을 위한"</td><td class="after">중복 문구 정리: "초과·휴일근무 제수당 지급 증빙 양식 신설"</td></tr>
+<tr><td class="loc">관련근거 공문 표기</td><td class="before">서울 기준 3차 근거를 '서울시 대학협력과-6575(7.31.)', '서울앵커센터(7.28.)', '서울라이즈센터-4122(8.3.)'로 연번마다 다르게 표기</td><td class="after">"서울 앵커 사업비 집행 및 관리 기준(3차 개정, 2026.7.28.) — 서울시 대학협력과-6575(7.31.)·서울라이즈센터-4122(8.3.) 안내"로 한 번 정의 후 약칭</td></tr>
+</tbody></table></div>
+    </section>
+
+    <section id="r6">
+      <h2>⑥ 위계·체계</h2>
+      <div class="table-scroll"><table class="amend"><thead><tr><th class="loc">위치</th><th class="before">현재</th><th class="after">수정</th></tr></thead><tbody>
+<tr><td class="loc">목차(본문)</td><td class="before">1.~5. 아라비아 번호 / 본문은 Ⅰ~Ⅴ 로마자</td><td class="after">목차도 Ⅰ~Ⅴ로 통일하고 'Ⅳ.3 사업비 변경' 항목 추가</td></tr>
+<tr><td class="loc">목차 쪽수</td><td class="before">아 41 · 자 42 · 차 45 · 이월 47 · 별첨 49</td><td class="after"><b>실제: 아 42 · 자 44 · 차 47 · 사업비 변경 48 · Ⅴ 50 · 별첨 목차 52 · 서식1 53</b> (가~사는 일치)</td></tr>
+<tr><td class="loc">별첨 목차</td><td class="before">별첨1 88 · 별첨2 90</td><td class="after">별첨1 90 · 별첨2 92</td></tr>
+<tr><td class="loc">서식24 쪽 (83~86p)</td><td class="before">쪽번호 없음(인쇄 쪽수가 82→87로 건너뜀)</td><td class="after">쪽번호 삽입</td></tr>
+<tr><td class="loc">Ⅳ.2 항목별 하위 번호</td><td class="before">항목마다 '주요 집행항목 및 기준'이 3·4·5·6번 등으로 다르고, 사.는 3이 두 번</td><td class="after">각 항목 1) 집행개요 / 2) 집행 기준 및 제출서류(1. 일반기준 → n. 주요 집행항목 및 기준 → n+1. 제출서류) / 3) 집행 제한 — 번호 규칙 통일</td></tr>
+<tr><td class="loc">Ⅲ.6.다 결재선 ↔ 위임전결요강</td><td class="before">결재선: 500만원 이하는 본부장 '협조' 후 <b>센터장 전결</b> / 전결표 12: '5백만원 이하 예산 집행 — <b>본부장/센터장</b>'</td><td class="after">전결표를 '센터장(본부 사업은 본부장 협조)'로 맞추거나 결재선에 본부장 전결 경로 표기</td></tr>
+<tr><td class="loc">Ⅰ.2 관련 법·규정 순서</td><td class="before">법률·훈령·지침·학내 규정 혼재(라·카 중복)</td><td class="after">① 법령 → ② 교육부 훈령·지침 → ③ 서울시 기준·매뉴얼 → ④ 학내 규정 순으로 재배열</td></tr>
+<tr><td class="loc">전후표 연번 체계</td><td class="before">본문 연번 1~5 뒤 양식 표가 다시 연번 1</td><td class="after">양식 표를 연번 6(또는 '서식-1')으로 이어서 매김, 각 연번에 원안 쪽수 병기</td></tr>
+<tr><td class="loc">전후표 적용 범위</td><td class="before">원안의 신설 항목(사업연도 단서·연구개발비·국외여비·조기취업형·외부인건비·변경 박스) 미수록</td><td class="after">① 표의 '전후표 누락' 행을 연번으로 추가해 심의 자료로서 완결성 확보</td></tr>
+</tbody></table></div>
+    </section>
+
+    <section id="r7">
+      <h2>확인 필요 사항</h2>
+      <div class="review-card"><span class="rnum">1</span>「지역성장 인재양성체계 운영규정」(훈령 제575호)의 정식 명칭과 <b>제31조제4항(증빙 보존)</b>·제21조(사업기간) 조문 번호 원문 대조 — 앵커 지침 4차(2026.9.) 본문은 아직 '지역혁신중심 대학지원체계 운영규정'으로 인용</div><div class="review-card"><span class="rnum">2</span>Ⅳ.다 "5. 연구개발비"(대학 자체 연구개발) 편성 가능 여부를 서울앵커센터에 서면 질의 — 상위 기준은 산학공동기술개발과제에만 연구개발비(260) 매칭</div><div class="review-card"><span class="rnum">3</span>장비 심의 안내 공문 번호(서울라이즈센터-168 / 426) 중 서울 심의(3천만~1억)와 중앙 심의(1억 이상)에 각각 맞는 최신 공문 확정</div><div class="review-card"><span class="rnum">4</span>학내 「지역성장 인재양성체계(ANCHOR)사업 관리운영 규정」·「위원회 운영 내규」 개정 완료 여부와 정식 명칭(괄호 표기 포함)</div><div class="review-card"><span class="rnum">5</span>선급금 한도(계약금액 70%)의 현행 계약예규 기준 확인</div><div class="review-card"><span class="rnum">6</span>시설공사 기준: 산단 내규(1,000만원 비교견적)와 구매요강 28차(1,500만원 이상 총무처) 중 앵커 사업비 시설공사의 계약 주체 확정 — 기획IR센터 협의 절차와 함께 명문화</div><div class="review-card"><span class="rnum">7</span>현장점검 결과 확정(심의위원회 2026.10. 이후) 후 환수 유형을 Ⅳ 각 항목 집행 제한에 추가</div><div class="review-card"><span class="rnum">8</span>④ 표의 보완 조항은 개정 전이라도 센터장 명의 업무 지시로 먼저 시행하고, 이번 개정 심의에 본문 편입</div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  이 페이지는 「서울 지역성장 인재양성체계(ANCHOR)사업 사업비 관리 지침」 원안(수정본)과 개정 전후표(2026.10.21.)를 상위 규정·학내 규정과 대조해 작성한 참고용 검토안입니다. 실제 개정 시에는 서울앵커센터·산학협력단·총무처의 확인이 필요합니다.
+</footer>
+
+
+<script>
+  const links = document.querySelectorAll('nav.side a');
+  const linkMap = {};
+  links.forEach(l => linkMap[l.getAttribute('href').slice(1)] = l);
+  const targets = document.querySelectorAll('main section, main h3[id]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      if (!linkMap[id]) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        linkMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+  targets.forEach(s => { if (s.id) observer.observe(s); });
+
+  const searchBox = document.getElementById('searchBox');
+  const rows = document.querySelectorAll('table.amend tbody tr, .review-card');
+  searchBox.addEventListener('input', () => {
+    const q = searchBox.value.trim().toLowerCase();
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = (q === '' || text.includes(q)) ? '' : '';
+    });
+    // For table rows, hide via display:none / table-row toggle
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      const match = (q === '' || text.includes(q));
+      if (row.tagName.toLowerCase() === 'tr') {
+        row.style.display = match ? 'table-row' : 'none';
+      } else {
+        row.style.display = match ? '' : 'none';
+      }
+    });
+  });
+</script>
+
+
+</div>
+
+<script>
+(function() {
+  var STORAGE_KEY = "kurule-unlock-" + location.pathname;
+  var PASSWORD = "coolzet";
+  var gate = document.getElementById('pw-gate');
+  var content = document.getElementById('site-content');
+  var input = document.getElementById('pw-input');
+  var submitBtn = document.getElementById('pw-submit');
+  var errorMsg = document.getElementById('pw-error');
+
+  function unlock() {
+    gate.style.display = 'none';
+    content.style.display = 'block';
+  }
+
+  try {
+    if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+      unlock();
+    }
+  } catch (e) {}
+
+  function check() {
+    if (input.value === PASSWORD) {
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+      errorMsg.style.display = 'none';
+      unlock();
+    } else {
+      errorMsg.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  submitBtn.addEventListener('click', check);
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') check();
+  });
+})();
+</script>
+<!-- KU-UI:FOOT -->
+<div class="ku-beta" role="note"><span><b>규정김군</b> <b class="beta-foot">BETA</b> 시험 운영 중입니다. 정리·비교 내용은 업무 참고용이며, 집행·결재 전에는 반드시 규정 원문을 확인하세요.</span><a href="#" id="footTm">Teams 채팅으로 의견 보내기</a></div>
+<script id="ku-ui-js">
+(function(){
+  var TO="coolzet@konkuk.ac.kr",$=function(i){return document.getElementById(i);};
+  // 현재 메뉴 밑줄
+  var pg=location.pathname.split('/').pop()||'index.html',k=(pg==='index.html'&&location.hash==='#cmp')?'cmp':pg;
+  var cur=document.querySelector('.ku-gnb-nav [data-p="'+k+'"]');if(cur)cur.setAttribute('aria-current','page');
+  // Teams 채팅(베타)
+  var btn=$('tmBtn'),pop=$('tmPop');if(!btn||!pop)return;
+  function where(){var h=null,y=scrollY+90;document.querySelectorAll('h2,h3').forEach(function(e){if(e.closest('.tm-pop,.ku-drawer'))return;var t=e.getBoundingClientRect().top+scrollY;if(t<=y&&e.offsetParent)h=e;});return h?h.textContent.replace(/\s+/g,' ').trim().slice(0,60):'';}
+  function text(){var s='[규정김군 BETA] '+$('tmType').value,m=$('tmMsg').value.trim();if(m)s+='\n'+m;
+    if($('tmCtx').checked){var w=where();s+='\n— 화면: '+document.title.replace(/\s+/g,' ').trim()+(w?' › '+w:'')+'\n— 주소: '+location.href.split('#')[0].replace(/^file:.*\//,'')+(location.hash||'');}return s;}
+  function sync(){var s=text();$('tmGo').href='https://teams.microsoft.com/l/chat/0/0?users='+encodeURIComponent(TO)+'&message='+encodeURIComponent(s);
+    $('tmMail').href='mailto:'+TO+'?subject='+encodeURIComponent('[규정김군] '+$('tmType').value)+'&body='+encodeURIComponent(s);}
+  function note(t){var e=$('kuToast');if(!e)return;e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(function(){e.classList.remove('on');},2000);}
+  function open(){sync();pop.hidden=false;btn.setAttribute('aria-expanded','true');setTimeout(function(){$('tmMsg').focus();},0);}
+  function close(back){pop.hidden=true;btn.setAttribute('aria-expanded','false');if(back)btn.focus();}
+  btn.addEventListener('click',function(e){e.stopPropagation();pop.hidden?open():close();});
+  pop.addEventListener('click',function(e){e.stopPropagation();});
+  document.addEventListener('click',function(){if(!pop.hidden)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden)close(true);});
+  ['tmType','tmMsg','tmCtx'].forEach(function(i){$(i).addEventListener('input',sync);$(i).addEventListener('change',sync);});
+  $('tmGo').addEventListener('click',function(){sync();note('Teams를 엽니다. 내용 확인 후 Teams에서 보내기를 누르세요.');setTimeout(function(){close();},50);});
+  $('tmCopy').addEventListener('click',function(){var s=text();
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s).then(function(){note('문의 내용을 복사했습니다.');},function(){$('tmMsg').select();note('복사가 막혀 있습니다. Ctrl+C로 복사하세요.');});
+    else{$('tmMsg').select();note('Ctrl+C로 복사하세요.');}});
+  function openFromElsewhere(e){if(e)e.preventDefault();scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});setTimeout(open,30);}
+  var ft=$('footTm');if(ft)ft.addEventListener('click',function(e){e.stopPropagation();openFromElsewhere(e);});
+  // 전체 메뉴(드로어)에도 Teams 채팅 항목
+  addEventListener('DOMContentLoaded',function(){var nav=document.querySelector('.ku-drawer nav');if(!nav||nav.querySelector('.tm-d'))return;
+    var g=document.createElement('div');g.setAttribute('role','group');g.setAttribute('aria-label','문의');
+    g.innerHTML='<h3>문의 (베타)</h3><a href="#" class="tm-d"><span>Teams 채팅으로 문의</span><span class="lk" style="background:#E8E9FB;color:#4B53BC">BETA</span></a>';nav.appendChild(g);
+    g.querySelector('a').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var x=document.querySelector('.ku-drawer [data-close]');if(x)x.click();openFromElsewhere();});});
+})();
+</script>
+<!-- /KU-UI:FOOT -->
+<!-- KU-PROTECT:FOOT -->
+<div class="ku-copy" role="contentinfo">
+<span class="ku-c1">저작권 보호 안내</span> · © 2026 건국대학교 ANCHOR사업단. All rights reserved.<br>
+이 사이트의 정리·편집·구성·디자인은 건국대학교 ANCHOR사업단 업무 참고용으로 작성된 저작물입니다. 사전 동의 없이 내용을 복제·배포·전송하거나 2차 가공·게시할 수 없습니다.
+인용한 법령·규정·지침 원문의 권리는 각 발행기관(교육부, 서울특별시, 건국대학교 등)에 있으며, 정확한 내용은 반드시 원문을 확인하시기 바랍니다.
+이용·인용 문의: ANCHOR사업운영센터
+</div>
+<div class="ku-toast" id="kuToast" role="status" aria-live="polite"></div>
+<script id="ku-protect-js">
+(function(){
+  var editable=function(el){if(!el||!el.closest)return false;return !!el.closest('input,textarea,select,[contenteditable="true"]');};
+  var t=document.getElementById('kuToast'),h;
+  function msg(){if(!t)return;t.textContent='저작권 보호를 위해 복사·드래그가 제한된 페이지입니다.';t.classList.add('on');clearTimeout(h);h=setTimeout(function(){t.classList.remove('on');},1800);}
+  ['copy','cut'].forEach(function(ev){document.addEventListener(ev,function(e){if(editable(e.target))return;e.preventDefault();msg();});});
+  ['selectstart','dragstart'].forEach(function(ev){document.addEventListener(ev,function(e){if(editable(e.target))return;e.preventDefault();});});
+  document.addEventListener('contextmenu',function(e){if(editable(e.target))return;e.preventDefault();msg();});
+  document.addEventListener('keydown',function(e){
+    if(!(e.ctrlKey||e.metaKey))return; if(editable(e.target))return;
+    var k=(e.key||'').toLowerCase();
+    if(k==='c'||k==='x'||k==='a'||k==='s'||k==='u'){e.preventDefault();msg();}
+  });
+})();
+</script>
+<!-- /KU-PROTECT:FOOT -->
+<!-- KU-FOLD:FOOT -->
+<div class="ku-drawer" id="kuDrawer" role="dialog" aria-modal="true" aria-labelledby="kuDrawerT" hidden>
+  <div class="ku-drawer-bg" data-close></div>
+  <div class="ku-drawer-p">
+    <div class="ku-drawer-h"><b id="kuDrawerT">전체 규정 보기</b><button type="button" class="ku-drawer-x" data-close aria-label="메뉴 닫기">×</button></div>
+    <nav aria-label="전체 페이지">
+<div role="group" aria-label="홈"><h3>홈</h3>
+<a href="./index.html"><span>규정 통합 대시보드</span></a>
+</div><div role="group" aria-label="상위 규정"><h3>상위 규정</h3>
+<a href="./operating-regulation-guide.html"><span>운영규정(교육부훈령)</span></a>
+<a href="./anchor-budget-guide.html"><span>앵커 사업비 지침(4차)</span></a>
+<a href="./seoul-anchor-guide.html"><span>서울 앵커 기준(3차)</span></a>
+<a href="./sancoop-manual-guide.html"><span>산학연 매뉴얼(5차)</span></a>
+</div><div role="group" aria-label="건국대 규정"><h3>건국대 규정</h3>
+<a href="./konkuk-main-budget-guide.html"><span>사업단 사업비 관리 지침</span></a>
+<a href="./konkuk-research-fund-guide.html"><span>산단 내규(4차)</span></a>
+<a href="./konkuk-purchase-guide.html"><span>구매계약업무요강</span></a>
+<a href="./konkuk-inspection-guide.html"><span>검수요강</span></a>
+</div><div role="group" aria-label="캠퍼스타운"><h3>캠퍼스타운</h3>
+<a href="./campus-town-guide.html"><span>캠퍼스타운 사업비 지침</span></a>
+<a href="./campus-town-manual-guide.html"><span>캠퍼스타운 운영 매뉴얼</span></a>
+</div><div role="group" aria-label="교육·검토"><h3>교육·검토</h3>
+<a href="./anchor-training-materials.html"><span>실무 교육자료</span></a>
+<a href="./regulation-amendment-proposal.html"><span>규정 정합성·개정 제안</span><span class="lk">보호</span></a>
+<a href="./anchor-guideline-1021-review.html" aria-current="page"><span>사업단 지침 개정안 검토</span><span class="lk">보호</span></a>
+<a href="./campus-town-amendment-review.html"><span>캠퍼스타운 지침 개정 검토</span><span class="lk">보호</span></a>
+<a href="./audit-checklist.html"><span>회계감사 대비 체크리스트</span><span class="lk">보호</span></a>
+</div>
+    </nav>
+  </div>
+</div>
+<nav class="ku-bbar" aria-label="하단 바로가기"><a href="./index.html" data-k="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>홈</span></a><a href="./index.html#search" data-k="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><span>검색</span></a><a href="./index.html#cmp" data-k="cmp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="9.5" y="4" width="5" height="16" rx="1"/><rect x="16" y="4" width="5" height="16" rx="1"/></svg><span>규정 비교</span></a><a href="./anchor-training-materials.html" data-k="edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M2 8l10-4 10 4-10 4z"/><path d="M6 10v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg><span>교육자료</span></a><button type="button" class="ku-bbar-menu" aria-haspopup="dialog" aria-controls="kuDrawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>전체 메뉴</span></button></nav>
+<button type="button" class="ku-top" id="kuTop" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l6-6 6 6"/></svg></button>
+<script id="ku-fold-js">
+(function(){
+  // 1) 전체 메뉴 드로어: 초록 '전체' 버튼을 열기 버튼으로 전환
+  var d=document.getElementById('kuDrawer'),btn=document.querySelector('.ku-gnb-all'),last;
+  if(d&&btn){
+    btn.setAttribute('role','button');btn.setAttribute('aria-haspopup','dialog');btn.setAttribute('aria-controls','kuDrawer');btn.setAttribute('aria-expanded','false');
+    function open(e){if(e)e.preventDefault();last=document.activeElement;d.hidden=false;d.classList.add('on');btn.setAttribute('aria-expanded','true');document.documentElement.style.overflow='hidden';var c=d.querySelector('[aria-current]')||d.querySelector('.ku-drawer-x');setTimeout(function(){c.focus();},0);}
+    function close(){d.classList.remove('on');d.hidden=true;btn.setAttribute('aria-expanded','false');document.documentElement.style.overflow='';if(last&&last.focus)last.focus();}
+    btn.insertAdjacentHTML('beforeend','<svg class="ku-ham" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>');
+    btn.addEventListener('click',open);
+    var bm=document.querySelector('.ku-bbar-menu');
+    if(bm){bm.addEventListener('click',function(e){open(e);bm.setAttribute('aria-expanded','true');});
+      new MutationObserver(function(){bm.setAttribute('aria-expanded',d.hidden?'false':'true');}).observe(d,{attributes:true,attributeFilter:['hidden']});}
+    btn.addEventListener('keydown',function(e){if(e.key===' '){open(e);}});
+    d.addEventListener('click',function(e){if(e.target.closest('[data-close]'))close();});
+    document.addEventListener('keydown',function(e){
+      if(d.hidden)return;
+      if(e.key==='Escape'){close();return;}
+      if(e.key==='Tab'){var f=d.querySelectorAll('a,button'),a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}}
+    });
+  }
+  // 2) 스크롤 상자에 들어 있지 않은 넓은 표를 가로 스크롤 영역으로 감싸고, 키보드·낭독기로도 접근 가능하게
+  function scrollable(el){for(var p=el.parentElement;p&&p!==document.body;p=p.parentElement){var o=getComputedStyle(p).overflowX;if(o==='auto'||o==='scroll')return p;}return null;}
+  document.querySelectorAll('table').forEach(function(t){
+    if(t.closest('.ku-drawer'))return;
+    var box=scrollable(t);
+    if(!box){box=document.createElement('div');box.className='ku-tscroll';t.parentNode.insertBefore(box,t);box.appendChild(t);}
+    if(!box.hasAttribute('tabindex')){box.setAttribute('tabindex','0');box.setAttribute('role','region');
+      var cap=t.querySelector('caption'),h=t.closest('section')&&t.closest('section').querySelector('h2,h3');
+      box.setAttribute('aria-label',(cap?cap.textContent:(h?h.textContent:'표')).trim().slice(0,60)+' (가로로 밀어서 보기)');}
+    if(!box.previousElementSibling||!box.previousElementSibling.classList.contains('ku-scrollhint')){
+      var hint=document.createElement('p');hint.className='ku-scrollhint';hint.setAttribute('aria-hidden','true');hint.textContent='← 표를 옆으로 밀어 나머지 열을 볼 수 있습니다 →';box.parentNode.insertBefore(hint,box);box._hint=hint;}
+    else box._hint=box.previousElementSibling;
+  });
+  function hints(){document.querySelectorAll('.ku-tscroll,.tbl-scroll,.table-scroll').forEach(function(b){if(b._hint)b._hint.classList.toggle('on',b.scrollWidth>b.clientWidth+4);});}
+  hints();addEventListener('resize',hints);
+  // 하단 고정 메뉴: 현재 위치 표시, 대시보드에서 '검색'은 검색창으로 바로 이동
+  (function(){var pg=location.pathname.split('/').pop()||'index.html',h=location.hash;
+    var k=pg==='anchor-training-materials.html'?'edu':(pg==='index.html'?(h==='#cmp'?'cmp':h==='#search'?'search':'home'):'');
+    var cur=k&&document.querySelector('.ku-bbar [data-k="'+k+'"]');if(cur)cur.setAttribute('aria-current','page');
+    var sa=document.querySelector('.ku-bbar [data-k="search"]'),gi=document.getElementById('gsInput');
+    if(sa&&gi)sa.addEventListener('click',function(e){e.preventDefault();var t=document.getElementById('search')||gi;t.scrollIntoView({block:'start'});gi.focus({preventScroll:true});});
+    if(pg==='index.html'&&h==='#search'&&gi)setTimeout(function(){gi.focus({preventScroll:true});},300);
+  })();
+  // 3) 맨 위로 버튼
+  var top=document.getElementById('kuTop');
+  if(top){addEventListener('scroll',function(){top.classList.toggle('on',scrollY>400);},{passive:true});
+    top.addEventListener('click',function(){scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});var g=document.querySelector('.ku-logo');if(g)g.focus({preventScroll:true});});}
+})();
+</script>
+<!-- /KU-FOLD:FOOT -->
+<!-- KU-READ:FOOT -->
+<div class="ku-fs-note" id="kuFsNote" role="status" aria-live="polite"></div>
+<script id="ku-read-js">
+(function(){
+  // 기준: 본문 최소 14px(모바일)·13px(PC), 짧은 라벨·배지 최소 12px / 줄간격 최소 본문 1.5·짧은 줄 1.3·제목 1.3
+  var LEVELS=[{k:'보통',s:1},{k:'크게',s:1.15},{k:'아주 크게',s:1.3}];
+  var KEY='ku-text-scale',lv=0;
+  try{lv=Math.max(0,Math.min(2,+localStorage.getItem(KEY)||0));}catch(e){}
+  // 대비가 낮은 색(금색·주황·회색) → 같은 색 계열에서 명도만 낮춰 4.5:1 이상
+  var FG={'rgb(169, 121, 30)':'#835A12','rgb(154, 106, 30)':'#835A12','rgb(217, 130, 43)':'#A0521A','rgb(106, 110, 112)':'#5A5E60'};
+  var BGW={'rgb(169, 121, 30)':'#835A12','rgb(217, 130, 43)':'#A0521A'};
+  var SKIP='script,style,svg,.ku-gnb,.ku-bbar,.ku-drawer,.ku-fs-note,.ku-toast,.ku-top';
+  var dark=matchMedia('(prefers-color-scheme: dark)');
+  var done=new WeakSet(),touched=[];
+  function own(el){var t='';for(var n=el.firstChild;n;n=n.nextSibling)if(n.nodeType===3)t+=n.textContent;return t.trim();}
+  function measure(el){
+    var t=own(el),cs=getComputedStyle(el);
+    return {el:el,t:t,color:cs.color,bg:cs.backgroundColor,fs:parseFloat(cs.fontSize),lh:cs.lineHeight,ws:cs.whiteSpace};
+  }
+  function fix(m,mobile,sc){
+    var el=m.el,t=m.t;
+    if(!dark.matches){
+      if(FG[m.color]&&t){el.style.setProperty('color',FG[m.color],'important');touched.push(el);}
+      if(BGW[m.bg]&&m.color==='rgb(255, 255, 255)'){el.style.setProperty('background-color',BGW[m.bg],'important');touched.push(el);}
+    }
+    if(!t)return;
+    var fs=m.fs;if(!(fs>=1))return;
+    var head=/^H[1-6]$/.test(el.tagName),short=t.length<=14&&!head;
+    var floor=short?12:(mobile?14:13);
+    var nf=Math.max(fs,floor);if(nf<20)nf=nf*sc;
+    var lh=m.lh==='normal'?1.2:parseFloat(m.lh)/fs;
+    var minLh=head?1.3:(t.length>40?1.5:1.3);
+    var nlh=Math.max(lh,minLh);
+    var ch=Math.abs(nf-fs)>.2;
+    if(mobile&&t.length>14&&m.ws==='nowrap'&&!el.closest('table,.tbl-scroll,.table-scroll,.ku-tscroll')){el.style.setProperty('white-space','normal','important');touched.push(el);}
+    if(ch){el.style.setProperty('font-size',nf.toFixed(1)+'px','important');touched.push(el);}
+    if(nlh-lh>.01||ch){el.style.setProperty('line-height',nlh.toFixed(2),'important');touched.push(el);}
+  }
+  function reset(){touched.forEach(function(el){el.style.removeProperty('font-size');el.style.removeProperty('line-height');el.style.removeProperty('color');el.style.removeProperty('background-color');el.style.removeProperty('white-space');});touched=[];done=new WeakSet();}
+  function run(root){
+    var mobile=innerWidth<=720,sc=LEVELS[lv].s,list=[];
+    (root||document.body).querySelectorAll('*').forEach(function(el){if(!done.has(el)){done.add(el);list.push(el);}});
+    // 먼저 원래 값을 모두 읽은 뒤 바꾸면 부모·자식이 서로 영향을 주지 않음
+    var ms=list.filter(function(el){return !el.closest(SKIP);}).map(measure);
+    ms.forEach(function(m){fix(m,mobile,sc);});
+  }
+  function all(){reset();run();label();}
+  // 상단 바 '가' 버튼
+  var gnb=document.querySelector('.ku-gnb'),btn;
+  function label(){if(!btn)return;var cur=LEVELS[lv].k,next=LEVELS[(lv+1)%3].k;btn.querySelector('small').textContent=cur;btn.setAttribute('aria-label','글자 크기 '+cur+' (누르면 '+next+')');}
+  if(gnb){btn=document.createElement('button');btn.type='button';btn.className='ku-gnb-fs';btn.innerHTML='<b aria-hidden="true">가</b><small></small>';
+    var ref=gnb.querySelector('.ku-gnb-search');gnb.insertBefore(btn,ref);
+    btn.addEventListener('click',function(){lv=(lv+1)%3;try{localStorage.setItem(KEY,lv);}catch(e){}all();
+      var n=document.getElementById('kuFsNote');if(n){n.textContent='글자 크기: '+LEVELS[lv].k;n.classList.add('on');clearTimeout(n._h);n._h=setTimeout(function(){n.classList.remove('on');},1400);}});}
+  all();
+  var bp=innerWidth<=720;addEventListener('resize',function(){var m=innerWidth<=720;if(m!==bp){bp=m;all();}});
+  dark.addEventListener&&dark.addEventListener('change',all);
+  // 검색 결과처럼 나중에 그려지는 내용도 같은 기준 적용
+  var q;new MutationObserver(function(ms){var add=ms.some(function(m){return m.addedNodes.length;});if(!add)return;clearTimeout(q);q=setTimeout(function(){run();},60);}).observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+<!-- /KU-READ:FOOT -->
+</body>
+</html>
