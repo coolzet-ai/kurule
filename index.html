@@ -1499,7 +1499,7 @@ h2::before{content:"";display:inline-block;width:6px;height:.95em;margin-right:1
 </div>
 <script id="ku-orig-js">
 /* 규정별 원문 자료 목록.
-   - file : ./originals/ 폴더에 올린 파일명 (예: "anchor-guideline.pdf"). 비워두면 "원문 준비 중"으로 표시됩니다.
+   - file : index.html과 같은 위치(저장소 맨 위)에 올린 파일명 (예: "anchor-guideline.pdf"). 비워두면 "원문 준비 중"으로 표시됩니다.
    - ext  : "pdf"만 사이트 안 미리보기 창이 열리고, hwp·hwpx·docx 등은 다운로드 버튼만 동작합니다.
    - urlLabel : url 버튼에 표시할 기관명
    - url  : 파일 대신 발행기관 사이트로 연결할 때 사용 (법령 등). url이 있으면 새 탭으로 열립니다.
@@ -1549,7 +1549,7 @@ var KU_ORIGINALS = {
   "national-contract-act-guide.html": { title:"국가를 당사자로 하는 계약에 관한 법률",            url:"https://www.law.go.kr/법령/국가를당사자로하는계약에관한법률", urlLabel:"국가법령정보센터" }
 };
 (function(){
-  var DIR = './originals/';
+  var DIR = './';   /* 원문 PDF는 저장소 맨 위(index.html과 같은 위치)에 둡니다. 폴더로 옮기면 './originals/' 처럼 바꾸세요. */
   var modal = document.getElementById('origModal'), body = document.getElementById('origBody');
   var ttl = document.getElementById('origTtl'), dl = document.getElementById('origDl'), nw = document.getElementById('origNew');
   var lastFocus = null;
@@ -1583,7 +1583,10 @@ var KU_ORIGINALS = {
     info._dlname = (info.name || info.title) + (ext ? '.' + ext : '');
     var pv = mk('button','orig-btn','📄 미리보기'); pv.type = 'button'; pv.setAttribute('aria-label', label + ' 미리보기');
     var dn = mk('a','orig-btn','⬇ 다운로드'); dn.href = href; dn.setAttribute('download', info._dlname); dn.setAttribute('aria-label', label + ' 다운로드');
-    if(ext === 'pdf'){ pv.addEventListener('click', function(){ openPreview(info, href, label); }); }
+    if(ext === 'pdf'){ pv.addEventListener('click', function(){
+        var inline = (navigator.pdfViewerEnabled !== false) && !(window.matchMedia && matchMedia('(pointer:coarse)').matches);
+        if(inline) openPreview(info, href, label); else window.open(href, '_blank', 'noopener');
+      }); }
     else { pv.setAttribute('aria-disabled','true'); pv.title = ext.toUpperCase() + ' 파일은 미리보기를 지원하지 않습니다. 다운로드해서 열어 주세요.'; }
     row.appendChild(pv); row.appendChild(dn); foot.appendChild(row);
     if(ext !== 'pdf') foot.appendChild(mk('div','orig-note', ext.toUpperCase() + ' 파일은 다운로드 후 열람할 수 있습니다.'));
